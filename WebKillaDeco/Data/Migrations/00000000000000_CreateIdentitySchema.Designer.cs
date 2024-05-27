@@ -9,7 +9,7 @@ using WebKillaDeco.Data;
 
 namespace WebKillaDeco.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(KillaDbContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
