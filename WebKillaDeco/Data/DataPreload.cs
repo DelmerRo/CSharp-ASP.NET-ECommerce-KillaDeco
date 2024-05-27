@@ -37,7 +37,6 @@ namespace WebKillaDeco.Models
             LoadClients();
             LoadEmployees();
             LoadBlogPosts();
-            LoadAddresses();
             LoadCommentsBlog();
             LoadProducts();
             LoadStockItems();
