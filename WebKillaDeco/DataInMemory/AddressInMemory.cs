@@ -5,7 +5,7 @@ namespace WebKillaDeco.DataInMemory
 {
     public class AddressInMemory
     {
-        public static List<Address> GetAddress()
+        public static List<Address> GetAddresses()
         {
             List<Address> addresses = new()
             {
