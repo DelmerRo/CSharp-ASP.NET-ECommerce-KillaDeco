@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using WebKillaDeco.Data;
+using WebKillaDeco.DataInMemory;
 
 namespace WebKillaDeco.Models
 {
@@ -19,76 +21,175 @@ namespace WebKillaDeco.Models
             _context = context;
         }
 
-        public void LoadData()
+        public async Task LoadDataAsync()
         {
             // Entidades independientes
             if (!_roleManager.Roles.Any())
             {
-                LoadRoles();
+                await LoadRolesAsync();
             }
-            LoadCategories();
-            LoadCoupons();
-            LoadLocations();
-            LoadSuppliers();
+            await LoadCategoriesAsync();
+            await LoadCouponsAsync();
+            await LoadLocationsAsync();
+            await LoadSuppliersAsync();
 
             // Entidades con dependencias
-            LoadAddresses();
-            LoadUsers();
-            LoadClients();
-            LoadEmployees();
-            LoadBlogPosts();
-            LoadCommentsBlog();
-            LoadProducts();
-            LoadStockItems();
-            LoadFavorites();
-            LoadCartItems();
-            LoadCart();
-            LoadPurchases();
-            LoadPurchaseDetails();
-            LoadQualifications();
-            LoadDetailOrderSuppliers();
-            LoadSupplierOrders();
-            // Continúa con la carga de otras entidades aquí...
+            await LoadUsersAsync();
+            await LoadClientsAsync();
+            await LoadEmployeesAsync();
+            await LoadAddressesAsync();
+            await LoadProductsAsync();
+            await LoadStockItemsAsync();
+            await LoadFavoritesAsync();
+            await LoadCartItemsAsync();
+            await LoadCartAsync();
+            await LoadPurchasesAsync();
+            await LoadPurchaseDetailsAsync();
+            await LoadQualificationsAsync();
+            await LoadDetailOrderSuppliersAsync();
+            await LoadSupplierOrdersAsync();
+            await LoadQuestionsAsync();
+            await LoadAnswersAsync();
+
         }
 
-        private void LoadCart()
+        private async Task LoadAnswersAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        private void LoadRoles()
-        {
-            // Crea los roles si no existen
-            _roleManager.CreateAsync(new Rol { Name = "Admin" }).Wait();
-            _roleManager.CreateAsync(new Rol { Name = "Client" }).Wait();
-            // Agrega más roles si es necesario
-        }
-
-        private void LoadClients()
-        {
-            if (!_context.Clients.Any())
+            if (!_context.Answers.Any())
             {
-                // Cargar clientes
+                var answers = AnswerInMemory.GetAnswers();
+                foreach (Answer anAnswer in answers)
+                {
+                    var answerFound = await _context.Answers.FirstOrDefaultAsync(a => a.EmployeeId == anAnswer.EmployeeId && a.QuestionId== anAnswer.QuestionId);
+                    if (answerFound == null)
+                    {
+                        _context.Add(anAnswer);
+                        _context.SaveChangesAsync().Wait();
+                    }
+                }
             }
         }
 
-        private void LoadEmployees()
+        private async Task LoadQuestionsAsync()
+        {
+            if (!_context.Questions.Any())
+            {
+                var questions = QuestionInMemory.GetQuestions();
+                foreach (var anQuestion in questions)
+                {
+                    var questionFound = await _context.Questions.FirstOrDefaultAsync(q => q.ClientId == anQuestion.ClientId && q.ProductId== anQuestion.ProductId);
+                    if (questionFound == null)
+                    {
+                        _context.Questions.Add(anQuestion);
+                    }
+                }
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        private async Task LoadCartAsync()
+        {
+            if (!_context.Client.Any())
+            {
+                var carts = CartInMemory.GetCarts();
+                foreach (var anCart in carts)
+                {
+                    var cartsFound = await _context.Client.FirstOrDefaultAsync(c => c.ClientId == anCart.ClientId);
+                    if (cartsFound == null)
+                    {
+                        _context.Client.Add(anCart);
+                    }
+                }
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        private async Task LoadRolesAsync()
+        {
+            await _roleManager.CreateAsync(new Rol { Name = "User" });
+            await _roleManager.CreateAsync(new Rol { Name = "Employee" });
+            await _roleManager.CreateAsync(new Rol { Name = "Client" });
+            await _roleManager.CreateAsync(new Rol { Name = "Supplier" });
+        }
+
+        private async Task LoadClientsAsync()
+        {
+            if (!_context.Client.Any())
+            {
+                var clients = ClientInMemory.GetClients();
+                var nombreRol = "Client";
+                foreach (var anClient in clients)
+                {
+                    if (anClient.Email != null)
+                    {
+                        var existingUser = await _userManager.FindByEmailAsync(anClient.Email);
+                        if (existingUser == null)
+                        {
+                            var clientCreated = await _userManager.CreateAsync(anClient, passwordDefault);
+                            if (clientCreated.Succeeded)
+                            {
+                                await _userManager.AddToRoleAsync(anClient, nombreRol);
+                            }
+                        }
+                    }
+                }
+                await _context.SaveChangesAsync();
+            }
+        }
+
+
+
+        private async Task LoadEmployeesAsync()
         {
             if (!_context.Employees.Any())
             {
-                // Cargar empleados
+                var employees = EmployeeInMemory.GetEmployees();
+                var nombreRol = "Employee";
+                foreach (var anEmployee in employees)
+                {
+                    if (anEmployee.Email != null)
+                    {
+                        var existingEmployee = await _userManager.FindByEmailAsync(anEmployee.Email);
+                        if (existingEmployee == null)
+                        {
+                            var clientCreated = await _userManager.CreateAsync(anEmployee, passwordDefault);
+                            if (clientCreated.Succeeded)
+                            {
+                                await _userManager.AddToRoleAsync(anEmployee, nombreRol);
+                            }
+                        }
+                    }
+                }
+                await _context.SaveChangesAsync();
             }
         }
 
-        private void LoadUsers()
+        private async Task LoadUsersAsync()
         {
             if (!_context.Users.Any())
             {
-                // Cargar usuarios
+                var users = UserInMemory.GetUsers();
+                var nombreRol = "User";
+                foreach (var anUser in users)
+                {
+                    if (anUser.Email != null)
+                    {
+                        var existingUser = await _userManager.FindByEmailAsync(anUser.Email);
+                        if (existingUser == null)
+                        {
+                            var userCreated = await _userManager.CreateAsync(anUser, passwordDefault);
+                            if (userCreated.Succeeded)
+                            {
+                                await _userManager.AddToRoleAsync(anUser, nombreRol);
+                            }
+                        }
+                    }
+                }
+                await _context.SaveChangesAsync();
             }
         }
 
-        private void LoadAddresses()
+        private async Task LoadAddressesAsync()
         {
             if (!_context.Addresses.Any())
             {
@@ -96,15 +197,8 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadBlogPosts()
-        {
-            if (!_context.BlogPosts.Any())
-            {
-                // Cargar publicaciones de blog
-            }
-        }
 
-        private void LoadCartItems()
+        private async Task LoadCartItemsAsync()
         {
             if (!_context.CartItems.Any())
             {
@@ -112,23 +206,29 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadCategories()
+        private async Task LoadCategoriesAsync()
         {
             if (!_context.Categories.Any())
             {
-                // Cargar categorías
+                List<Answer> categorias = CategoryInMemory.GetCategories();
+                foreach (Answer unaCategoria in categorias)
+                {
+                    var categoriaEncontrada = _context.Categories.FirstOrDefault(c => c.Name == unaCategoria.Name);
+                    if (categoriaEncontrada == null)
+                    {
+                        Answer categoria = new();
+                        categoria.Name = unaCategoria.Name;
+                        categoria.ImageUrl = unaCategoria.ImageUrl;
+                        _context.Add(categoria);
+                        _context.SaveChangesAsync().Wait();
+                    }
+                }
             }
         }
 
-        private void LoadCommentsBlog()
-        {
-            if (!_context.CommentsBlog.Any())
-            {
-                // Cargar comentarios del blog
-            }
-        }
 
-        private void LoadCoupons()
+
+        private async Task LoadCouponsAsync()
         {
             if (!_context.Coupons.Any())
             {
@@ -136,7 +236,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadDetailOrderSuppliers()
+        private async Task LoadDetailOrderSuppliersAsync()
         {
             if (!_context.DetailOrderSuppliers.Any())
             {
@@ -144,7 +244,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadFavorites()
+        private async Task LoadFavoritesAsync()
         {
             if (!_context.Favorites.Any())
             {
@@ -152,7 +252,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadLocations()
+        private async Task LoadLocationsAsync()
         {
             if (!_context.Locations.Any())
             {
@@ -160,7 +260,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadProducts()
+        private async Task LoadProductsAsync()
         {
             if (!_context.Products.Any())
             {
@@ -168,7 +268,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadPurchases()
+        private async Task LoadPurchasesAsync()
         {
             if (!_context.Purchases.Any())
             {
@@ -176,7 +276,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadPurchaseDetails()
+        private async Task LoadPurchaseDetailsAsync()
         {
             if (!_context.PurchaseDetails.Any())
             {
@@ -184,7 +284,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadQualifications()
+        private async Task LoadQualificationsAsync()
         {
             if (!_context.Qualifications.Any())
             {
@@ -192,7 +292,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadStockItems()
+        private async Task LoadStockItemsAsync()
         {
             if (!_context.StockItems.Any())
             {
@@ -200,7 +300,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadSuppliers()
+        private async Task LoadSuppliersAsync()
         {
             if (!_context.Suppliers.Any())
             {
@@ -208,7 +308,7 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private void LoadSupplierOrders()
+        private async Task LoadSupplierOrdersAsync()
         {
             if (!_context.SupplierOrders.Any())
             {

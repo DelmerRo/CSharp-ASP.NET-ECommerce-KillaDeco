@@ -92,7 +92,7 @@ namespace WebKillaDeco
             {
                 killaDbContext?.Database.Migrate();
             }
-            serviceScope.ServiceProvider.GetService<DataPreload>()?.LoadData();
+            serviceScope.ServiceProvider.GetService<DataPreload>()?.LoadDataAsync();
         }
     }
 
