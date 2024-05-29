@@ -14,9 +14,9 @@ namespace WebKillaDeco.Data
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Question> Questions { get; set; }
-        public DbSet<Cart> Client { get; set; }
+        public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
-        public DbSet<Answer> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Answer> Answers { get; set; }
@@ -127,8 +127,7 @@ namespace WebKillaDeco.Data
                 .WithOne(a => a.Employee)
                 .HasForeignKey(a => a.EmployeeId);
 
-            // Category
-            modelBuilder.Entity<Answer>()
+            modelBuilder.Entity<Category>()
                 .HasMany(c => c.SubCategories)
                 .WithOne(sc => sc.Category)
                 .HasForeignKey(sc => sc.CategoryId);

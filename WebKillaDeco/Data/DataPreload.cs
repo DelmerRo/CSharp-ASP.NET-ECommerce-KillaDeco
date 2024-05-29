@@ -89,15 +89,15 @@ namespace WebKillaDeco.Models
 
         private async Task LoadCartAsync()
         {
-            if (!_context.Client.Any())
+            if (!_context.Carts.Any())
             {
                 var carts = CartInMemory.GetCarts();
                 foreach (var anCart in carts)
                 {
-                    var cartsFound = await _context.Client.FirstOrDefaultAsync(c => c.ClientId == anCart.ClientId);
+                    var cartsFound = await _context.Carts.FirstOrDefaultAsync(carts => carts.ClientId == anCart.ClientId);
                     if (cartsFound == null)
                     {
-                        _context.Client.Add(anCart);
+                        _context.Carts.Add(anCart);
                     }
                 }
                 await _context.SaveChangesAsync();
@@ -114,7 +114,7 @@ namespace WebKillaDeco.Models
 
         private async Task LoadClientsAsync()
         {
-            if (!_context.Client.Any())
+            if (!_context.Clients.Any())
             {
                 var clients = ClientInMemory.GetClients();
                 var nombreRol = "Client";
@@ -137,30 +137,11 @@ namespace WebKillaDeco.Models
             }
         }
 
-
-
         private async Task LoadEmployeesAsync()
         {
             if (!_context.Employees.Any())
             {
-                var employees = EmployeeInMemory.GetEmployees();
-                var nombreRol = "Employee";
-                foreach (var anEmployee in employees)
-                {
-                    if (anEmployee.Email != null)
-                    {
-                        var existingEmployee = await _userManager.FindByEmailAsync(anEmployee.Email);
-                        if (existingEmployee == null)
-                        {
-                            var clientCreated = await _userManager.CreateAsync(anEmployee, passwordDefault);
-                            if (clientCreated.Succeeded)
-                            {
-                                await _userManager.AddToRoleAsync(anEmployee, nombreRol);
-                            }
-                        }
-                    }
-                }
-                await _context.SaveChangesAsync();
+                // Cargar empleados
             }
         }
 
@@ -168,24 +149,7 @@ namespace WebKillaDeco.Models
         {
             if (!_context.Users.Any())
             {
-                var users = UserInMemory.GetUsers();
-                var nombreRol = "User";
-                foreach (var anUser in users)
-                {
-                    if (anUser.Email != null)
-                    {
-                        var existingUser = await _userManager.FindByEmailAsync(anUser.Email);
-                        if (existingUser == null)
-                        {
-                            var userCreated = await _userManager.CreateAsync(anUser, passwordDefault);
-                            if (userCreated.Succeeded)
-                            {
-                                await _userManager.AddToRoleAsync(anUser, nombreRol);
-                            }
-                        }
-                    }
-                }
-                await _context.SaveChangesAsync();
+                // Cargar usuarios
             }
         }
 
@@ -210,19 +174,20 @@ namespace WebKillaDeco.Models
         {
             if (!_context.Categories.Any())
             {
-                List<Answer> categorias = CategoryInMemory.GetCategories();
-                foreach (Answer unaCategoria in categorias)
+                var categories = CategoryInMemory.GetCategories();
+                foreach (var unaCategoria in categories)
                 {
-                    var categoriaEncontrada = _context.Categories.FirstOrDefault(c => c.Name == unaCategoria.Name);
-                    if (categoriaEncontrada == null)
+                    if (!_context.Categories.Any(c => c.Name == unaCategoria.Name))
                     {
-                        Answer categoria = new();
-                        categoria.Name = unaCategoria.Name;
-                        categoria.ImageUrl = unaCategoria.ImageUrl;
-                        _context.Add(categoria);
-                        _context.SaveChangesAsync().Wait();
+                        var categoria = new Category
+                        {
+                            Name = unaCategoria.Name,
+                            ImageUrl = unaCategoria.ImageUrl
+                        };
+                        _context.Categories.Add(categoria);
                     }
                 }
+                await _context.SaveChangesAsync();
             }
         }
 
