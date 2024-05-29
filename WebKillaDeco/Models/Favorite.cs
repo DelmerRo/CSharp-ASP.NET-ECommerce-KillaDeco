@@ -6,7 +6,7 @@
         public int ProductId { get; set; }
         public int ClientId { get; set; }
         public DateTime DateFavorite { get; set; }
-        public Product Product { get; set; }
-        public Client Client { get; set; }
+        public Product? Product { get; set; }
+        public Client? Client { get; set; }
     }
 }

@@ -8,6 +8,7 @@
         Delivered,
         Canceled,
         Paid,
-        Received
+        Received,
+        Completed
     }
 }
