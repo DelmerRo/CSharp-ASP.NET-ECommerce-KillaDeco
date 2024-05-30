@@ -90,7 +90,7 @@ namespace WebKillaDeco
 
             if (!_dbInMemory)
             {
-                killaDbContext?.Database.Migrate();
+                killaDbContext.Database.Migrate();
             }
             serviceScope.ServiceProvider.GetService<DataPreload>()?.LoadDataAsync();
         }

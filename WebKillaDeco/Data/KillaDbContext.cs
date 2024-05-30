@@ -5,37 +5,56 @@ using WebKillaDeco.Models;
 
 namespace WebKillaDeco.Data
 {
-    public class KillaDbContext : IdentityDbContext<User, Rol, int>
+    public class KillaDbContext : IdentityDbContext<IdentityUser<int>, IdentityRole<int>, int>
     {
-        public KillaDbContext(DbContextOptions<KillaDbContext> options) : base(options)
+        public KillaDbContext(DbContextOptions options) : base(options)
         {
         }
-
-        public DbSet<Rol> Roles { get; set; }
-        public DbSet<Address> Addresses { get; set; }
-        public DbSet<Question> Questions { get; set; }
-        public DbSet<Cart> Carts { get; set; }
-        public DbSet<CartItem> CartItems { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<SubCategory> SubCategories { get; set; }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Answer> Answers { get; set; }
-        public DbSet<Coupon> Coupons { get; set; }
-        public DbSet<DetailOrderSupplier> DetailOrderSuppliers { get; set; }
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Favorite> Favorites { get; set; }
-        public DbSet<Location> Locations { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Purchase> Purchases { get; set; }
-        public DbSet<PurchaseDetail> PurchaseDetails { get; set; }
-        public DbSet<Qualification> Qualifications { get; set; }
-        public DbSet<StockItem> StockItems { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<SupplierOrder> SupplierOrders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Configuración para CartItem
+            modelBuilder.Entity<CartItem>()
+                .Property(c => c.UnitPrice)
+                .HasColumnType("decimal(18,2)");
+
+            // Configuración para Coupon
+            modelBuilder.Entity<Coupon>()
+                .Property(c => c.Discount)
+                .HasColumnType("decimal(18,2)");
+
+            // Configuración para DetailOrderSupplier
+            modelBuilder.Entity<DetailOrderSupplier>()
+                .Property(d => d.UnitPrice)
+                .HasColumnType("decimal(18,2)");
+
+            // Configuración para Employee
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.Salary)
+                .HasColumnType("decimal(18,2)");
+
+            // Configuración para Product
+            modelBuilder.Entity<Product>()
+                .Property(p => p.CurrentPrice)
+                .HasColumnType("decimal(18,2)");
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Discount)
+                .HasColumnType("decimal(18,2)");
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Weight)
+                .HasColumnType("decimal(18,2)");
+
+            // Configuración para Purchase
+            modelBuilder.Entity<Purchase>()
+                .Property(p => p.Total)
+                .HasColumnType("decimal(18,2)");
+
+            // Configuración para PurchaseDetail
+            modelBuilder.Entity<PurchaseDetail>()
+                .Property(p => p.UnitPrice)
+                .HasColumnType("decimal(18,2)");
 
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Addresses)
@@ -136,7 +155,36 @@ namespace WebKillaDeco.Data
                 .HasMany(sc => sc.Products)
                 .WithOne(p => p.SubCategories)
                 .HasForeignKey(p => p.SubCategoryId);
+
+            //Definicion de nonmbre de tablas
+            modelBuilder.Entity<IdentityUser<int>>().ToTable("Users");
+            modelBuilder.Entity<IdentityRole<int>>().ToTable("Roles");
+            modelBuilder.Entity<IdentityUserRole<int>>().ToTable("UsersRoles");
         }
+
+        public DbSet<Rol> Roles { get; set; }
+        public DbSet<User> Admins { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Coupon> Coupons { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<DetailOrderSupplier> DetailOrderSuppliers { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<PurchaseDetail> PurchaseDetails { get; set; }
+        public DbSet<Qualification> Qualifications { get; set; }
+        public DbSet<StockItem> StockItems { get; set; }
+        public DbSet<SupplierOrder> SupplierOrders { get; set; }
+
     }
 
 }

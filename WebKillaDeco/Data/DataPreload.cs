@@ -26,7 +26,7 @@ namespace WebKillaDeco.Models
             // Entidades independientes
             if (!_roleManager.Roles.Any())
             {
-                await LoadRolesAsync();
+                 LoadRolesAsync();
             }
             await LoadCategoriesAsync();
             await LoadSubCategoriesAsync();
@@ -126,12 +126,12 @@ namespace WebKillaDeco.Models
             }
         }
 
-        private async Task LoadRolesAsync()
+        private void LoadRolesAsync()
         {
-            await _roleManager.CreateAsync(new Rol { Name = "User" });
-            await _roleManager.CreateAsync(new Rol { Name = "Employee" });
-            await _roleManager.CreateAsync(new Rol { Name = "Client" });
-            await _roleManager.CreateAsync(new Rol { Name = "Supplier" });
+             _roleManager.CreateAsync(new Rol { Name = "Admin" }).Wait();
+             _roleManager.CreateAsync(new Rol { Name = "Employee" }).Wait();
+             _roleManager.CreateAsync(new Rol { Name = "Client" }).Wait();
+             _roleManager.CreateAsync(new Rol { Name = "Supplier" }).Wait();
         }
 
         private async Task LoadClientsAsync()
@@ -186,7 +186,7 @@ namespace WebKillaDeco.Models
 
         private async Task LoadUsersAsync()
         {
-            if (!_context.Users.Any())
+            if (!_context.Admins.Any())
             {
                 var users = UserInMemory.GetUsers();
                 var nombreRol = "User";
