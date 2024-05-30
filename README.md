@@ -62,6 +62,7 @@ Almacena la dirección completa de un usuario, incluyendo calle, ciudad, provinc
 - **AddressId** (int): Clave primaria.
 - **UserId** (int): Clave foránea que referencia a la entidad User.
 - **Street** (string?): Calle.
+- **Number** (int?): número de calle.
 - **City** (string?): Ciudad.
 - **Province** (string?): Provincia.
 - **PostalCode** (string?): Código postal.
