@@ -8,6 +8,10 @@ namespace WebKillaDeco.Models
         public int AddressId { get; set; }
         public int UserId { get; set; }
         public string? Street { get; set; }
+        public int Number { get; set; }
+        public string? Tower { get; set; }
+        public int Floor { get; set; }
+        public string? Department { get; set; }
         public string? City { get; set; }
         public string? Province { get; set; }
         public string? PostalCode { get; set; }
