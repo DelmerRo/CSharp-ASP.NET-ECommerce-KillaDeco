@@ -12,6 +12,7 @@
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "7.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.15",
           "Microsoft.AspNetCore.Identity.UI": "7.0.15",
+          "Microsoft.EntityFrameworkCore": "7.0.15",
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.15",
