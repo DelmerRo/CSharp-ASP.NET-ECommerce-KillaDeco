@@ -25,25 +25,40 @@ Realizar los ajustes requeridos del lado de los permisos.
 Todo lo referido a la presentación de la aplicaión (cuestiones visuales).
 
 ## Entidades 📄
-Usuario
-Cliente
-Empleado
-Producto
-Categoria
-Stock
+Address
+Answer
+Cart
+CartItem
+Category
+Client
+Coupon
+DetailOrderSupplier
+Employee
+ErrorViewModel
+Favorite
+Location
+PaymentMethod
+Product
+Purchase
+PurchaseDetail
+Qualification
+Question
+Rol
+State
 StockItem
-Carrito
-CarritoItem
-Compra
+SubCategory
+Supplier
+SupplierOrder
+User
 Importante: Todas las entidades deben tener su identificador unico. Id o <ClassNameId>
 
-Las propiedades descriptas a continuación, son las minimas que deben tener las entidades. Uds. pueden agregar las que consideren necesarias. De la misma manera Uds. deben definir los tipos de datos asociados a cada una de ellas, como así también las restricciones.
-
+´´´
 Usuario
 - Nombre
 - Email
 - FechaAlta
 - Password
+´´´
 
 Cliente
 - Nombre
