@@ -11,7 +11,6 @@ namespace WebKillaDeco.DataInMemory
             {
     new Address
     {
-        AddressId = 1,
         UserId = 1,
         Street = "Avenida Corrientes",
         Number = 1234,
@@ -25,7 +24,6 @@ namespace WebKillaDeco.DataInMemory
     },
     new Address
     {
-        AddressId = 2,
         UserId = 1,
         Street = "Calle Florida",
         Number = 567,
@@ -39,7 +37,6 @@ namespace WebKillaDeco.DataInMemory
     },
     new Address
     {
-        AddressId = 3,
         UserId = 2,
         Street = "Avenida 9 de Julio",
         Number = 789,
@@ -53,7 +50,6 @@ namespace WebKillaDeco.DataInMemory
     },
     new Address
     {
-        AddressId = 4,
         UserId = 2,
         Street = "Calle San Martín",
         Number = 321,
@@ -67,7 +63,6 @@ namespace WebKillaDeco.DataInMemory
     },
     new Address
     {
-        AddressId = 5,
         UserId = 3,
         Street = "Avenida de Mayo",
         Number = 654,
@@ -81,7 +76,6 @@ namespace WebKillaDeco.DataInMemory
     },
     new Address
     {
-        AddressId = 6,
         UserId = 3,
         Street = "Calle Defensa",
         Number = 987,
@@ -95,7 +89,6 @@ namespace WebKillaDeco.DataInMemory
     },
     new Address
     {
-        AddressId = 7,
         UserId = 4,
         Street = "Avenida Santa Fe",
         Number = 159,

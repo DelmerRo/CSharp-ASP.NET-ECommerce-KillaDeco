@@ -11,7 +11,7 @@ namespace WebKillaDeco.Models
         public string? Phone { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime DateAdded { get; set; }
-        public List<Address>? Addresses { get; set; }
+        public List<Address> Addresses { get; set; }
 
         public string? FullName => $"{LastName.ToUpper()}, {Name}";
     }

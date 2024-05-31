@@ -18,8 +18,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\WebKillaDeco\WebKillaDeco
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/Account/LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxMb2dJbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Home/Index.cshtml]
