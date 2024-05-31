@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebKillaDeco.Models;
 
-namespace WebKillaDeco.Data
+namespace WebKillaDeco.Areas.Identity.Data
 {
     public class KillaDbContext : IdentityDbContext<IdentityUser<int>, IdentityRole<int>, int>
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WebKillaDeco.Data;
+using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Models;
 
 namespace WebKillaDeco
@@ -57,7 +57,7 @@ namespace WebKillaDeco
             services.PostConfigure<CookieAuthenticationOptions>(IdentityConstants.ApplicationScheme,
                 opciones =>
                 {
-                    opciones.LoginPath = "/Account/IniciarSesion";
+                    opciones.LoginPath = "/Account/LogIn";
                     opciones.AccessDeniedPath = "/Account/AccesoDenegado";
                 });
 
@@ -92,7 +92,7 @@ namespace WebKillaDeco
             {
                 killaDbContext.Database.Migrate();
             }
-            serviceScope.ServiceProvider.GetService<DataPreload>()?.LoadDataAsync();
+            serviceScope.ServiceProvider.GetService<DataPreload>().LoadData();
         }
     }
 
