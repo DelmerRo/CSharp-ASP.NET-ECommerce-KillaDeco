@@ -17,7 +17,9 @@ namespace WebKillaDeco.DataInMemory
                     Name = "Cliente1",
                     LastName = "Doe",
                     Phone = "123-456-789",
-                    Email = "john@example.com"
+                    Email = "john@example.com",
+                    DateAdded = DateTime.Now,
+                    BirthDate = DateTime.Today.AddYears(-30)
                  },
 
                  new User
@@ -27,18 +29,10 @@ namespace WebKillaDeco.DataInMemory
                     Name = "Cliente 2",
                     LastName = "Doe",
                     Phone = "987-654-321",
-                    Email = "jane@example.com"
+                    Email = "jane@example.com",
+                    DateAdded = DateTime.Now,
+                    BirthDate = DateTime.Today.AddYears(-20)
                  },
-
-                 new User
-                 {
-                    Dni = "94807936",
-                    Cuil = "20-94807936-9",
-                    Name = "Cliente 3",
-                    LastName = "Rodríguez",
-                    Phone = "1122540454",
-                    Email = "cliente3@client.com"
-                 }
             };
 
             return users;

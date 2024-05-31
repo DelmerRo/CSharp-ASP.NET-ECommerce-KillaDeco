@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq;
+using System.Threading.Tasks;
 using WebKillaDeco.Data;
 using WebKillaDeco.DataInMemory;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WebKillaDeco.Models
 {
@@ -26,24 +27,25 @@ namespace WebKillaDeco.Models
             // Entidades independientes
             if (!_roleManager.Roles.Any())
             {
-                 LoadRolesAsync();
+                await LoadRolesAsync();
             }
+            // Entidades de tipo Entity
+            await LoadAddressesAsync();
+            await LoadUsersAsync();
+            await LoadClientsAsync();
+            await LoadEmployeesAsync();
+            await LoadSuppliersAsync();
+            
+            // Entidades con dependencias
             await LoadCategoriesAsync();
             await LoadSubCategoriesAsync();
             await LoadCouponsAsync();
             await LoadLocationsAsync();
-            await LoadSuppliersAsync();
-
-            // Entidades con dependencias
-            await LoadUsersAsync();
-            await LoadClientsAsync();
-            await LoadEmployeesAsync();
-            await LoadAddressesAsync();
             await LoadProductsAsync();
             await LoadStockItemsAsync();
             await LoadFavoritesAsync();
             await LoadCartItemsAsync();
-            await LoadCartAsync();
+            await LoadCartsAsync();
             await LoadPurchasesAsync();
             await LoadPurchaseDetailsAsync();
             await LoadQualificationsAsync();
@@ -51,7 +53,14 @@ namespace WebKillaDeco.Models
             await LoadSupplierOrdersAsync();
             await LoadQuestionsAsync();
             await LoadAnswersAsync();
+        }
 
+        private async Task LoadRolesAsync()
+        {
+            await _roleManager.CreateAsync(new Rol { Name = "Admin" });
+            await _roleManager.CreateAsync(new Rol { Name = "Employee" });
+            await _roleManager.CreateAsync(new Rol { Name = "Client" });
+            await _roleManager.CreateAsync(new Rol { Name = "Supplier" });
         }
 
         private async Task LoadSubCategoriesAsync()
@@ -59,36 +68,32 @@ namespace WebKillaDeco.Models
             if (!_context.SubCategories.Any())
             {
                 var subCategories = SubCategoryInMemory.GetSubCategories();
-
                 foreach (var subCategory in subCategories)
                 {
-                    var existingSubCategory = await _context.SubCategories.FirstOrDefaultAsync(sc => sc.SubCategoryId == subCategory.SubCategoryId);
-
+                    var existingSubCategory = await _context.SubCategories.FirstOrDefaultAsync(sc => sc.Name == subCategory.Name);
                     if (existingSubCategory == null)
                     {
-                        _context.SubCategories.Add(subCategory);
+                        _context.Add(subCategory);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
-
 
         private async Task LoadAnswersAsync()
         {
             if (!_context.Answers.Any())
             {
                 var answers = AnswerInMemory.GetAnswers();
-                foreach (Answer anAnswer in answers)
+                foreach (var answer in answers)
                 {
-                    var answerFound = await _context.Answers.FirstOrDefaultAsync(a => a.EmployeeId == anAnswer.EmployeeId && a.QuestionId == anAnswer.QuestionId);
+                    var answerFound = await _context.Answers.FirstOrDefaultAsync(a => a.EmployeeId == answer.EmployeeId && a.QuestionId == answer.QuestionId);
                     if (answerFound == null)
                     {
-                        _context.Add(anAnswer);
-                        _context.SaveChangesAsync().Wait();
+                        _context.Add(answer);
                     }
                 }
+                await _context.SaveChangesAsync();
             }
         }
 
@@ -97,41 +102,33 @@ namespace WebKillaDeco.Models
             if (!_context.Questions.Any())
             {
                 var questions = QuestionInMemory.GetQuestions();
-                foreach (var anQuestion in questions)
+                foreach (var question in questions)
                 {
-                    var questionFound = await _context.Questions.FirstOrDefaultAsync(q => q.ClientId == anQuestion.ClientId && q.ProductId == anQuestion.ProductId);
+                    var questionFound = await _context.Questions.FirstOrDefaultAsync(q => q.ClientId == question.ClientId && q.ProductId == question.ProductId);
                     if (questionFound == null)
                     {
-                        _context.Questions.Add(anQuestion);
+                        _context.Questions.Add(question);
                     }
                 }
                 await _context.SaveChangesAsync();
             }
         }
 
-        private async Task LoadCartAsync()
+        private async Task LoadCartsAsync()
         {
             if (!_context.Carts.Any())
             {
                 var carts = CartInMemory.GetCarts();
-                foreach (var anCart in carts)
+                foreach (var cart in carts)
                 {
-                    var cartsFound = await _context.Carts.FirstOrDefaultAsync(carts => carts.ClientId == anCart.ClientId);
-                    if (cartsFound == null)
+                    var cartFound = await _context.Carts.FirstOrDefaultAsync(c => c.ClientId == cart.ClientId);
+                    if (cartFound == null)
                     {
-                        _context.Carts.Add(anCart);
+                        _context.Carts.Add(cart);
                     }
                 }
                 await _context.SaveChangesAsync();
             }
-        }
-
-        private void LoadRolesAsync()
-        {
-             _roleManager.CreateAsync(new Rol { Name = "Admin" }).Wait();
-             _roleManager.CreateAsync(new Rol { Name = "Employee" }).Wait();
-             _roleManager.CreateAsync(new Rol { Name = "Client" }).Wait();
-             _roleManager.CreateAsync(new Rol { Name = "Supplier" }).Wait();
         }
 
         private async Task LoadClientsAsync()
@@ -139,18 +136,18 @@ namespace WebKillaDeco.Models
             if (!_context.Clients.Any())
             {
                 var clients = ClientInMemory.GetClients();
-                var nombreRol = "Client";
-                foreach (var anClient in clients)
+                var roleName = "Client";
+                foreach (var client in clients)
                 {
-                    if (anClient.Email != null)
+                    if (client.Email != null)
                     {
-                        var existingUser = await _userManager.FindByEmailAsync(anClient.Email);
+                        var existingUser = await _userManager.FindByEmailAsync(client.Email);
                         if (existingUser == null)
                         {
-                            var clientCreated = await _userManager.CreateAsync(anClient, passwordDefault);
+                            var clientCreated = await _userManager.CreateAsync(client, passwordDefault);
                             if (clientCreated.Succeeded)
                             {
-                                await _userManager.AddToRoleAsync(anClient, nombreRol);
+                                await _userManager.AddToRoleAsync(client, roleName);
                             }
                         }
                     }
@@ -164,18 +161,18 @@ namespace WebKillaDeco.Models
             if (!_context.Employees.Any())
             {
                 var employees = EmployeeInMemory.GetEmployees();
-                var nombreRol = "Employee";
-                foreach (var anEmployee in employees)
+                var roleName = "Employee";
+                foreach (var employee in employees)
                 {
-                    if (anEmployee.Email != null)
+                    if (employee.Email != null)
                     {
-                        var existingUser = await _userManager.FindByEmailAsync(anEmployee.Email);
+                        var existingUser = await _userManager.FindByEmailAsync(employee.Email);
                         if (existingUser == null)
                         {
-                            var employeeCreated = await _userManager.CreateAsync(anEmployee, passwordDefault);
+                            var employeeCreated = await _userManager.CreateAsync(employee, passwordDefault);
                             if (employeeCreated.Succeeded)
                             {
-                                await _userManager.AddToRoleAsync(anEmployee, nombreRol);
+                                await _userManager.AddToRoleAsync(employee, roleName);
                             }
                         }
                     }
@@ -186,21 +183,29 @@ namespace WebKillaDeco.Models
 
         private async Task LoadUsersAsync()
         {
-            if (!_context.Admins.Any())
+            if (!_context.Users.Any())
             {
                 var users = UserInMemory.GetUsers();
-                var nombreRol = "User";
-                foreach (var anUser in users)
+                var roleName = "Admin";
+                foreach (var user in users)
                 {
-                    if (anUser.Email != null)
+                    if (user.Email != null)
                     {
-                        var existingUser = await _userManager.FindByEmailAsync(anUser.Email);
+                        var existingUser = await _userManager.FindByEmailAsync(user.Email);
                         if (existingUser == null)
                         {
-                            var userCreated = await _userManager.CreateAsync(anUser, passwordDefault);
+                            var userCreated = await _userManager.CreateAsync(user, passwordDefault);
                             if (userCreated.Succeeded)
                             {
-                                await _userManager.AddToRoleAsync(anUser, nombreRol);
+                                var roleResult = await _userManager.AddToRoleAsync(user, roleName);
+                                if (!roleResult.Succeeded)
+                                {
+                                    LogIdentityErrors(roleResult.Errors);
+                                }
+                            }
+                            else
+                            {
+                                LogIdentityErrors(userCreated.Errors);
                             }
                         }
                     }
@@ -209,63 +214,65 @@ namespace WebKillaDeco.Models
             }
         }
 
+        private void LogIdentityErrors(IEnumerable<IdentityError> errors)
+        {
+            foreach (var error in errors)
+            {
+                // Puedes usar cualquier sistema de logging aquí, por ejemplo, Serilog, NLog, etc.
+                // Aquí estamos usando Console.WriteLine solo como ejemplo.
+                Console.WriteLine($"Code: {error.Code}, Description: {error.Description}");
+            }
+        }
+
         private async Task LoadAddressesAsync()
         {
             if (!_context.Addresses.Any())
             {
                 var addresses = AddressInMemory.GetAddresses();
-
-                foreach (var anAddress in addresses)
+                foreach (var address in addresses)
                 {
-                    var existingAddress = await _context.Addresses.FindAsync(anAddress.AddressId);
-
+                    var existingAddress = await _context.Addresses.FindAsync(address.AddressId);
                     if (existingAddress == null)
                     {
-                        _context.Addresses.Add(anAddress);
+                        _context.Addresses.Add(address);
                     }
                 }
                 await _context.SaveChangesAsync();
             }
         }
-
-
 
         private async Task LoadCartItemsAsync()
         {
             if (!_context.CartItems.Any())
             {
                 var cartItems = CartItemInMemory.GetCartItems();
-
                 foreach (var cartItem in cartItems)
                 {
                     var existingCartItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.CartId == cartItem.CartId && ci.ProductId == cartItem.ProductId);
-
                     if (existingCartItem == null)
                     {
                         _context.CartItems.Add(cartItem);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
-
 
         private async Task LoadCategoriesAsync()
         {
             if (!_context.Categories.Any())
             {
                 var categories = CategoryInMemory.GetCategories();
-                foreach (var unaCategoria in categories)
+                foreach (var category in categories)
                 {
-                    if (!_context.Categories.Any(c => c.Name == unaCategoria.Name))
+                    if (!_context.Categories.Any(c => c.Name == category.Name))
                     {
-                        var categoria = new Category
+                        var newCategory = new Category
                         {
-                            Name = unaCategoria.Name,
-                            ImageUrl = unaCategoria.ImageUrl
+                            Name = category.Name,
+                            ImageUrl = category.ImageUrl
                         };
-                        _context.Categories.Add(categoria);
+                        _context.Categories.Add(newCategory);
                     }
                 }
                 await _context.SaveChangesAsync();
@@ -277,17 +284,14 @@ namespace WebKillaDeco.Models
             if (!_context.Coupons.Any())
             {
                 var coupons = CouponInMemory.GetCoupons();
-
                 foreach (var coupon in coupons)
                 {
-                    var existingCoupon = await _context.Coupons.FirstOrDefaultAsync(cou => cou.Code == coupon.Code);
-
+                    var existingCoupon = await _context.Coupons.FirstOrDefaultAsync(c => c.Code == coupon.Code);
                     if (existingCoupon == null)
                     {
                         _context.Coupons.Add(coupon);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
@@ -297,36 +301,33 @@ namespace WebKillaDeco.Models
             if (!_context.DetailOrderSuppliers.Any())
             {
                 var supplierOrderDetails = DetailOrderSupplierInMemory.GetDetailOrderSuppliers();
-
-                foreach (var anSupplierOrderDetail in supplierOrderDetails)
+                foreach (var detail in supplierOrderDetails)
                 {
-                    var existingSupplierOrderDetail = await _context.DetailOrderSuppliers.FirstOrDefaultAsync(sod => sod.SupplierOrderId == anSupplierOrderDetail.SupplierOrderId && sod.ProductId == anSupplierOrderDetail.ProductId);
-
-                    if (existingSupplierOrderDetail == null)
+                    var existingDetail = await _context.DetailOrderSuppliers.FirstOrDefaultAsync(d => d.SupplierOrderId == detail.SupplierOrderId && d.ProductId == detail.ProductId);
+                    if (existingDetail == null)
                     {
-                        _context.DetailOrderSuppliers.Add(anSupplierOrderDetail);
+                        _context.DetailOrderSuppliers.Add(detail);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
 
         private async Task LoadFavoritesAsync()
         {
-            var favorites = FavoriteInMemory.GetFavorites();
-
-            foreach (var favorite in favorites)
+            if (!_context.Favorites.Any())
             {
-                var existingFavorite = await _context.Favorites.FirstOrDefaultAsync(f => f.ProductId == favorite.ProductId && f.ClientId == favorite.ClientId);
-
-                if (existingFavorite == null)
+                var favorites = FavoriteInMemory.GetFavorites();
+                foreach (var favorite in favorites)
                 {
-                    _context.Favorites.Add(favorite);
+                    var existingFavorite = await _context.Favorites.FirstOrDefaultAsync(f => f.ProductId == favorite.ProductId && f.ClientId == favorite.ClientId);
+                    if (existingFavorite == null)
+                    {
+                        _context.Favorites.Add(favorite);
+                    }
                 }
+                await _context.SaveChangesAsync();
             }
-
-            await _context.SaveChangesAsync();
         }
 
         private async Task LoadLocationsAsync()
@@ -334,59 +335,48 @@ namespace WebKillaDeco.Models
             if (!_context.Locations.Any())
             {
                 var locations = LocationInMemory.GetLocations();
-
                 foreach (var location in locations)
                 {
-                    var existingLocation = await _context.Locations.FindAsync(location.AddressId );
-
+                    var existingLocation = await _context.Locations.FindAsync(location.AddressId);
                     if (existingLocation == null)
                     {
                         _context.Locations.Add(location);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
-
 
         private async Task LoadProductsAsync()
         {
             if (!_context.Products.Any())
             {
                 var products = ProductInMemory.GetProducts();
-
                 foreach (var product in products)
                 {
-                    var existingProduct = await _context.Products.FirstOrDefaultAsync(p => p.Sku == product.Sku && p.ProductId == product.ProductId);
-
+                    var existingProduct = await _context.Products.FirstOrDefaultAsync(p => p.Sku == product.Sku);
                     if (existingProduct == null)
                     {
                         _context.Products.Add(product);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
-
 
         private async Task LoadPurchasesAsync()
         {
             if (!_context.Purchases.Any())
             {
                 var purchases = PurchaseInMemory.GetPurchases();
-
                 foreach (var purchase in purchases)
                 {
                     var existingPurchase = await _context.Purchases.FirstOrDefaultAsync(p => p.ClientId == purchase.ClientId && p.AddressId == purchase.AddressId);
-
                     if (existingPurchase == null)
                     {
                         _context.Purchases.Add(purchase);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
@@ -396,17 +386,14 @@ namespace WebKillaDeco.Models
             if (!_context.PurchaseDetails.Any())
             {
                 var purchaseDetails = PurchaseDetailInMemory.GetPurchaseDetails();
-
                 foreach (var detail in purchaseDetails)
                 {
                     var existingDetail = await _context.PurchaseDetails.FirstOrDefaultAsync(pd => pd.PurchaseId == detail.PurchaseId && pd.ProductId == detail.ProductId);
-
                     if (existingDetail == null)
                     {
                         _context.PurchaseDetails.Add(detail);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
@@ -416,49 +403,41 @@ namespace WebKillaDeco.Models
             if (!_context.Qualifications.Any())
             {
                 var qualifications = QualificationInMemory.GetQualifications();
-
                 foreach (var qualification in qualifications)
                 {
                     var existingQualification = await _context.Qualifications.FirstOrDefaultAsync(q => q.ProductId == qualification.ProductId && q.ClientId == qualification.ClientId);
-
                     if (existingQualification == null)
                     {
                         _context.Qualifications.Add(qualification);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
-
 
         private async Task LoadStockItemsAsync()
         {
             if (!_context.StockItems.Any())
             {
                 var stockItems = StockItemInMemory.GetStockItems();
-
                 foreach (var stockItem in stockItems)
                 {
                     var existingStockItem = await _context.StockItems.FirstOrDefaultAsync(si => si.LocationId == stockItem.LocationId && si.ProductId == stockItem.ProductId);
-
                     if (existingStockItem == null)
                     {
                         _context.StockItems.Add(stockItem);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
-
 
         private async Task LoadSuppliersAsync()
         {
             if (!_context.Suppliers.Any())
             {
                 var suppliers = SupplierInMemory.GetSuppliers();
-                var nombreRol = "Employee";
+                var roleName = "Supplier";
                 foreach (var supplier in suppliers)
                 {
                     if (supplier.Email != null)
@@ -469,7 +448,7 @@ namespace WebKillaDeco.Models
                             var supplierCreated = await _userManager.CreateAsync(supplier, passwordDefault);
                             if (supplierCreated.Succeeded)
                             {
-                                await _userManager.AddToRoleAsync(supplier, nombreRol);
+                                await _userManager.AddToRoleAsync(supplier, roleName);
                             }
                         }
                     }
@@ -483,22 +462,16 @@ namespace WebKillaDeco.Models
             if (!_context.SupplierOrders.Any())
             {
                 var supplierOrders = SupplierOrderInMemory.GetSupplierOrders();
-
                 foreach (var supplierOrder in supplierOrders)
                 {
                     var existingSupplierOrder = await _context.SupplierOrders.FirstOrDefaultAsync(so => so.SupplierId == supplierOrder.SupplierId);
-
                     if (existingSupplierOrder == null)
                     {
                         _context.SupplierOrders.Add(supplierOrder);
                     }
                 }
-
                 await _context.SaveChangesAsync();
             }
         }
-
-
-        // Agrega más métodos privados para cargar otras entidades si es necesario
     }
 }
