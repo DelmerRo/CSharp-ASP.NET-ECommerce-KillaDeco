@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using WebKillaDeco;
-
 namespace WebKillaDeco
 {
     public class Program

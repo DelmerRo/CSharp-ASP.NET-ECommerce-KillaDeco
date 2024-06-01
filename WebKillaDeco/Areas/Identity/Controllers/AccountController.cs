@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using WebKillaDeco.Areas.Identity.Data;
@@ -24,20 +25,31 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             _rolManager = rolManager;
         }
 
+        public async Task<ActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Index", "home");
+        }
+
         [HttpGet]
         public IActionResult AccesoDenegado()
         {
             return View();
         }
 
-        public ActionResult LogIn(string returnurl)
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult Login(string returnurl)
         {
             TempData["returnUrl"] = returnurl;
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> LogIn(LogIn logInViewModel)
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LogIn logInViewModel)
         {
             string? returnUrl = TempData["returnUrl"] as string;
 
