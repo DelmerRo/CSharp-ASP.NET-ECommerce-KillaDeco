@@ -34,97 +34,97 @@ namespace WebKillaDeco.DataInMemory
                 },
                 new StockItem
                 {
-                    LocationId = 3,
+                    LocationId = 1,
                     ProductId = 5,
                     Quantity = 40
                 },
                 new StockItem
                 {
-                    LocationId = 3,
+                    LocationId = 2,
                     ProductId = 6,
                     Quantity = 60
                 },
                 new StockItem
                 {
-                    LocationId = 4,
+                    LocationId = 1,
                     ProductId = 7,
                     Quantity = 25
                 },
                 new StockItem
                 {
-                    LocationId = 4,
+                    LocationId = 2,
                     ProductId = 8,
                     Quantity = 35
                 },
                 new StockItem
                 {
-                    LocationId = 5,
+                    LocationId = 1,
                     ProductId = 9,
                     Quantity = 45
                 },
                 new StockItem
                 {
-                    LocationId = 5,
+                    LocationId = 2,
                     ProductId = 10,
                     Quantity = 55
                 },
                 new StockItem
                 {
-                    LocationId = 6,
+                    LocationId = 1,
                     ProductId = 11,
                     Quantity = 65
                 },
                 new StockItem
                 {
-                    LocationId = 6,
+                    LocationId = 2,
                     ProductId = 12,
                     Quantity = 75
                 },
                 new StockItem
                 {
-                    LocationId = 7,
+                    LocationId =1,
                     ProductId = 13,
                     Quantity = 85
                 },
                 new StockItem
                 {
-                    LocationId = 7,
+                    LocationId = 2,
                     ProductId = 14,
                     Quantity = 95
                 },
                 new StockItem
                 {
-                    LocationId = 8,
+                    LocationId = 2,
                     ProductId = 15,
                     Quantity = 105
                 },
                 new StockItem
                 {
-                    LocationId = 8,
+                    LocationId = 2,
                     ProductId = 16,
                     Quantity = 115
                 },
                 new StockItem
                 {
-                    LocationId = 9,
+                    LocationId = 1,
                     ProductId = 17,
                     Quantity = 125
                 },
                 new StockItem
                 {
-                    LocationId = 9,
+                    LocationId = 2,
                     ProductId = 18,
                     Quantity = 135
                 },
                 new StockItem
                 {
-                    LocationId = 10,
+                    LocationId = 1,
                     ProductId = 19,
                     Quantity = 145
                 },
                 new StockItem
                 {
-                    LocationId = 10,
+                    LocationId = 2,
                     ProductId = 20,
                     Quantity = 155
                 }

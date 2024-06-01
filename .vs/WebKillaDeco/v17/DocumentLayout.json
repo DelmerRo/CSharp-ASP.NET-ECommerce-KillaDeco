@@ -3,16 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\data\\datapreload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\data\\datapreload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\datainmemory\\userinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\datainmemory\\userinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\datainmemory\\answersinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\datainmemory\\answersinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\datainmemory\\addressinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\datainmemory\\addressinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KillaDB/True/SqlTable/dbo.Questions.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\datainmemory\\purchasedetailinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\datainmemory\\purchasedetailinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\datainmemory\\cartinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\datainmemory\\cartinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\datainmemory\\purchaseinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\datainmemory\\purchaseinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KillaDB/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KillaDB/True/SqlTable/dbo.Purchases.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KillaDB/True/SqlTable/dbo.Addresses.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\datainmemory\\cartiteminmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\datainmemory\\cartiteminmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,8 +53,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 115,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 152,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,47 +62,152 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Models\\User.cs",
-              "RelativeDocumentMoniker": "WebKillaDeco\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Models\\User.cs",
-              "RelativeToolTip": "WebKillaDeco\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
+              "DocumentIndex": 1,
+              "Title": "AnswersInMemory.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\AnswersInMemory.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\DataInMemory\\AnswersInMemory.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\AnswersInMemory.cs",
+              "RelativeToolTip": "WebKillaDeco\\DataInMemory\\AnswersInMemory.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T05:56:59.25Z",
+              "WhenOpened": "2024-06-01T00:32:19.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AddressInMemory.cs",
-              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\AddressInMemory.cs",
-              "RelativeDocumentMoniker": "WebKillaDeco\\DataInMemory\\AddressInMemory.cs",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\AddressInMemory.cs",
-              "RelativeToolTip": "WebKillaDeco\\DataInMemory\\AddressInMemory.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAkwA0AAAATAAAA",
+              "Title": "dbo.Questions [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KillaDB/True/SqlTable/dbo.Questions.sql",
+              "ToolTip": "dbo.Questions [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-01T00:30:34.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PurchaseDetailInMemory.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\PurchaseDetailInMemory.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\DataInMemory\\PurchaseDetailInMemory.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\PurchaseDetailInMemory.cs",
+              "RelativeToolTip": "WebKillaDeco\\DataInMemory\\PurchaseDetailInMemory.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAADQAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T05:55:45.732Z",
+              "WhenOpened": "2024-05-31T23:06:52.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PurchaseInMemory.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\PurchaseInMemory.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\DataInMemory\\PurchaseInMemory.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\PurchaseInMemory.cs",
+              "RelativeToolTip": "WebKillaDeco\\DataInMemory\\PurchaseInMemory.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAIwC8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T23:03:36.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CartItemInMemory.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\CartItemInMemory.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\DataInMemory\\CartItemInMemory.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\CartItemInMemory.cs",
+              "RelativeToolTip": "WebKillaDeco\\DataInMemory\\CartItemInMemory.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAADQAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T22:59:13.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartInMemory.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\CartInMemory.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\DataInMemory\\CartInMemory.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\CartInMemory.cs",
+              "RelativeToolTip": "WebKillaDeco\\DataInMemory\\CartInMemory.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T22:34:38.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataPreload.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Data\\DataPreload.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Data\\DataPreload.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Data\\DataPreload.cs",
+              "RelativeToolTip": "WebKillaDeco\\Data\\DataPreload.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAEwDkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T22:32:57.229Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedHeight": 115,
-          "SelectedChildIndex": 0,
+          "DockedHeight": 78,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserInMemory.cs",
-              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\UserInMemory.cs",
-              "RelativeDocumentMoniker": "WebKillaDeco\\DataInMemory\\UserInMemory.cs",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\DataInMemory\\UserInMemory.cs",
-              "RelativeToolTip": "WebKillaDeco\\DataInMemory\\UserInMemory.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAkAAAA",
+              "DocumentIndex": 7,
+              "Title": "dbo.Purchases [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KillaDB/True/SqlTable/dbo.Purchases.sql",
+              "ToolTip": "dbo.Purchases [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-05-31T23:07:09.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KillaDB/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-05-31T23:04:03.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "dbo.Addresses [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/KillaDB/True/SqlTable/dbo.Addresses.sql",
+              "ToolTip": "dbo.Addresses [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-05-31T23:05:31.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Models\\CartItem.cs",
+              "RelativeToolTip": "WebKillaDeco\\Models\\CartItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T05:56:34.159Z",
+              "WhenOpened": "2024-05-31T22:59:20.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Models\\Cart.cs",
+              "RelativeToolTip": "WebKillaDeco\\Models\\Cart.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T22:35:32.092Z",
               "EditorCaption": ""
             }
           ]

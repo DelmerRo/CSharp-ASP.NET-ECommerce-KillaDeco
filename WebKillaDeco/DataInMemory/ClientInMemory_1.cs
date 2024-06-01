@@ -15,7 +15,7 @@ namespace WebKillaDeco.DataInMemory
                     Name = "John",
                     LastName = "Doe",
                     Phone = "123-456-789",
-                    Email = "john@example.com"
+                    Email = "client1@dominio.com.ar"
                  },
 
                  new Client
@@ -25,7 +25,7 @@ namespace WebKillaDeco.DataInMemory
                     Name = "Jane",
                     LastName = "Doe",
                     Phone = "987-654-321",
-                    Email = "jane@example.com"
+                    Email = "cliente2@dominio.com.ar"
                  }
             };
                  return clients;

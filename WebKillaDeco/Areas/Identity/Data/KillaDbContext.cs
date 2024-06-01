@@ -57,9 +57,10 @@ namespace WebKillaDeco.Areas.Identity.Data
                 .HasColumnType("decimal(18,2)");
 
             modelBuilder.Entity<User>()
-                .HasMany(u => u.Addresses)
+                .HasOne(u => u.Address)
                 .WithOne(a => a.User)
-                .HasForeignKey(a => a.UserId);
+                 .HasForeignKey<Address>(a => a.UserId)
+                .IsRequired();
 
             modelBuilder.Entity<Client>()
                 .HasMany(c => c.Purchases)
@@ -130,6 +131,11 @@ namespace WebKillaDeco.Areas.Identity.Data
                 .HasMany(l => l.StockItems)
                 .WithOne(si => si.Location)
                 .HasForeignKey(si => si.LocationId);
+
+            modelBuilder.Entity<Location>()
+           .HasOne(l => l.Address)
+           .WithOne(a => a.Location)
+           .HasForeignKey<Address>(a => a.LocationId);
 
             modelBuilder.Entity<Cart>()
                 .HasMany(c => c.CartItems)
