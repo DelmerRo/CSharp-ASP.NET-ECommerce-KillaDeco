@@ -3,7 +3,7 @@ using WebKillaDeco.Helpers;
 
 namespace WebKillaDeco.Areas.Identity.ViewModels
 {
-    public class LogIn
+    public class Login
     {
         /*[Required(ErrorMessage = ErrMsgs.Requerido)]
         [Display(Name = Alias.Email)]*/
