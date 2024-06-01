@@ -26,7 +26,7 @@ namespace WebKillaDeco
 
         public bool _dbInMemory = false;
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // Este método es llamado por el runtime. Usa este método para agregar servicios al contenedor.
         public void ConfigureServices(IServiceCollection services)
         {
             #region Tipo de DB provider a usar
@@ -45,22 +45,25 @@ namespace WebKillaDeco
             services.AddScoped<DataPreload>();
 
             #region Identity
-            services.AddIdentity<User, Rol>().AddEntityFrameworkStores<KillaDbContext>();
+            services.AddIdentity<User, Rol>()
+                .AddEntityFrameworkStores<KillaDbContext>()
+                .AddDefaultTokenProviders()
+                .AddSignInManager<SignInManager<User>>();
+               
 
-            services.Configure<IdentityOptions>(
-                opciones =>
-                {
-                    opciones.Password.RequiredLength = 8;
-                }
-            );
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredLength = 8;
+                // Agrega otras configuraciones necesarias para Identity aquí.
+            });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Identity/Account/Login"; // Ruta de inicio de sesión
+                options.LogoutPath = "/Identity/Account/Logout"; // Ruta de cierre de sesión
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+            });
             #endregion
-
-            services.PostConfigure<CookieAuthenticationOptions>(IdentityConstants.ApplicationScheme,
-                opciones =>
-                {
-                    opciones.LoginPath = "/Account/LogIn";
-                    opciones.AccessDeniedPath = "/Account/AccesoDenegado";
-                });
 
             services.AddControllersWithViews();
         }
@@ -74,9 +77,9 @@ namespace WebKillaDeco
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -87,7 +90,6 @@ namespace WebKillaDeco
                 if (!_dbInMemory)
                 {
                     killaDbContext.Database.Migrate();
-
                 }
                 serviceScope.ServiceProvider.GetService<DataPreload>().LoadData();
             }
@@ -102,8 +104,7 @@ namespace WebKillaDeco
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-            }
-            );
+            });
         }
     }
 }

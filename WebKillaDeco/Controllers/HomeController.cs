@@ -1,15 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using System.Diagnostics;
+using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Models;
 
 namespace WebKillaDeco.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        public readonly KillaDbContext _context;
+        public readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, KillaDbContext context)
         {
+            _context = context;
             _logger = logger;
         }
 
