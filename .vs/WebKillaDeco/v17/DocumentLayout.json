@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\viewmodels\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\viewmodels\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\viewmodels\\resetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\viewmodels\\resetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\areas\\identity\\viewmodels\\forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\viewmodels\\forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\webkilladeco\\webkilladeco\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -14,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 194,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,12 +62,142 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T17:37:07.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\ViewModels\\Login.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\ViewModels\\Login.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\ViewModels\\Login.cs",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\ViewModels\\Login.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T17:37:04.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T17:32:55.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T17:27:45.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\Views\\Account\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\Views\\Account\\ResetPassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T16:53:31.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\Views\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T16:51:40.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T16:44:53.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ResetPassword.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\ViewModels\\ResetPassword.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\ViewModels\\ResetPassword.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\ViewModels\\ResetPassword.cs",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\ViewModels\\ResetPassword.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T16:46:53.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ForgotPassword.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\ViewModels\\ForgotPassword.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\ViewModels\\ForgotPassword.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\ViewModels\\ForgotPassword.cs",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\ViewModels\\ForgotPassword.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T16:46:42.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Areas\\Identity\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAG0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T16:30:27.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "WebKillaDeco\\Views\\Shared\\_Layout.cshtml*",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-01T16:21:40.886Z",

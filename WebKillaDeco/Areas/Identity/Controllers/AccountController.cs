@@ -45,6 +45,8 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             return View();
         }
 
+        
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -80,13 +82,35 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             return View(logInViewModel);
         }
 
-        public ActionResult RegisterUser()
+        public IActionResult ResetPassword()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> RegisterUser(RegisterUserViewModel userViewModel)
+        public IActionResult ResetPassword(ResetPassword resetPasswordViewModel)
+        {
+            return View();
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<ActionResult> ForgotPassword(ForgotPassword forgotPasswordViewModel)
+        {
+            return View();
+        }
+
+
+            public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Register(RegisterViewModel userViewModel)
         {
             //Hago con model lo que necesito.
 

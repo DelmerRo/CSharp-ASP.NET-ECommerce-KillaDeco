@@ -1,6 +1,6 @@
 ﻿namespace WebKillaDeco.Areas.Identity.ViewModels
 {
-    public class RegisterUserViewModel
+    public class RegisterViewModel
     {
         public string Dni { get; set; }
         public string Cuil { get; set; }
