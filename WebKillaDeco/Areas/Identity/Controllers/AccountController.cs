@@ -9,7 +9,7 @@ namespace WebKillaDeco.Areas.Identity.Controllers
 {
     public class AccountController : Controller
     {
-        /*private readonly KillaDbContext _context;
+        private readonly KillaDbContext _context;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<Rol> _rolManager;
@@ -142,6 +142,6 @@ namespace WebKillaDeco.Areas.Identity.Controllers
         public IActionResult Index()
         {
             return View();
-        }*/
+        }
     }
 }

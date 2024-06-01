@@ -9,14 +9,66 @@ namespace WebKillaDeco.DataInMemory
         {
             List<Address> addresses = new()
             {
-    new Address
+   new Address
     {
         UserId = 1,
-        Street = "Avenida Corrientes",
-        Number = 1234,
-        Tower = "A",
-        Floor = 5,
+        Street = "Avenida de Mayo",
+        Number = 123,
+        Tower = "B",
+        Floor = 2,
         Department = "B",
+        City = "Buenos Aires",
+        Province = "Buenos Aires",
+        PostalCode = "C1084AAB",
+        Country = "Argentina"
+    },
+    new Address
+    {
+        UserId = 2,
+        Street = "Calle Florida",
+        Number = 456,
+        Tower = "3",
+        Floor = 1,
+        Department = "C",
+        City = "Buenos Aires",
+        Province = "Buenos Aires",
+        PostalCode = "C1005AAS",
+        Country = "Argentina"
+    },
+    /*new Address
+    {
+        UserId = 3,
+        Street = "Avenida 9 de Julio",
+        Number = 789,
+        Tower = "1",
+        Floor = 3,
+        Department = "A",
+        City = "Buenos Aires",
+        Province = "Buenos Aires",
+        PostalCode = "C1043AAB",
+        Country = "Argentina"
+    },
+    new Address
+    {
+        UserId = 4,
+        Street = "Calle Lavalle",
+        Number = 101,
+        Tower = "A",
+        Floor = 4,
+        Department = "D",
+        City = "Buenos Aires",
+        Province = "Buenos Aires",
+        PostalCode = "C1047AAG",
+        Country = "Argentina"
+    },
+    new Address
+    {
+        UserId = 5,
+        Street = "Avenida Corrientes",
+        Number = 202,
+        Tower = "3",
+        Floor = 5,
+        Department = "E",
         City = "Buenos Aires",
         Province = "Buenos Aires",
         PostalCode = "C1043AAS",
@@ -24,82 +76,30 @@ namespace WebKillaDeco.DataInMemory
     },
     new Address
     {
-        UserId = 1,
-        Street = "Calle Florida",
-        Number = 567,
-        Tower = "A",
-        Floor = 3,
-        Department = "A",
-        City = "Buenos Aires",
-        Province = "Buenos Aires",
-        PostalCode = "C1005AAN",
-        Country = "Argentina"
-    },
-    new Address
-    {
-        UserId = 2,
-        Street = "Avenida 9 de Julio",
-        Number = 789,
-        Tower = "B",
-        Floor = 10,
-        Department = "C",
-        City = "Buenos Aires",
-        Province = "Buenos Aires",
-        PostalCode = "C1043AAO",
-        Country = "Argentina"
-    },
-    new Address
-    {
-        UserId = 2,
-        Street = "Calle San Martín",
-        Number = 321,
-        Tower = "1",
-        Floor = 1,
-        Department = "B",
-        City = "Buenos Aires",
-        Province = "Buenos Aires",
-        PostalCode = "C1004AAF",
-        Country = "Argentina"
-    },
-    new Address
-    {
-        UserId = 3,
-        Street = "Avenida de Mayo",
-        Number = 654,
-        Tower = "C",
-        Floor = 8,
-        Department = "D",
-        City = "Buenos Aires",
-        Province = "Buenos Aires",
-        PostalCode = "C1084AAC",
-        Country = "Argentina"
-    },
-    new Address
-    {
-        UserId = 3,
-        Street = "Calle Defensa",
-        Number = 987,
-        Tower = "C",
-        Floor = 2,
-        Department = "A",
-        City = "Buenos Aires",
-        Province = "Buenos Aires",
-        PostalCode = "C1065AAK",
-        Country = "Argentina"
-    },
-    new Address
-    {
-        UserId = 4,
-        Street = "Avenida Santa Fe",
-        Number = 159,
-        Tower = "D",
-        Floor = 7,
+        UserId = 6,
+        Street = "Calle Reconquista",
+        Number = 303,
+        Tower = "2",
+        Floor = 6,
         Department = "F",
         City = "Buenos Aires",
         Province = "Buenos Aires",
-        PostalCode = "C1059AAD",
+        PostalCode = "C1003ABH",
         Country = "Argentina"
-    }
+    },
+    new Address
+    {
+        UserId = 7,
+        Street = "Avenida Belgrano",
+        Number = 404,
+        Tower = "1",
+        Floor = 7,
+        Department = "G",
+        City = "Buenos Aires",
+        Province = "Buenos Aires",
+        PostalCode = "C1092AAQ",
+        Country = "Argentina"
+    }*/
             };
 
             return addresses;

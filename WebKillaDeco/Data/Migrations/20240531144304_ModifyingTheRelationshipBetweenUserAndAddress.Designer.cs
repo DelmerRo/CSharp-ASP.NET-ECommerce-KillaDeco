@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebKillaDeco.Areas.Identity.Data;
 
@@ -11,9 +12,11 @@ using WebKillaDeco.Areas.Identity.Data;
 namespace WebKillaDeco.Data.Migrations
 {
     [DbContext(typeof(KillaDbContext))]
-    partial class KillaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240531144304_ModifyingTheRelationshipBetweenUserAndAddress")]
+    partial class ModifyingTheRelationshipBetweenUserAndAddress
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -259,9 +262,6 @@ namespace WebKillaDeco.Data.Migrations
                     b.Property<int>("Floor")
                         .HasColumnType("int");
 
-                    b.Property<int?>("LocationId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
@@ -277,15 +277,10 @@ namespace WebKillaDeco.Data.Migrations
                     b.Property<string>("Tower")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .IsRequired()
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("AddressId");
-
-                    b.HasIndex("LocationId")
-                        .IsUnique()
-                        .HasFilter("[LocationId] IS NOT NULL");
 
                     b.HasIndex("UserId")
                         .IsUnique();
@@ -482,6 +477,9 @@ namespace WebKillaDeco.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LocationId"));
 
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -492,6 +490,8 @@ namespace WebKillaDeco.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("LocationId");
+
+                    b.HasIndex("AddressId");
 
                     b.ToTable("Locations");
                 });
@@ -767,26 +767,21 @@ namespace WebKillaDeco.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Cuil")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateAdded")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Dni")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("User");
@@ -875,17 +870,11 @@ namespace WebKillaDeco.Data.Migrations
 
             modelBuilder.Entity("WebKillaDeco.Models.Address", b =>
                 {
-                    b.HasOne("WebKillaDeco.Models.Location", "Location")
-                        .WithOne("Address")
-                        .HasForeignKey("WebKillaDeco.Models.Address", "LocationId");
-
                     b.HasOne("WebKillaDeco.Models.User", "User")
                         .WithOne("Address")
                         .HasForeignKey("WebKillaDeco.Models.Address", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Location");
 
                     b.Navigation("User");
                 });
@@ -975,6 +964,17 @@ namespace WebKillaDeco.Data.Migrations
                     b.Navigation("Client");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("WebKillaDeco.Models.Location", b =>
+                {
+                    b.HasOne("WebKillaDeco.Models.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
                 });
 
             modelBuilder.Entity("WebKillaDeco.Models.Product", b =>
@@ -1115,8 +1115,6 @@ namespace WebKillaDeco.Data.Migrations
 
             modelBuilder.Entity("WebKillaDeco.Models.Location", b =>
                 {
-                    b.Navigation("Address");
-
                     b.Navigation("StockItems");
                 });
 
@@ -1155,7 +1153,8 @@ namespace WebKillaDeco.Data.Migrations
 
             modelBuilder.Entity("WebKillaDeco.Models.User", b =>
                 {
-                    b.Navigation("Address");
+                    b.Navigation("Address")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WebKillaDeco.Models.Client", b =>

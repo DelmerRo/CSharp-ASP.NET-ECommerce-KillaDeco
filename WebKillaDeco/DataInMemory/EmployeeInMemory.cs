@@ -16,7 +16,7 @@ namespace WebKillaDeco.Models
                     Name = "John",
                     LastName = "Doe",
                     Phone = "123-456-789",
-                    Email = "john@example.com",
+                    Email = "employee1@killa.com.ar",
                     Occupation = "Manager",
                     Salary = 50000,
                     DateAdded = DateTime.Now
@@ -28,7 +28,7 @@ namespace WebKillaDeco.Models
                     Name = "Jane",
                     LastName = "Doe",
                     Phone = "987-654-321",
-                    Email = "jane@example.com",
+                    Email = "employee2@killa.com.ar",
                     Occupation = "Developer",
                     Salary = 60000,
                     DateAdded = DateTime.Now
@@ -40,7 +40,7 @@ namespace WebKillaDeco.Models
                     Name = "Alice",
                     LastName = "Smith",
                     Phone = "111-222-333",
-                    Email = "alice@example.com",
+                    Email = "employee3@killa.com.ar",
                     Occupation = "Designer",
                     Salary = 55000,
                     DateAdded = DateTime.Now

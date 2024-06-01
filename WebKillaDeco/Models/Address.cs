@@ -6,7 +6,11 @@ namespace WebKillaDeco.Models
     public class Address
     {
         public int AddressId { get; set; }
-        public int UserId { get; set; }
+
+        // Claves foráneas para la relación uno a uno con User y Location
+        public int? UserId { get; set; }
+        public int? LocationId { get; set; }
+
         public string? Street { get; set; }
         public int Number { get; set; }
         public string? Tower { get; set; }
@@ -16,6 +20,9 @@ namespace WebKillaDeco.Models
         public string? Province { get; set; }
         public string? PostalCode { get; set; }
         public string? Country { get; set; }
+
+        // Propiedades de navegación
         public User? User { get; set; }
+        public Location? Location { get; set; }
     }
 }

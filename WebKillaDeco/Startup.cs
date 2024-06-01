@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Models;
@@ -64,49 +65,45 @@ namespace WebKillaDeco
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-       public void Configure(IApplicationBuilder app, IWebHostEnvironment env, KillaDbContext killaDbContext)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseMigrationsEndPoint();
-    }
-    else
-    {
-        app.UseExceptionHandler("/Home/Error");
-        app.UseHsts();
-    }
-
-    app.UseHttpsRedirection();
-    app.UseStaticFiles();
-
-    var serviceScopeFactory = app.ApplicationServices.GetService<IServiceScopeFactory>();
-
-    if (serviceScopeFactory != null)
-    {
-        using (var serviceScope = serviceScopeFactory.CreateScope())
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, KillaDbContext killaDbContext)
         {
-            var contexto = serviceScope.ServiceProvider.GetRequiredService<KillaDbContext>();
-
-            if (!_dbInMemory)
+            if (env.IsDevelopment())
             {
-                killaDbContext.Database.Migrate();
+                app.UseDeveloperExceptionPage();
             }
-            serviceScope.ServiceProvider.GetService<DataPreload>().LoadData();
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var contexto = serviceScope.ServiceProvider.GetRequiredService<KillaDbContext>();
+
+                if (!_dbInMemory)
+                {
+                    killaDbContext.Database.Migrate();
+
+                }
+                serviceScope.ServiceProvider.GetService<DataPreload>().LoadData();
+            }
+
+            app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            }
+            );
         }
-    }
-
-    app.UseRouting();
-
-    app.UseAuthentication();
-    app.UseAuthorization();
-
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
-    });
-}
     }
 }
