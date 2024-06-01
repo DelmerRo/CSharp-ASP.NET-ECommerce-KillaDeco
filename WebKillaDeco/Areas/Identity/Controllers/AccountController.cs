@@ -8,6 +8,7 @@ using WebKillaDeco.Models;
 
 namespace WebKillaDeco.Areas.Identity.Controllers
 {
+    [Area("Identity")]
     public class AccountController : Controller
     {
         private readonly KillaDbContext _context;
@@ -38,9 +39,7 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             return View();
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-        public ActionResult Login(string returnurl)
+        public IActionResult Login(string returnurl)
         {
             TempData["returnUrl"] = returnurl;
             return View();
@@ -49,7 +48,7 @@ namespace WebKillaDeco.Areas.Identity.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LogIn logInViewModel)
+        public async Task<ActionResult> Login(Login logInViewModel)
         {
             string? returnUrl = TempData["returnUrl"] as string;
 

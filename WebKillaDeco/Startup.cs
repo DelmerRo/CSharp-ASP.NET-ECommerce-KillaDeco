@@ -1,7 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Models;
 
@@ -23,7 +28,6 @@ namespace WebKillaDeco
         }
 
         public IConfiguration Configuration { get; }
-
         public bool _dbInMemory = false;
 
         // Este método es llamado por el runtime. Usa este método para agregar servicios al contenedor.
@@ -49,7 +53,6 @@ namespace WebKillaDeco
                 .AddEntityFrameworkStores<KillaDbContext>()
                 .AddDefaultTokenProviders()
                 .AddSignInManager<SignInManager<User>>();
-               
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -66,8 +69,12 @@ namespace WebKillaDeco
             #endregion
 
             services.AddControllersWithViews();
+
+            // Agregar servicios de páginas de Razor
+            services.AddRazorPages();
         }
 
+        // Este método es llamado por el runtime. Configura el pipeline de HTTP.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, KillaDbContext killaDbContext)
         {
             if (env.IsDevelopment())
@@ -102,8 +109,14 @@ namespace WebKillaDeco
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapRazorPages();
             });
         }
     }
