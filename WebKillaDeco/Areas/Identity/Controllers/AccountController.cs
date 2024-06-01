@@ -48,8 +48,6 @@ namespace WebKillaDeco.Areas.Identity.Controllers
         
 
         [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(Login logInViewModel)
         {
             string? returnUrl = TempData["returnUrl"] as string;
