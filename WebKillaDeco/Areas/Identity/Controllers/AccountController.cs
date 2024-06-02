@@ -30,7 +30,7 @@ namespace WebKillaDeco.Areas.Identity.Controllers
         {
             await _signInManager.SignOutAsync();
 
-            return RedirectToAction("Index", "home");
+            return RedirectToAction("Login", "Account");
         }
 
         [HttpGet]
@@ -39,18 +39,17 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             return View();
         }
 
-        public IActionResult Login(string returnurl)
+        public ActionResult Login(string returnurl)
         {
             TempData["returnUrl"] = returnurl;
             return View();
         }
 
-        
 
         [HttpPost]
         public async Task<ActionResult> Login(Login logInViewModel)
         {
-            string? returnUrl = TempData["returnUrl"] as string;
+            string returnUrl = TempData["returnUrl"] as string;
 
             if (ModelState.IsValid)
             {
@@ -64,12 +63,13 @@ namespace WebKillaDeco.Areas.Identity.Controllers
                     var resultadoSignIn = await _signInManager.PasswordSignInAsync(user, logInViewModel.Password, logInViewModel.Remember, false);
                     if (resultadoSignIn.Succeeded)
                     {
-                        if (!string.IsNullOrEmpty(returnUrl))
+                        if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                         {
                             return Redirect(returnUrl);
                         }
 
-                        return RedirectToAction("Index", "Home");
+                        // Redirigir a la raíz del sitio
+                        return Redirect("/");
                     }
                     else
                     {
@@ -79,6 +79,9 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             }
             return View(logInViewModel);
         }
+
+
+
 
         public IActionResult ResetPassword()
         {

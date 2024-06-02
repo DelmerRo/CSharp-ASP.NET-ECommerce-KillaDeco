@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Home/prueba.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwcnVlYmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Shared/Error.cshtml]
