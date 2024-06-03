@@ -1,0 +1,39 @@
+﻿/* Definición de colores */
+:root {
+    --orange-color: #fbb710; /* Color naranja */
+    --black-color: #242424; /* Color negro */
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--orange-color) !important; /* Color naranja */
+    border-color: var(--orange-color) !important; /* Color naranja */
+}
+
+    .btn-primary:hover {
+        background-color: var(--black-color) !important; /* Cambia el color de fondo a negro */
+        border-color: var(--black-color) !important; /* Cambia el color del borde a negro */
+        color: white !important; /* Cambia el color del texto a blanco */
+    }
+
+/* Enlaces */
+.link-primary {
+    color: var(--orange-color); /* Color naranja */
+}
+
+    .link-primary:hover {
+        color: var(--black-color) !important; /* Cambia el color del texto a negro */
+    }
+
+/* Enlaces con clase text-body */
+.text-body,
+.navbar-nav .nav-link {
+    color: var(--black-color); /* Color negro por defecto */
+    transition: color 0.3s; /* Transición suave de color */
+}
+
+    /* Cambio de color al pasar el cursor */
+    .text-body:hover,
+    .navbar-nav .nav-link:hover {
+        color: var(--orange-color); /* Cambia el color a naranja al pasar el cursor */
+    }
