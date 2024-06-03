@@ -1,8 +1,9 @@
 ﻿@model WebKillaDeco.Areas.Identity.ViewModels.Login
-  
+
 @{
     ViewData["Title"] = "Iniciar Sesión";
 }
+
 <h1 align="center"> @ViewData["Title"]</h1>
 
 <section class="vh-100">
@@ -69,7 +70,7 @@
                                 Recordarme
                             </label>
                         </div>
-                        <a href="#!" class="text-body">Olvidaste contraseña?</a>
+                        <a href="https://vientosandinosperu.blogspot.com/p/partituras.html" class="link-primary">Olvidaste contraseña?</a>
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">
@@ -79,7 +80,7 @@
                         </button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">
                             No tienes una cuenta? <a href="#!"
-                                                     class="link-danger">Registro</a>
+                                                     class="link-primary">Registro</a>
                         </p>
                     </div>
                 </form>
@@ -87,6 +88,7 @@
         </div>
     </div>
 </section>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
