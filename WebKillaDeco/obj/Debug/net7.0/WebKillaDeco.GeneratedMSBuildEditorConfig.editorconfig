@@ -9,75 +9,75 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebKillaDeco
 build_property.RootNamespace = WebKillaDeco
-build_property.ProjectDir = C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\WebKillaDeco\WebKillaDeco\
+build_property.ProjectDir = C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\WebKillaDeco\WebKillaDeco
+build_property.MSBuildProjectDirectory = C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/Account/ForgotPassword.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Areas/Identity/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/Account/LogIn.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Areas/Identity/Views/Account/LogIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxMb2dJbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/Account/Register.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Areas/Identity/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/Account/ResetPassword.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Areas/Identity/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/_ViewImports.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Areas/Identity/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Areas/Identity/Views/_ViewStart.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Areas/Identity/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Home/Index.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Home/Privacy.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Home/prueba.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/Home/prueba.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwcnVlYmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Shared/Error.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Shared/_LayoutEmployee.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/Shared/_LayoutEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRFbXBsb3llZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/_ViewImports.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/_ViewStart.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Jindrg/Desktop/Proyectos Propios/KillaHome/WebKillaDeco/WebKillaDeco/Views/Shared/_Layout.cshtml]
+[C:/Users/Jindrg/Source/Repos/CSharp-ASP.NET-ECommerce-KillaDeco/WebKillaDeco/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-k2fy4oj4so

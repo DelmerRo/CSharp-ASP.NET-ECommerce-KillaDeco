@@ -291,3 +291,16 @@ C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\WebKillaDeco\WebKillaDeco\bi
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\WebKillaDeco\WebKillaDeco\bin\Debug\net7.0\zh-CN\Humanizer.resources.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\WebKillaDeco\WebKillaDeco\bin\Debug\net7.0\zh-Hans\Humanizer.resources.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\WebKillaDeco\WebKillaDeco\bin\Debug\net7.0\zh-Hant\Humanizer.resources.dll
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.csproj.AssemblyReference.cache
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.AssemblyInfoInputs.cache
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.AssemblyInfo.cs
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.csproj.CoreCompileInputs.cache
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.RazorAssemblyInfo.cache
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.RazorAssemblyInfo.cs
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.sourcelink.json
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.dll
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\refint\WebKillaDeco.dll
+C:\Users\Jindrg\Source\Repos\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.pdb

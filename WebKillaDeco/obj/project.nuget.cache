@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZzQVpJdT1rE=",
+  "dgSpecHash": "bi3VzKI2jbE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\WebKillaDeco\\WebKillaDeco\\WebKillaDeco.csproj",
+  "projectFilePath": "C:\\Users\\Jindrg\\Source\\Repos\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\WebKillaDeco.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jindrg\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Jindrg\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
