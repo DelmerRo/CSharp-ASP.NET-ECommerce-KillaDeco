@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.EntityFrameworkCore
+@inject WebKillaDeco.Areas.Identity.Data.KillaDbContext killaDbContext
+
+@{
+    var categories = await killaDbContext.Categories.Include(c => c.SubCategories).ToListAsync();
+}
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <!-- Etiquetas meta requeridas -->
@@ -41,26 +47,27 @@
                         <span class="menu-title">Tablero</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-                        <span class="menu-title">Elementos de UI Básicos</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="ui-basic">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="~/pages/ui-features/buttons.html">Botones</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="~/pages/ui-features/dropdowns.html">Desplegables</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="~/pages/ui-features/typography.html">Tipografía</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                @foreach (var category in categories)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-@category.Name" aria-expanded="false" aria-controls="ui-@category.Name">
+                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                            <span class="menu-title">@category.Name</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-@category.Name">
+                            <ul class="nav flex-column sub-menu">
+                                @foreach (var subcategory in category.SubCategories)
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="~/pages/ui-features/">@subcategory.Name</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                }
+
                 <li class="nav-item">
                     <a class="nav-link" href="~/pages/icons/mdi.html">
                         <i class="mdi mdi-contacts menu-icon"></i>
