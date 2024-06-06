@@ -24,21 +24,21 @@ namespace WebKillaDeco.DataInMemory
                 },
                 new PurchaseDetail
                 {
-                    PurchaseId = 6,
+                    PurchaseId = 1,
                     ProductId = 3,
                     UnitPrice = 39.99m,
                     Amount = 1
                 },
                 new PurchaseDetail
                 {
-                    PurchaseId = 7,
+                    PurchaseId = 2,
                     ProductId = 4,
                     UnitPrice = 89.99m,
                     Amount = 1
                 },
                 new PurchaseDetail
                 {
-                    PurchaseId = 8,
+                    PurchaseId = 3,
                     ProductId = 5,
                     UnitPrice = 14.99m,
                     Amount = 5
