@@ -1,3 +1,10 @@
 ﻿@{
-    Layout = "/Views/Shared/_Layout.cshtml";
+    if (!Context.User.Identity.IsAuthenticated) // Verifica si el usuario no está autenticado
+    {
+        Layout = "/Views/Shared/_LoginLayout.cshtml";  // Cambia al diseño de inicio de sesión
+    }
+    else
+    {
+        Layout = "/Views/Shared/_LayoutEmployee.cshtml"; // Mantén el diseño de empleado para usuarios autenticados
+    }
 }

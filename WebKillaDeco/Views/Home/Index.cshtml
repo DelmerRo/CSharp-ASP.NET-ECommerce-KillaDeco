@@ -1,7 +1,10 @@
-﻿﻿@{
+﻿@using Microsoft.EntityFrameworkCore
+@inject WebKillaDeco.Areas.Identity.Data.KillaDbContext killaDbContext
+﻿@{
     ViewData["Title"] = "Home Page";
+    var categories = await killaDbContext.Categories.Include(c => c.SubCategories).ToListAsync();
 }
-
+<h1>Clienteeeeeee</h1>
 <div class="page-header flex-wrap">
     <h3 class="mb-0">
         ¡Hola, bienvenido de nuevo! <span class="pl-0 h6 pl-sm-2 text-muted d-inline-block">Tu plantilla de panel de análisis web.</span>
@@ -792,62 +795,23 @@
             <!--estadísticas del navegador-->
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Estadísticas del navegador</h4>
+                    <h4 class="card-title">Ventas por Categoría</h4>
+                @foreach (var category in categories)
+                {
+                    var categoryName = category.Name.Replace(" ", "-").Replace("&", "and"); // Reemplazar espacios con guiones y & con "and"
                     <div class="row py-2">
                         <div class="col-sm-12">
                             <div class="d-flex justify-content-between pb-3 border-bottom">
                                 <div>
-                                    <img class="mr-2" src="~/images/browser-logo/opera-logo.png" alt="" />
-                                    <span class="p">opera mini</span>
+                                    <img class="mr-2" src="@Url.Content(category.ImageUrl)" alt="@category.Name logo" />
+                                    <span class="p">@category.Name</span>
                                 </div>
-                                <p class="mb-0">23%</p>
+                                <p class="mb-0">23%</p> <!-- Puedes cambiar esto con datos dinámicos si los tienes -->
                             </div>
                         </div>
                     </div>
-                    <div class="row py-2">
-                        <div class="col-sm-12">
-                            <div class="d-flex justify-content-between pb-3 border-bottom">
-                                <div>
-                                    <img class="mr-2" src="~/images/browser-logo/safari-logo.png" alt="" />
-                                    <span class="p">Safari</span>
-                                </div>
-                                <p class="mb-0">07%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-sm-12">
-                            <div class="d-flex justify-content-between pb-3 border-bottom">
-                                <div>
-                                    <img class="mr-2" src="~/images/browser-logo/chrome-logo.png" alt="" />
-                                    <span class="p">Chrome</span>
-                                </div>
-                                <p class="mb-0">33%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-sm-12">
-                            <div class="d-flex justify-content-between pb-3 border-bottom">
-                                <div>
-                                    <img class="mr-2" src="~/images/browser-logo/firefox-logo.png" alt="" />
-                                    <span class="p">Firefox</span>
-                                </div>
-                                <p class="mb-0">17%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-sm-12">
-                            <div class="d-flex justify-content-between">
-                                <div>
-                                    <img class="mr-2" src="~/images/browser-logo/explorer-logo.png" alt="" />
-                                    <span class="p">Explorer</span>
-                                </div>
-                                <p class="mb-0">05%</p>
-                            </div>
-                        </div>
-                    </div>
+                }
+
                 </div>
             </div>
             <!--fin de estadísticas del navegador-->

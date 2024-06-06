@@ -8,12 +8,12 @@ namespace WebKillaDeco.DataInMemory
         {
             List<Category> categories = new()
             {
-                new Category {  Name = "Mesa", ImageUrl = "url_de_la_imagen_de_mesa" },
-                new Category {  Name = "Cocina", ImageUrl = "url_de_la_imagen_de_cocina" },
-                new Category { Name = "Asado y Vino", ImageUrl = "url_de_la_imagen_de_asado_y_vino" },
-                new Category { Name = "Deco", ImageUrl = "url_de_la_imagen_de_deco" },
-                new Category { Name = "Aromas", ImageUrl = "url_de_la_imagen_de_aromas" },
-                new Category { Name = "Baño y Lavadero", ImageUrl = "url_de_la_imagen_de_baño_y_lavadero" }
+                new Category {  Name = "Mesa", ImageUrl = "~/images/category-logo/vajilla.png" },
+                new Category {  Name = "Cocina", ImageUrl = "~/images/category-logo/utensilios-de-cocina.png" },
+                new Category { Name = "Asado y Vino", ImageUrl = "~/images/category-logo/cena.png" },
+                new Category { Name = "Deco", ImageUrl = "~/images/category-logo/decoracion.png" },
+                new Category { Name = "Aromas", ImageUrl = "~/images/category-logo/aroma.png" },
+                new Category { Name = "Baño y Lavadero", ImageUrl = "~/images/category-logo/banera.png" }
             };
 
             return categories;

@@ -1,9 +1,11 @@
 ﻿@using Microsoft.EntityFrameworkCore
 @inject WebKillaDeco.Areas.Identity.Data.KillaDbContext killaDbContext
-
+@inject SignInManager<User> singInManager
 @{
     var categories = await killaDbContext.Categories.Include(c => c.SubCategories).ToListAsync();
+    var isAuthenticated = singInManager.IsSignedIn(User);
 }
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,6 +22,12 @@
     <link rel="shortcut icon" href="~/images/favicon.png" />
 </head>
 <body>
+    @if (!isAuthenticated)
+    {
+        <script>
+            window.location.href = '/Identity/Account/Login';
+        </script>
+    }else{
     <div class="container-scroller">
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
@@ -296,5 +304,6 @@
     <script src="~/js/misc.js"></script>
     <script src="~/js/dashboard.js"></script>
     @RenderSection("scripts", required: false)
+    }
 </body>
 </html>
