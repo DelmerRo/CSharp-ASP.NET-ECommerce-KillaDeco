@@ -28,7 +28,8 @@ namespace WebKillaDeco.DataInMemory
 
                 //ASADO & VINO
                 new SubCategory { CategoryId = 3, Name = "Parrillas", ImageUrl = "url_de_la_imagen_de_subcategoria5" },
-                new SubCategory { CategoryId = 3, Name = "Accesorios de vino & bar", ImageUrl = "url_de_la_imagen_de_subcategoria5" },
+                new SubCategory { CategoryId = 3, Name = "Accesorios de vino", ImageUrl = "url_de_la_imagen_de_subcategoria5" },
+                new SubCategory { CategoryId = 3, Name = "Accesorios de bar", ImageUrl = "url_de_la_imagen_de_subcategoria5" },
 
                 //DECO
                 new SubCategory { CategoryId = 4, Name = "Manta & almohadones", ImageUrl = "url_de_la_imagen_de_subcategoria5" },
