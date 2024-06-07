@@ -1,14 +1,8 @@
-﻿@using Microsoft.EntityFrameworkCore
-@inject WebKillaDeco.Areas.Identity.Data.KillaDbContext killaDbContext
-﻿@{
-    ViewData["Title"] = "Home Page";
-    var categories = await killaDbContext.Categories.Include(c => c.SubCategories).ToListAsync();
-}
+﻿
 <div class="products-catagories-area clearfix">
     <div class="amado-pro-catagory clearfix">
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/1.jpg" alt="">
                 <!-- Hover Content -->
@@ -20,8 +14,8 @@
             </a>
         </div>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/2.jpg" alt="">
                 <!-- Hover Content -->
@@ -33,8 +27,8 @@
             </a>
         </div>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/3.jpg" alt="">
                 <!-- Hover Content -->
@@ -46,8 +40,8 @@
             </a>
         </div>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/4.jpg" alt="">
                 <!-- Hover Content -->
@@ -59,8 +53,8 @@
             </a>
         </div>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/5.jpg" alt="">
                 <!-- Hover Content -->
@@ -72,8 +66,8 @@
             </a>
         </div>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/6.jpg" alt="">
                 <!-- Hover Content -->
@@ -85,8 +79,8 @@
             </a>
         </div>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/7.jpg" alt="">
                 <!-- Hover Content -->
@@ -98,8 +92,8 @@
             </a>
         </div>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/8.jpg" alt="">
                 <!-- Hover Content -->
@@ -111,8 +105,8 @@
             </a>
         </div>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
+        <!-- Single Category -->
+        <div class="single-products-catagory flex-fill">
             <a href="shop.html">
                 <img src="~/client/img/bg-img/9.jpg" alt="">
                 <!-- Hover Content -->
@@ -123,8 +117,6 @@
                 </div>
             </a>
         </div>
-    </div>
-</div>
-<!-- Product Catagories Area End -->
-
-                  
+        </div>
+        </div>  
+     
