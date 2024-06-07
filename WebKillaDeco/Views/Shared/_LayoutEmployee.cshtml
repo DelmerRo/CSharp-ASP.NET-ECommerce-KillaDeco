@@ -4,6 +4,12 @@
 @{
     var categories = await killaDbContext.Categories.Include(c => c.SubCategories).ToListAsync();
     var isAuthenticated = singInManager.IsSignedIn(User);
+    var userName = @User.Identity?.Name;
+
+    if (userName != null && userName.Contains('@'))
+    {
+        userName = userName.Substring(0, userName.IndexOf('@'));
+    }
 }
 
 <!DOCTYPE html>
@@ -25,7 +31,7 @@
     @if (!isAuthenticated)
     {
         <script>
-            window.location.href = '/Identity/Account/Login';
+            window.location.href = '/Identity/Account/AccesoDenegado';
         </script>
     }else{
     <div class="container-scroller">
@@ -43,12 +49,13 @@
                             <!--cambiar a offline o busy según sea necesario-->
                         </div>
                         <div class="nav-profile-text d-flex flex-column pr-3">
-                            <span class="font-weight-medium mb-2">Henry Klein</span>
+                                <span class="font-weight-medium mb-2">@userName</span>
                             <span class="font-weight-normal">$8,753.00</span>
                         </div>
                         <span class="badge badge-danger text-white ml-3 rounded">3</span>
                     </a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="~/index.html">
                         <i class="mdi mdi-home menu-icon"></i>
@@ -236,33 +243,34 @@
                             </form>
                         </li>
                     </ul>
-                    <ul class="navbar-nav navbar-nav-right ml-lg-auto">
-                        <li class="nav-item dropdown d-none d-xl-flex border-0">
-                            <a class="nav-link dropdown-toggle" id="languageDropdown" href="#" data-toggle="dropdown">
-                                <i class="mdi mdi-earth"></i> Inglés
-                            </a>
-                            <div class="dropdown-menu navbar-dropdown" aria-labelledby="languageDropdown">
-                                <a class="dropdown-item" href="#"> Francés </a>
-                                <a class="dropdown-item" href="#"> Español </a>
-                                <a class="dropdown-item" href="#"> Latín </a>
-                                <a class="dropdown-item" href="#"> Japonés </a>
-                            </div>
-                        </li>
-                        <li class="nav-item nav-profile dropdown border-0">
-                            <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown">
-                                <img class="nav-profile-img mr-2" alt="" src="~/images/faces/face1.jpg" />
-                                <span class="profile-name">Henry Klein</span>
-                            </a>
-                            <div class="dropdown-menu navbar-dropdown w-100" aria-labelledby="profileDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="mdi mdi-cached mr-2 text-success"></i> Registro de Actividad
+
+                        <ul class="navbar-nav navbar-nav-right ml-lg-auto">
+                            <li class="nav-item dropdown d-none d-xl-flex border-0">
+                                <a class="nav-link dropdown-toggle" id="languageDropdown" href="#" data-toggle="dropdown">
+                                    <i class="mdi mdi-earth"></i> Inglés
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="mdi mdi-logout mr-2 text-primary"></i> Cerrar Sesión
+                                <div class="dropdown-menu navbar-dropdown" aria-labelledby="languageDropdown">
+                                    <a class="dropdown-item" href="#"> Francés </a>
+                                    <a class="dropdown-item" href="#"> Español </a>
+                                    <a class="dropdown-item" href="#"> Latín </a>
+                                    <a class="dropdown-item" href="#"> Japonés </a>
+                                </div>
+                            </li>
+                            <li class="nav-item nav-profile dropdown border-0 ">
+                                <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown">
+                                    <img class="nav-profile-img mr-2" alt="" src="~/images/faces/face1.jpg" />
+                                    <span class="profile-name">@userName</span>
                                 </a>
-                            </div>
-                        </li>
-                    </ul>
+                                <div class="dropdown-menu navbar-dropdown w-170" aria-labelledby="profileDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="mdi mdi-cached mr-2 text-success"></i> Registro de Actividad
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="mdi mdi-logout mr-2 text-primary"></i> Cerrar Sesión
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
                     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                         <span class="mdi mdi-menu"></span>
                     </button>
