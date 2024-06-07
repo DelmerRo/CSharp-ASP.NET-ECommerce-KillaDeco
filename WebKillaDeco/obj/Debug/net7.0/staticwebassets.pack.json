@@ -181,6 +181,258 @@
       "PackagePath": "staticwebassets\\WebKillaDeco.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\animate.css",
+      "PackagePath": "staticwebassets\\client\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\client\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\classy-nav.min.css",
+      "PackagePath": "staticwebassets\\client\\css\\classy-nav.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\core-style.css",
+      "PackagePath": "staticwebassets\\client\\css\\core-style.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\core-style.css.map",
+      "PackagePath": "staticwebassets\\client\\css\\core-style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\client\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\client\\css\\jquery-ui.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\client\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\client\\css\\nice-select.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\css\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\client\\css\\owl.carousel.css"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\client\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\client\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\client\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\client\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\client\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\client\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\helvetica_neu_bold-webfont.ttf",
+      "PackagePath": "staticwebassets\\client\\fonts\\helvetica_neu_bold-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\helvetica_neu_bold-webfont.woff",
+      "PackagePath": "staticwebassets\\client\\fonts\\helvetica_neu_bold-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\helvetica_neu_bold-webfont.woff2",
+      "PackagePath": "staticwebassets\\client\\fonts\\helvetica_neu_bold-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\helveticaneue_medium-webfont.ttf",
+      "PackagePath": "staticwebassets\\client\\fonts\\helveticaneue_medium-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\helveticaneue_medium-webfont.woff",
+      "PackagePath": "staticwebassets\\client\\fonts\\helveticaneue_medium-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\fonts\\helveticaneue_medium-webfont.woff2",
+      "PackagePath": "staticwebassets\\client\\fonts\\helveticaneue_medium-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\1.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\2.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\3.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\4.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\5.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\6.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\7.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\8.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\9.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\cart1.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\cart1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\cart2.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\cart2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\bg-img\\cart3.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\bg-img\\cart3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\core-img\\cart.png",
+      "PackagePath": "staticwebassets\\client\\img\\core-img\\cart.png"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\core-img\\favicon.ico",
+      "PackagePath": "staticwebassets\\client\\img\\core-img\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\core-img\\favorites.png",
+      "PackagePath": "staticwebassets\\client\\img\\core-img\\favorites.png"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\core-img\\logo.png",
+      "PackagePath": "staticwebassets\\client\\img\\core-img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\core-img\\logo2.png",
+      "PackagePath": "staticwebassets\\client\\img\\core-img\\logo2.png"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\core-img\\paypal.png",
+      "PackagePath": "staticwebassets\\client\\img\\core-img\\paypal.png"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\core-img\\search.png",
+      "PackagePath": "staticwebassets\\client\\img\\core-img\\search.png"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\pro-big-1.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\pro-big-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\pro-big-2.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\pro-big-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\pro-big-3.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\pro-big-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\pro-big-4.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\pro-big-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\product1.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\product1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\product2.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\product2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\product3.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\product3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\product4.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\product4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\product5.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\product5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\img\\product-img\\product6.jpg",
+      "PackagePath": "staticwebassets\\client\\img\\product-img\\product6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\js\\active.js",
+      "PackagePath": "staticwebassets\\client\\js\\active.js"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\client\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\js\\classy-nav.min.js",
+      "PackagePath": "staticwebassets\\client\\js\\classy-nav.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\js\\jquery\\jquery-2.2.4.min.js",
+      "PackagePath": "staticwebassets\\client\\js\\jquery\\jquery-2.2.4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\js\\map-active.js",
+      "PackagePath": "staticwebassets\\client\\js\\map-active.js"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\client\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\client\\js\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\scss\\_mixin.scss",
+      "PackagePath": "staticwebassets\\client\\scss\\_mixin.scss"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\scss\\_responsive.scss",
+      "PackagePath": "staticwebassets\\client\\scss\\_responsive.scss"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\scss\\_theme_color.scss",
+      "PackagePath": "staticwebassets\\client\\scss\\_theme_color.scss"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\client\\scss\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\client\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\client\\scss\\style.scss"
+    },
+    {
       "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

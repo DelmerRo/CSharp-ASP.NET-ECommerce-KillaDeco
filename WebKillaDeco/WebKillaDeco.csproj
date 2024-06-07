@@ -34,6 +34,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\client\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\style.scssc" />
+    <None Include="wwwroot\client\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_mixin.scssc" />
+    <None Include="wwwroot\client\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_responsive.scssc" />
+    <None Include="wwwroot\client\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_theme_color.scssc" />
+    <None Include="wwwroot\client\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_variables.scssc" />
+    <None Include="wwwroot\client\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\style.scssc" />
+    <None Include="wwwroot\client\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_mixin.scssc" />
+    <None Include="wwwroot\client\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_responsive.scssc" />
+    <None Include="wwwroot\client\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_theme_color.scssc" />
+    <None Include="wwwroot\client\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_variables.scssc" />
+    <None Include="wwwroot\client\css\core-style.css.map" />
+    <None Include="wwwroot\client\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\client\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\client\fonts\helveticaneue_medium-webfont.woff2" />
+    <None Include="wwwroot\client\fonts\helvetica_neu_bold-webfont.woff2" />
+    <None Include="wwwroot\client\js\active.js" />
+    <None Include="wwwroot\client\js\bootstrap.min.js" />
+    <None Include="wwwroot\client\js\classy-nav.min.js" />
+    <None Include="wwwroot\client\js\jquery\jquery-2.2.4.min.js" />
+    <None Include="wwwroot\client\js\map-active.js" />
+    <None Include="wwwroot\client\js\plugins.js" />
+    <None Include="wwwroot\client\js\popper.min.js" />
+    <None Include="wwwroot\client\scss\style.scss" />
+    <None Include="wwwroot\client\scss\_mixin.scss" />
+    <None Include="wwwroot\client\scss\_responsive.scss" />
+    <None Include="wwwroot\client\scss\_theme_color.scss" />
+    <None Include="wwwroot\client\scss\_variables.scss" />
     <None Include="wwwroot\login\.DS_Store" />
     <None Include="wwwroot\login\css\.DS_Store" />
     <None Include="wwwroot\login\css\bootstrap.min.css.map" />
