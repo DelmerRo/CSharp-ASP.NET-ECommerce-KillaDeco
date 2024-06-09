@@ -42,8 +42,13 @@
         public const string Amount = "Cantidad";
 
         public const string CategoryId = "ID de Categoría";
-        public const string ImageUrl = "URL de Imagen";
+        public const string CategoryName = "Nombre de Categoría";
+        public const string UrlCategoryImage = "URL de Imagen de Categoría";
+        public const string IconCategoryUrl = "URL de Icono de Categoría";
+
         public const string SubCategoryId = "ID de SubCategoría";
+        public const string SubCategoryName = "Nombre de SubCategoría";
+        public const string IconSubCategoryUrl = "URL de Icono de SubCategoría";
 
         public const string PurchaseId = "ID de Compra";
         public const string PurchaseDate = "Fecha de Compra";

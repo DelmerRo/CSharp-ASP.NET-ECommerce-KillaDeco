@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebKillaDeco.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<div class="single-products-catagory flex-fill">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="cart-title mt-50">
+                    <h2>Categorias</h2>
+                </div>
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                var categoryName = item.Name.Replace(" ", "-").Replace("&", "and");
+                                <tr>
+                                    <td class="cart_product_img">
+                                        <a href="#"><img src="~/client/img/bg-img/cart1.jpg" alt="Product"></a>
+                                        <img class="mr-2" src="@Url.Content(item.ImageUrl)" alt="@item.Name logo" />
+                                    </td>
+                                    <td class="cart_product_desc">
+                                        <h5>@item.Name</h5>
+                                    </td>
+                                    <td class="Cantidad">
+                                        <span>1300</span>
+                                    </td>
+                                    <td class="qty">
+                                        <div class="qty-btn d-flex">
+                                            <div class="quantity">
+                                                <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                                                <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                                                <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
