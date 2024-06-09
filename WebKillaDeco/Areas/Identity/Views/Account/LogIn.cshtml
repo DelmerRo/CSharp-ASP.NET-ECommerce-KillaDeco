@@ -20,6 +20,58 @@
     <link rel="stylesheet" href="~/login/css/style.css">
 
     <title>@ViewData["Title"]</title>
+    <style>
+        .btn-facebook {
+            background-color: #3b5998; /* Facebook blue */
+            color: white;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-decoration: none; /* Para eliminar subrayado si es un enlace */
+            transition: background-color 0.3s; /* Transición suave para el cambio de color */
+        }
+
+        .btn-google {
+            background-color: #db4437; /* Google red */
+            color: white;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none; /* Para eliminar subrayado si es un enlace */
+            transition: background-color 0.3s; /* Transición suave para el cambio de color */
+        }
+
+        .btn .icon-facebook, .btn .icon-google {
+            margin-right: 10px;
+        }
+
+        /* Asegúrate de que los textos dentro de los botones sean blancos */
+        .btn-facebook *, .btn-google * {
+            color: white !important;
+        }
+
+        /* Estilos para el estado hover */
+        .btn-facebook:hover {
+            background-color: #2d4373; /* Azul más oscuro para Facebook */
+            color: white; /* Mantener el color del texto blanco */
+        }
+
+        .btn-google:hover {
+            background-color: #c23321; /* Rojo más oscuro para Google */
+            color: white; /* Mantener el color del texto blanco */
+        }
+
+            /* Asegurar que los elementos hijos dentro de los botones mantengan el color blanco en estado hover */
+            .btn-facebook:hover *, .btn-google:hover * {
+                color: white !important;
+            }
+
+    </style>
 </head>
 <body>
     <div class="d-lg-flex half">
@@ -52,6 +104,15 @@
                                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                             </div>
                             <input type="submit" value="Iniciar Sesión" class="btn btn-block btn-primary">
+                            <span class="text-center my-3 d-block">or</span>
+                            <div class="">
+                                <button href="#" class="btn btn-facebook">
+                                    <span class="icon-facebook mr-3"></span> Login with Facebook
+                                </button>
+                                <button href="#" class="btn btn-google">
+                                    <span class="icon-google mr-3"></span> Login with Google
+                                </button>
+                            </div>
                         </form>
                         <p class="small fw-bold mt-2 pt-1 mb-0">
                             No tienes una cuenta? <a href="#" class="link-danger">Registro</a>

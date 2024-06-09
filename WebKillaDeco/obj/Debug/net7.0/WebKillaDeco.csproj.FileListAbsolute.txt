@@ -11,9 +11,7 @@ C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-Kil
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Humanizer.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.Build.dll
@@ -40,7 +38,6 @@ C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-Kil
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
@@ -270,7 +267,6 @@ C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-Kil
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.AssemblyInfoInputs.cache
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.AssemblyInfo.cs
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.csproj.CoreCompileInputs.cache
-C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.RazorAssemblyInfo.cache
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.RazorAssemblyInfo.cs
