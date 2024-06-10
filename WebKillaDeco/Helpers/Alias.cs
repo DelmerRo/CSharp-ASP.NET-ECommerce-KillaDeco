@@ -83,6 +83,7 @@
         public const string Quantity = "Cantidad";
 
         public const string Cuit = "CUIT";
+        public const string Cuil = "CUIL";
         public const string SupplierOrders = "Órdenes del Proveedor";
 
         public const string Id = "ID";
@@ -94,6 +95,7 @@
         public const string CodePostal = "Código Postal";
         public const string Role = "Rol";
         public const string DateAdded = "Fecha de Alta";
+        public const string DateBirthDate = "Fecha de Nacimiento";
         public const string PurchaseDetails = "Detalles de Compra";
         public const string Supplier = "Proveedor";
         public const string Suppliers = "Proveedores";

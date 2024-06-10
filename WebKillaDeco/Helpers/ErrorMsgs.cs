@@ -6,7 +6,9 @@ namespace WebKillaDeco.Helpers
         public const string Required = "El campo {0} es requerido";
         public const string RangeMinMax = "El campo {0} debe estar comprendido entre {1} y {2}";
         public const string StrMaxMin = "El campo {0}, debe tener un mínimo de {2} y un máximo de {1}";
-        public const string StrMax = "El campo {0}, debe tener un máximo de {1}";
+        public const string DniSize = "El campo {0}, debe tener un máximo de {1}";
+        public const string CuilSize = "El campo {0}, debe tener un máximo de {1}";
+        public const string CuitSize = "El campo {0}, debe tener un máximo de {1}";
         public const string Generic = "Verifique el ingreso del campo {0}";
         public const string NotValid = "El campo {0} no es válido";
         public const string ErrMsgNotValid = "El ingreso en el campo {0} no es válido";
@@ -15,7 +17,7 @@ namespace WebKillaDeco.Helpers
         public const string ErrMsgStrLen = "El campo {0} debería tener como mínimo {2} y  como máximo {1} caracteres.";
         public const string ErrMsgRequired = "Este campo es requerido.";
         public const string ErrMsgNotNumeric = "El valor ingresado en el campo {0} debe ser numérico.";
-        public const string FormatoCelularInvalido = "El numero de celular debe tener un formato 11-1111-1111.";
+        public const string FormatCelularInvalid = "El numero de celular debe tener un formato 11-1111-1111.";
 
         // New error messages
         public const string EmailFormat = "El formato de {0} no es válido";

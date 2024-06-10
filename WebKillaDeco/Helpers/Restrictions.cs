@@ -3,20 +3,25 @@
     public static class Restrictions
     {
         // User and Client Restrictions (Restricciones para usuarios y clientes)
-        public const int MinName = 2; // Longitud mínima para nombres
-        public const int MaxName = 50; // Longitud máxima para nombres
+        public const int NumDNICharacters = 8; // Longitud única de DNI
+        public const int NumCUILCharacters = 11; // Longitud única de CUIL
+        public const int NumCUITCharacters = 11; // Longitud única de CUIT
         public const int MinUsername = 3; // Longitud mínima para nombres de usuario
         public const int MaxUsername = 30; // Longitud máxima para nombres de usuario
-        public const int MinSurname = 3; // Longitud mínima para apellidos
-        public const int MaxSurname = 50; // Longitud máxima para apellidos
-        public const int MinPassword = 8; // Longitud mínima para contraseñas
-        public const int MaxPassword = 100; // Longitud máxima para contraseñas
+        public const int MinUserLastName = 3; // Longitud mínima para apellidos
+        public const int MaxUserLastName = 50; // Longitud máxima para apellidos
+        public const int MinEmployeeOccupation = 4; // Longitud mínima para Ocupación
+        public const int MaxEmployeeOccupation = 30; // Longitud máxima para Ocupación
+        public const int MinEmployeeSalary = 100000; // Salario mínimo
+        public const int MaxEmployeeSalary = 2000000; // Salario máximo
 
-        // Email and Phone Restrictions (Restricciones para correos electrónicos y números de teléfono)
+        // Email and Phone Restrictions (Restricciones para correos electrónicos, contraseña y números de teléfono)
         public const int MinEmail = 5; // Longitud mínima para direcciones de correo electrónico
         public const int MaxEmail = 254; // Longitud máxima para direcciones de correo electrónico
         public const int MinPhone = 10; // Longitud mínima para números de teléfono
         public const int MaxPhone = 15; // Longitud máxima para números de teléfono
+        public const int MinPassword = 8; // Longitud mínima para contraseñas
+        public const int MaxPassword = 30; // Longitud máxima para contraseñas
 
         // Address Restrictions (Restricciones para direcciones)
         public const int MinStreet = 5; // Longitud mínima para nombres de calles
