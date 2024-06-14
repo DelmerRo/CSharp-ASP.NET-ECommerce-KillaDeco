@@ -12,7 +12,7 @@ namespace WebKillaDeco.DataInMemory
                new Supplier
                 {
                     Dni = "12345678",
-                    Cuil = "20-12345678-5",
+                    Cuil = "20123456785",
                     Name = "Proveedor1",
                     LastName = "Apellido1",
                     Phone = "123456789",
@@ -23,7 +23,7 @@ namespace WebKillaDeco.DataInMemory
                 new Supplier
                 {
                     Dni = "23456789",
-                    Cuil = "20-23456789-4",
+                    Cuil = "20234567894",
                     Name = "Proveedor2",
                     LastName = "Apellido2",
                     Phone = "987654321",
@@ -34,7 +34,7 @@ namespace WebKillaDeco.DataInMemory
                 new Supplier
                 {
                     Dni = "34567890",
-                    Cuil = "20-34567890-3",
+                    Cuil = "20345678903",
                     Name = "Proveedor3",
                     LastName = "Apellido3",
                     Phone = "456789123",

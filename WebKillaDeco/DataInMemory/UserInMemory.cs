@@ -13,7 +13,7 @@ namespace WebKillaDeco.DataInMemory
                  new User
                  {
                     Dni = "12345678",
-                    Cuil = "20-12345678-9",
+                    Cuil = "20123456789",
                     Name = "Juan",
                     LastName = "Perez",
                     Email = "admin1@killa.com.ar",
@@ -24,8 +24,8 @@ namespace WebKillaDeco.DataInMemory
 
                  new User
                  {
-                     Dni = "87654321",
-                    Cuil = "20-87654321-9",
+                    Dni = "87654321",
+                    Cuil = "20876543219",
                     Name = "María",
                     LastName = "López",
                     Email = "admin@killa.com.ar",
