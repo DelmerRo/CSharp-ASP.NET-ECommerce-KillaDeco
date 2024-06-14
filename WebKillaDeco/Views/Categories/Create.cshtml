@@ -6,7 +6,6 @@
     Layout = "/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-
 <div class="container my-5">
     <div class="card">
         <div class="card-body">
@@ -18,24 +17,26 @@
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ImageUrl"></label>
-                    <input type="file" name="ImageUrl" class="form-control" />
-                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    <label asp-for="ImageUrlFile"></label>
+                    <input type="file" asp-for="ImageUrlFile" class="form-control" />
+                    <span asp-validation-for="ImageUrlFile" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="IconUrl"></label>
-                    <input type="file" name="IconUrl" class="form-control" />
-                    <span asp-validation-for="IconUrl" class="text-danger"></span>
+                    <label asp-for="IconUrlFile"></label>
+                    <input type="file" asp-for="IconUrlFile" class="form-control" />
+                    <span asp-validation-for="IconUrlFile" class="text-danger"></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Crear</button>
-                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+                </div>
             </form>
-
         </div>
     </div>
 </div>
 
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

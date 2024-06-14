@@ -7,24 +7,32 @@
       "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\categories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\categories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\datainmemory\\categoryinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\datainmemory\\categoryinmemory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\helpers\\alias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\helpers\\alias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\areas\\identity\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\shared\\_layoutemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\shared\\_layoutemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\helpers\\restrictions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\users\\jindrg\\desktop\\proyectos propios\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -50,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 269,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,53 +63,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAPACAAAAAAAAAAAUwBwDAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-14T21:02:14.389Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "WebKillaDeco\\Models\\Category.cs",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Models\\Category.cs",
-              "RelativeToolTip": "WebKillaDeco\\Models\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAVAAAA",
+              "Title": "Alias.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Helpers\\Alias.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Helpers\\Alias.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Helpers\\Alias.cs",
+              "RelativeToolTip": "WebKillaDeco\\Helpers\\Alias.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAnwDEAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T19:06:14.342Z",
+              "WhenOpened": "2024-06-14T22:30:37.386Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Categories\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Categories\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Categories\\Edit.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Views\\Categories\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-14T22:30:22.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CategoryInMemory.cs",
               "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\DataInMemory\\CategoryInMemory.cs",
               "RelativeDocumentMoniker": "WebKillaDeco\\DataInMemory\\CategoryInMemory.cs",
               "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\DataInMemory\\CategoryInMemory.cs",
               "RelativeToolTip": "WebKillaDeco\\DataInMemory\\CategoryInMemory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-14T18:29:31.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Categories\\Create.cshtml",
-              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Categories\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Categories\\Create.cshtml",
-              "RelativeToolTip": "WebKillaDeco\\Views\\Categories\\Create.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-14T17:30:57.664Z",
               "EditorCaption": ""
             },
             {
@@ -114,16 +105,16 @@
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "WebKillaDeco\\Controllers\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "WebKillaDeco\\Controllers\\CategoriesController.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAEwJAAAAAAAAAA",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\CategoriesController.cs*",
+              "RelativeToolTip": "WebKillaDeco\\Controllers\\CategoriesController.cs*",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAQwIMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-14T17:30:52.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Shared\\_Layout.cshtml",
@@ -136,20 +127,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Models\\Category.cs",
+              "RelativeToolTip": "WebKillaDeco\\Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T19:06:14.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "_LayoutEmployee.cshtml",
-              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_LayoutEmployee.cshtml",
-              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Shared\\_LayoutEmployee.cshtml",
-              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_LayoutEmployee.cshtml",
-              "RelativeToolTip": "WebKillaDeco\\Views\\Shared\\_LayoutEmployee.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Categories\\Create.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Categories\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Categories\\Create.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Views\\Categories\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-14T05:56:19.663Z",
+              "WhenOpened": "2024-06-14T17:30:57.664Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Areas\\Identity\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAPACAAAAAAAAAAAUwBwDAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-14T21:02:14.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Restrictions.cs",
               "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Helpers\\Restrictions.cs",
               "RelativeDocumentMoniker": "WebKillaDeco\\Helpers\\Restrictions.cs",
@@ -162,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Categories\\Index.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Categories\\Index.cshtml",
@@ -175,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "WebKillaDeco\\wwwroot\\css\\site.css",

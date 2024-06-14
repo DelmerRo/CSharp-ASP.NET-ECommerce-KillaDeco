@@ -1,39 +1,55 @@
 ﻿@model WebKillaDeco.Models.Category
+@using WebKillaDeco.Helpers
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>Category</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="CategoryId" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container my-5">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title text-center mb-4">@Alias.EditCategory</h1>
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="CategoryId" />
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageUrlFile"></label>
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <div class="mb-3">
+                            <img src="@Url.Content(Model.ImageUrl)" alt="Current Image" style="max-height: 200px;" />
+                        </div>
+                    }
+                    <input type="file" asp-for="ImageUrlFile" class="form-control" />
+                    <span asp-validation-for="ImageUrlFile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IconUrlFile"></label>
+                    @if (!string.IsNullOrEmpty(Model.IconUrl))
+                    {
+                        <div class="mb-3">
+                            <img src="@Url.Content(Model.IconUrl)" alt="Current Icon" style="max-height: 100px;" />
+                        </div>
+                    }
+                    <input type="file" asp-for="IconUrlFile" class="form-control" />
+                    <span asp-validation-for="IconUrlFile" class="text-danger"></span>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
