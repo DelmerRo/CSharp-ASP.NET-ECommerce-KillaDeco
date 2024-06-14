@@ -47,6 +47,7 @@
         public const string UrlCategoryImage = "URL de Imagen de Categoría";
         public const string IconCategoryUrl = "URL de Icono de Categoría";
         public const string CreateNewCategory = "Crear nueva Categoría";
+        public const string EditCategory = "Editar Categoría";
 
         public const string SubCategoryId = "ID de SubCategoría";
         public const string SubCategoryName = "Nombre de SubCategoría";

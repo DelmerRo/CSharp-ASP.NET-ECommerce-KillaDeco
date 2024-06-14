@@ -605,6 +605,10 @@
       "PackagePath": "staticwebassets\\images\\category-icon\\aroma.png"
     },
     {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\babf9772-09f9-46e8-b2cd-3c8b0191a12a_muebles.png",
+      "PackagePath": "staticwebassets\\images\\category-icon\\babf9772-09f9-46e8-b2cd-3c8b0191a12a_muebles.png"
+    },
+    {
       "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\banera.png",
       "PackagePath": "staticwebassets\\images\\category-icon\\banera.png"
     },
@@ -635,6 +639,10 @@
     {
       "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-image\\bañolavabo.jpg",
       "PackagePath": "staticwebassets\\images\\category-image\\bañolavabo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-image\\c8aa73cc-a4aa-494c-9a9a-e82a591c0a53_muebles.jpg",
+      "PackagePath": "staticwebassets\\images\\category-image\\c8aa73cc-a4aa-494c-9a9a-e82a591c0a53_muebles.jpg"
     },
     {
       "Id": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-image\\cocina.jpg",

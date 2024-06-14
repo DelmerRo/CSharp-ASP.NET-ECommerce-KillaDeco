@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/AwysgugfT5aNV8q4I/MmXuyPnAC9RecrF5GOJPDuUA=",
+  "Hash": "InZfDSeZIPuAMg/EOPbEDW4tDhwF/IFF/4Ij9Lj40H0=",
   "Source": "WebKillaDeco",
   "BasePath": "_content/WebKillaDeco",
   "Mode": "Default",
@@ -2905,6 +2905,25 @@
       "OriginalItemSpec": "wwwroot\\images\\category-icon\\aroma.png"
     },
     {
+      "Identity": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\babf9772-09f9-46e8-b2cd-3c8b0191a12a_muebles.png",
+      "SourceId": "WebKillaDeco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\",
+      "BasePath": "_content/WebKillaDeco",
+      "RelativePath": "images/category-icon/babf9772-09f9-46e8-b2cd-3c8b0191a12a_muebles.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\category-icon\\babf9772-09f9-46e8-b2cd-3c8b0191a12a_muebles.png"
+    },
+    {
       "Identity": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\banera.png",
       "SourceId": "WebKillaDeco",
       "SourceType": "Discovered",
@@ -3055,6 +3074,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\category-image\\bañolavabo.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-image\\c8aa73cc-a4aa-494c-9a9a-e82a591c0a53_muebles.jpg",
+      "SourceId": "WebKillaDeco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\",
+      "BasePath": "_content/WebKillaDeco",
+      "RelativePath": "images/category-image/c8aa73cc-a4aa-494c-9a9a-e82a591c0a53_muebles.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\category-image\\c8aa73cc-a4aa-494c-9a9a-e82a591c0a53_muebles.jpg"
     },
     {
       "Identity": "C:\\Users\\Jindrg\\Desktop\\Proyectos Propios\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-image\\cocina.jpg",
