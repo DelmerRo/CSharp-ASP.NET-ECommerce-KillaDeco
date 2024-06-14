@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -15,10 +16,12 @@ namespace WebKillaDeco.Controllers
     public class CategoriesController : Controller
     {
         private readonly KillaDbContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public CategoriesController(KillaDbContext context)
+        public CategoriesController(KillaDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         // GET: Categories
@@ -65,27 +68,82 @@ namespace WebKillaDeco.Controllers
             return View(category);
         }
 
-        // GET: Categories/Create
+        [Authorize]
         public IActionResult Create()
         {
-            return View();
+            var category = new Category(); // Crear una nueva instancia de Category
+            return View(category);
         }
 
         // POST: Categories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("CategoryId,Name,ImageUrl,IconUrl")] Category category)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(category);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(category);
+        //}
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoryId,Name,ImageUrl")] Category category)
+        public async Task<IActionResult> Create(Category category, IFormFile ImageUrl, IFormFile IconUrl)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(category);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    // Guardar la imagen principal (ImageUrl)
+                    if (ImageUrl != null && ImageUrl.Length > 0)
+                    {
+                        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-image");
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(ImageUrl.FileName);
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await ImageUrl.CopyToAsync(fileStream);
+                        }
+                        category.ImageUrl = "~/images/category-image/" + uniqueFileName; // Guardar la ruta relativa
+                    }
+
+                    // Guardar el icono (IconUrl)
+                    if (IconUrl != null && IconUrl.Length > 0)
+                    {
+                        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-icon");
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(IconUrl.FileName);
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await IconUrl.CopyToAsync(fileStream);
+                        }
+                        category.IconUrl = "~/images/category-icon/" + uniqueFileName; // Guardar la ruta relativa
+                    }
+
+                    // Guardar la categoría en la base de datos
+                    _context.Add(category);
+                    await _context.SaveChangesAsync();
+
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateException ex)
+                {
+                    // Manejo de errores
+                    ModelState.AddModelError("", "Error al guardar la categoría. Inténtelo de nuevo más tarde.");
+                }
             }
+
+            // Si llegamos aquí, significa que ha habido errores, devolvemos la vista con el modelo para corregirlos
             return View(category);
         }
+
+
 
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)

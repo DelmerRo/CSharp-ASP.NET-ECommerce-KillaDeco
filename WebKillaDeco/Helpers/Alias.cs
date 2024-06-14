@@ -19,6 +19,7 @@
         public const string Description = "Descripción";
         public const string Date = "Fecha";
         public const string Category = "Categoría";
+        public const string Categories = "Categorías";
         public const string Status = "Estado";
         public const string RolName = "Nombre";
         public const string PassConfirm = "Confirmar Contraseña";
@@ -45,6 +46,7 @@
         public const string CategoryName = "Nombre de Categoría";
         public const string UrlCategoryImage = "URL de Imagen de Categoría";
         public const string IconCategoryUrl = "URL de Icono de Categoría";
+        public const string CreateNewCategory = "Crear nueva Categoría";
 
         public const string SubCategoryId = "ID de SubCategoría";
         public const string SubCategoryName = "Nombre de SubCategoría";
