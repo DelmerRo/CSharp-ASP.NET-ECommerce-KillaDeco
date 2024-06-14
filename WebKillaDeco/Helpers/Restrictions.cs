@@ -38,6 +38,10 @@
         // Category Restrictions (Restricciones para categorías)
         public const int MinCategoryName = 3; // Longitud mínima para nombres de categorías
         public const int MaxCategoryName = 100; // Longitud máxima para nombres de categorías
+        public const int MinCategoryImageUrl = 5; // Longitud mínima para ImagenUrl de categorías
+        public const int MaxCategoryImageUrl= 200; // Longitud máxima para ImagenUrl de categorías
+        public const int MinCategoryIconUrl = 5; // Longitud mínima para IconUrl de categorías
+        public const int MaxCategoryIconUrl= 200; // Longitud máxima para IconUrl de categorías
 
         // SubCategory Restrictions (Restricciones para subcategorías)
         public const int MinSubCategoryName = 3; // Longitud mínima para nombres de subcategorías
