@@ -75,9 +75,9 @@
                                     <img src="@Url.Content(item.IconUrl)" alt="@item.Name Icon">
                                 }
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-primary btn-sm mb-1">Editar</a>
-                                    <a href="#" class="btn btn-info btn-sm mb-1">Detalles</a>
-                                    <a href="#" class="btn btn-danger btn-sm mb-1">Eliminar</a>
+                                    <a class="btn btn-primary btn-sm mb-1" asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                                    <a class="btn btn-info btn-sm mb-1" asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                                    <a class="btn btn-danger btn-sm mb-1" asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
                                 </div>
                             </div>
                         </div>
