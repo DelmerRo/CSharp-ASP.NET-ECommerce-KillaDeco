@@ -5,11 +5,11 @@
     Layout = "/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<div class="single-products-catagory flex-fill">
+@* <div class="single-products-catagory ">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-xl-10">
-                <div class="cart-title mt-50">
+                <div class="cart-title mt-100">
                     <h2>Categorias</h2>
                 </div>
                 <div class="cart-table clearfix">
@@ -39,12 +39,12 @@
                                         <span>1300</span>
                                     </td>
                                     <td class="qty">
-                                        <div class="qty-btn d-flex">
-                                            <div class="quantity">
+                                        <div>
+                                           
                                                 <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
                                                 <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
                                                 <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
-                                            </div>
+                                            
                                         </div>
                                     </td>
                                 </tr>
@@ -52,6 +52,37 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Categorías</h4>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card">
+                            <img class="card-img-top" src="@Url.Content(item.ImageUrl)" alt="@item.Name Image">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Name</h5>
+                                @* Mostrar el icono pequeño si está disponible *@
+                                @if (!string.IsNullOrEmpty(item.IconUrl))
+                                {
+                                    <img src="@Url.Content(item.IconUrl)" alt="@item.Name Icon">
+                                }
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-primary btn-sm mb-1">Editar</a>
+                                    <a href="#" class="btn btn-info btn-sm mb-1">Detalles</a>
+                                    <a href="#" class="btn btn-danger btn-sm mb-1">Eliminar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
