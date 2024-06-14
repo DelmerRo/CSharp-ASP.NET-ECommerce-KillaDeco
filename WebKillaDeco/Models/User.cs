@@ -39,12 +39,10 @@ namespace WebKillaDeco.Models
 
         [Display(Name = Alias.DateAdded)]
         [DataType(DataType.DateTime, ErrorMessage = ErrorMsgs.ErrMsgNotValid)]
-        public DateTime DateAdded { get; set; }
+        public DateTime DateAdded { get; set; } 
 
         [Display(Name = Alias.Address)]
-        [DataType(DataType.DateTime, ErrorMessage = ErrorMsgs.ErrMsgNotValid)]
         public Address? Address { get; set; }
-
 
         [Display(Name = Alias.FullName)]
          [StringLength(Restrictions.MaxUsername, MinimumLength = Restrictions.MinUsername, ErrorMessage = ErrorMsgs.StrMaxMin)]

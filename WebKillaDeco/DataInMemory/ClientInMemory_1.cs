@@ -11,7 +11,7 @@ namespace WebKillaDeco.DataInMemory
                 new Client
                  {
                     Dni = "12345678",
-                    Cuil = "20-12345678-9",
+                    Cuil = "20123456789",
                     Name = "John",
                     LastName = "Doe",
                     Phone = "123-456-789",
@@ -21,7 +21,7 @@ namespace WebKillaDeco.DataInMemory
                  new Client
                  {
                     Dni = "87654321",
-                    Cuil = "20-87654321-9",
+                    Cuil = "20876543219",
                     Name = "Jane",
                     LastName = "Doe",
                     Phone = "987-654-321",

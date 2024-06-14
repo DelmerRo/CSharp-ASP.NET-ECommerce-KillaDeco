@@ -42,14 +42,28 @@
         // SubCategory Restrictions (Restricciones para subcategorías)
         public const int MinSubCategoryName = 3; // Longitud mínima para nombres de subcategorías
         public const int MaxSubCategoryName = 100; // Longitud máxima para nombres de subcategorías
+        public const int MinSubCategoryIcon = 5; // Icono mínima para nombres de subcategorías
+        public const int MaxSubCategoryIcon = 200; // Icono máxima para nombres de subcategorías
 
         // Product Restrictions (Restricciones para productos)
         public const int MinProductName = 2; // Longitud mínima para nombres de productos
         public const int MaxProductName = 100; // Longitud máxima para nombres de productos
         public const int MinProductDescription = 10; // Longitud mínima para descripciones de productos
         public const int MaxProductDescription = 2000; // Longitud máxima para descripciones de productos
-        public const decimal MinProductPrice = 0.01m; // Precio mínimo para productos
-        public const decimal MaxProductPrice = 10000.00m; // Precio máximo para productos
+        public const int MinProductSku = 1000000; // Longitud mínima para Sku de productos
+        public const int MaxProductSku = 9999999; // Longitud máxima para Sku de productos
+        public const double MinProductCurrentPrice = 0.01; // Precio mínimo para productos
+        public const double MaxProductCurrentPrice = 10000.00; // Precio máximo para productos
+        public const double MinProductAvailableStock = 0; // Stock mínimo para productos
+        public const double MaxProductAvailableStock = 9999; // Stock máximo para productos
+        public const double MinProductWeight = 1; // Peso mínimo para productos
+        public const double MaxProductWeight = 1000; // Peso máximo para productos
+        public const int MinProductDimensions = 3; // Dimensión mínima para productos
+        public const int MaxProductDimensions = 20; // Dimensión máxima para productos
+        public const int MinProductColors = 3; // Dimensión mínima para productos
+        public const int MaxProductColors = 100; // Dimensión máxima para productos
+        public const double MinProductDiscount = 1; // Discount mínima para productos
+        public const double MaxProductDiscount = 100; // Discount máxima para productos
 
         // Cart and Cart Item Restrictions (Restricciones para carritos y artículos de carrito)
         public const int MinCartItems = 1; // Número mínimo de artículos en un carrito

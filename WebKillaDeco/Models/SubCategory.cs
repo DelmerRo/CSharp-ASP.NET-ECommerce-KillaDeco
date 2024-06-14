@@ -7,6 +7,7 @@ namespace WebKillaDeco.Models
     public class SubCategory
     {
         public int SubCategoryId { get; set; }
+
         public int CategoryId { get; set; }
 
         [StringLength(Restrictions.MaxSubCategoryName, MinimumLength = Restrictions.MinSubCategoryName, ErrorMessage = ErrorMsgs.StrMaxMin)]
@@ -17,6 +18,7 @@ namespace WebKillaDeco.Models
 
         [Display(Name = Alias.IconSubCategoryUrl)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
+        [StringLength(Restrictions.MaxSubCategoryName, MinimumLength = Restrictions.MinSubCategoryName, ErrorMessage = ErrorMsgs.StrMaxMin)]
         public string? IconUrl { get; set; }
 
         [Display(Name = Alias.CategoryName)]

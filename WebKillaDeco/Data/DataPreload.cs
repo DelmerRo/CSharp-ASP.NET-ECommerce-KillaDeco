@@ -331,7 +331,8 @@ namespace WebKillaDeco.Models
                         var newCategory = new Category
                         {
                             Name = category.Name,
-                            ImageUrl = category.ImageUrl
+                            ImageUrl = category.ImageUrl,
+                            IconUrl = category.IconUrl
                         };
                         _context.Categories.Add(newCategory);
                     }

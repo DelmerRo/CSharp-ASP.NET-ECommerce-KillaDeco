@@ -12,7 +12,7 @@ namespace WebKillaDeco.Models
                 new Employee
                 {
                     Dni = "12345678",
-                    Cuil = "20-12345678-9",
+                    Cuil = "20123456789",
                     Name = "John",
                     LastName = "Doe",
                     Phone = "123-456-789",
@@ -24,7 +24,7 @@ namespace WebKillaDeco.Models
                 new Employee
                 {
                     Dni = "87654321",
-                    Cuil = "20-87654321-9",
+                    Cuil = "20876543219",
                     Name = "Jane",
                     LastName = "Doe",
                     Phone = "987-654-321",
@@ -36,7 +36,7 @@ namespace WebKillaDeco.Models
                 new Employee
                 {
                     Dni = "13579246",
-                    Cuil = "20-13579246-8",
+                    Cuil = "20135792468",
                     Name = "Alice",
                     LastName = "Smith",
                     Phone = "111-222-333",
