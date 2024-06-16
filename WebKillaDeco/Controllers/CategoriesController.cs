@@ -7,7 +7,6 @@ using WebKillaDeco.Models;
 
 namespace WebKillaDeco.Controllers
 {
-    
     public class CategoriesController : Controller
     {
         private readonly KillaDbContext _context;

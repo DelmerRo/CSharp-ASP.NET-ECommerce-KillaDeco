@@ -1,5 +1,5 @@
 ﻿@model WebKillaDeco.Models.Category
-
+@using WebKillaDeco.Helpers
 @{
     ViewData["Title"] = "Eliminar Categoría";
 }
@@ -7,10 +7,10 @@
 <div class="container my-5">
     <div class="card shadow-sm">
         <div class="card-body">
-            <h1 class="text-danger">Eliminar Categoría</h1>
-            <h3>¿Estás seguro de que quieres eliminar esta categoría?</h3>
+            <h1 class="text-danger">@Alias.Delete  @Html.DisplayNameFor(model => model.Name)</h1>
+            <h3>@Alias.DeleteThisCategory</h3>
             <div class="mt-4">
-                <h4>Detalles de la Categoría</h4>
+                <h4>@Alias.CategoryDetails</h4>
                 <hr />
                 <dl class="row">
                     <dt class="col-sm-2 font-weight-bold">
@@ -43,7 +43,7 @@
                     <input type="hidden" asp-for="CategoryId" />
                     <div class="form-group">
                         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-                        <a class="btn btn-secondary" asp-action="Index">Volver a la Lista</a>
+                        <a class="btn btn-secondary" asp-action="Index">@Alias.Back</a>
                     </div>
                 </form>
             </div>

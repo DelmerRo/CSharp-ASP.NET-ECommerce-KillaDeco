@@ -5,10 +5,13 @@
     Layout = "/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<div class="container my-5">
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a class="btn btn-success btn-sm mb-1 ml-auto" asp-action="Create">@Alias.CreateNewCategory</a>
+    </div>
     <div class="card">
         <div class="card-body">
-            <h1 class="card-title text-center mb-4">@Alias.Categories</h1>
+            <h1 class="text-center mb-4">@Alias.Categories</h1>
             <div class="row">
                 @foreach (var item in Model)
                 {
@@ -25,9 +28,9 @@
                                     </div>
                                 }
                                 <div class="mt-auto text-center">
-                                    <a class="btn btn-primary btn-sm mb-1" asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a>
-                                    <a class="btn btn-info btn-sm mb-1" asp-action="Details" asp-route-id="@item.CategoryId">Details</a>
-                                    <a class="btn btn-danger btn-sm mb-1" asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                                    <a class="btn btn-primary btn-sm mb-1" asp-action="Edit" asp-route-id="@item.CategoryId">@Alias.Edit</a>
+                                    <a class="btn btn-info btn-sm mb-1" asp-action="Details" asp-route-id="@item.CategoryId">@Alias.Details</a>
+                                    <a class="btn btn-danger btn-sm mb-1" asp-action="Delete" asp-route-id="@item.CategoryId">@Alias.Delete</a>
                                 </div>
                             </div>
                         </div>
