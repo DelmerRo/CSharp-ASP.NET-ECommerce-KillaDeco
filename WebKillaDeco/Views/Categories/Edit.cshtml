@@ -12,11 +12,13 @@
             <h1 class="card-title text-center mb-4">@Alias.EditCategory</h1>
             <form asp-action="Edit" method="post" enctype="multipart/form-data">
                 <input type="hidden" asp-for="CategoryId" />
+
                 <div class="form-group">
                     <label asp-for="Name"></label>
                     <input asp-for="Name" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="ImageUrlFile"></label>
                     @if (!string.IsNullOrEmpty(Model.ImageUrl))
@@ -28,6 +30,7 @@
                     <input type="file" asp-for="ImageUrlFile" class="form-control" />
                     <span asp-validation-for="ImageUrlFile" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="IconUrlFile"></label>
                     @if (!string.IsNullOrEmpty(Model.IconUrl))
@@ -39,6 +42,7 @@
                     <input type="file" asp-for="IconUrlFile" class="form-control" />
                     <span asp-validation-for="IconUrlFile" class="text-danger"></span>
                 </div>
+
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Guardar</button>
                     <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
@@ -47,9 +51,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

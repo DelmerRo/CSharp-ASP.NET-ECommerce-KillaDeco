@@ -12,23 +12,21 @@ namespace WebKillaDeco.Models
         [StringLength(Restrictions.MaxCategoryName, MinimumLength = Restrictions.MinCategoryName, ErrorMessage = ErrorMsgs.StrMaxMin)]
         [Display(Name = Alias.Category)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
-        [Remote(action: "CategoryNameAvailable", controller: "Categories")]
-        public string Name { get; set; }
+        [Remote(action: "CategoryNameAvailable", controller: "Categories", AdditionalFields = nameof(CategoryId))]
+        public string? Name { get; set; }
 
         [NotMapped]
-        public IFormFile ImageUrlFile { get; set; }
+        public IFormFile? ImageUrlFile { get; set; }
 
         [Display(Name = Alias.UrlCategoryImage)]
-        [Required(ErrorMessage = ErrorMsgs.Required)]
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         [NotMapped]
-        public IFormFile IconUrlFile { get; set; }
+        public IFormFile? IconUrlFile { get; set; }
 
         [Display(Name = Alias.IconCategoryUrl)]
-        [Required(ErrorMessage = ErrorMsgs.Required)]
-        public string IconUrl { get; set; }
+        public string? IconUrl { get; set; }
 
-        public List<SubCategory>? SubCategories { get; set; }
+        public ICollection<SubCategory>? SubCategories { get; set; }
     }
 }

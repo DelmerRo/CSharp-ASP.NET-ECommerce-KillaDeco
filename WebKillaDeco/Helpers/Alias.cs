@@ -46,12 +46,15 @@
         public const string CategoryName = "Nombre de Categoría";
         public const string UrlCategoryImage = "URL de Imagen de Categoría";
         public const string IconCategoryUrl = "URL de Icono de Categoría";
+        public const string Icon = "Icono";
         public const string CreateNewCategory = "Crear nueva Categoría";
         public const string EditCategory = "Editar Categoría";
+        public const string NumberOfSubCategories = "Cantidad de Subcategorías";
 
         public const string SubCategoryId = "ID de SubCategoría";
         public const string SubCategoryName = "Nombre de SubCategoría";
         public const string IconSubCategoryUrl = "URL de Icono de SubCategoría";
+        public const string SubCategories = "SubCategorías";
 
         public const string PurchaseId = "ID de Compra";
         public const string PurchaseDate = "Fecha de Compra";
@@ -92,6 +95,7 @@
         public const string Id = "ID";
         public const string Client = "Cliente";
         public const string Product = "Producto";
+        public const string NumberOfProducts = "Cantidad de Productos";
         public const string CurrentPrice = "Precio Actual";
         public const string UrlProductImage = "URL de Imagen de Producto";
         public const string AvailableStock = "Stock Disponible";
@@ -122,6 +126,12 @@
         public const string Dimensions = "Dimensiones";
         public const string Weight = "Peso";
         public const string Color = "Color";
+
+
+        public const string Actions = "Acciones";
+        public const string ViewProducts = "Ver Productos";
+
+
     }
 
 }
