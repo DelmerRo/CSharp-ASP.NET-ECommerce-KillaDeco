@@ -30,7 +30,7 @@
                         }
                     </div>
                     <div class="mb-3">
-                        <h5><strong>@Alias.EditCategory:</strong> <span class="text-muted">@(Model.SubCategories?.Count() ?? 0)</span></h5>
+                        <h5><strong>@Alias.NumberOfSubCategories:</strong> <span class="text-muted">@(Model.SubCategories?.Count() ?? 0)</span></h5>
                     </div>
                 </div>
             </div>
@@ -65,8 +65,10 @@
                                         <td>@subcategory.Name</td>
                                         <td class="text-center">@(subcategory.Products?.Count() ?? 0)</td>
                                         <td class="text-center">
-                                            <a class="btn btn-primary btn-sm" asp-action="Products" asp-route-subcategoryId="@subcategory.SubCategoryId">
-                                                <i class="fa fa-eye"></i> @Alias.ViewProducts
+                                            <a class="btn btn-primary btn-sm" asp-controller="SubCategories" asp-action="Details" asp-route-id="@subcategory.SubCategoryId">
+                                                
+
+                                                <i class="fa fa-eye"></i> @Alias.ViewSubCategories
                                             </a>
                                         </td>
                                     </tr>

@@ -16,12 +16,14 @@ namespace WebKillaDeco.Models
         public string? Name { get; set; }
 
         [NotMapped]
+        [Required(ErrorMessage = ErrorMsgs.Required)]
         public IFormFile? ImageUrlFile { get; set; }
 
         [Display(Name = Alias.UrlCategoryImage)]
         public string? ImageUrl { get; set; }
 
         [NotMapped]
+        [Required(ErrorMessage = ErrorMsgs.Required)]
         public IFormFile? IconUrlFile { get; set; }
 
         [Display(Name = Alias.IconCategoryUrl)]

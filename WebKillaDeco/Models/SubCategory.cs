@@ -11,9 +11,9 @@ namespace WebKillaDeco.Models
         public int CategoryId { get; set; }
 
         [StringLength(Restrictions.MaxSubCategoryName, MinimumLength = Restrictions.MinSubCategoryName, ErrorMessage = ErrorMsgs.StrMaxMin)]
-        [Display(Name = Alias.SubCategoryId)]
+        [Display(Name = Alias.SubCategoryName)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
-        [Remote(action: "CategoryNameAvailable", controller: "Categories")]
+        [Remote(action: "SubCategoryNameAvailable", controller: "Categories")]
         public string? Name { get; set; }
 
         [Display(Name = Alias.IconSubCategoryUrl)]

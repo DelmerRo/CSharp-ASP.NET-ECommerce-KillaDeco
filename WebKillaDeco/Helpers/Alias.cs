@@ -44,8 +44,8 @@
 
         public const string CategoryId = "ID de Categoría";
         public const string CategoryName = "Nombre de Categoría";
-        public const string UrlCategoryImage = "URL de Imagen de Categoría";
-        public const string IconCategoryUrl = "URL de Icono de Categoría";
+        public const string UrlCategoryImage = "Imagen de Categoría";
+        public const string IconCategoryUrl = "Icono de Categoría";
         public const string Icon = "Icono";
         public const string CreateNewCategory = "Crear nueva Categoría";
         public const string EditCategory = "Editar Categoría";
@@ -127,11 +127,21 @@
         public const string Weight = "Peso";
         public const string Color = "Color";
 
-
+        //Head table
         public const string Actions = "Acciones";
+        public const string DeleteThisCategory = "¿Realmente desea eliminar esta Categoría?";
+        public const string CategoryDetails = "Detalles de la Categoría";
+       
+
+        //Button
+        public const string Edit = "Editar";
+        public const string Details = "Detalles";
+        public const string Delete = "Eliminar";
+        public const string Create = "Crear";
+        public const string Back = "Volver";
+        public const string Cancel = "Cancelar";
         public const string ViewProducts = "Ver Productos";
-
-
+        public const string ViewSubCategories = "Ver SubCategorías";
     }
 
 }
