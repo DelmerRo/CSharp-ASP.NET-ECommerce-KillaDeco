@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Models;
@@ -36,20 +31,33 @@ namespace WebKillaDeco.Controllers
         // GET: Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
             var category = await _context.Categories
+                .Include(c => c.SubCategories)
+                    .ThenInclude(s => s.Products)
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
+
             if (category == null)
             {
                 return NotFound();
             }
 
+            if (!ModelState.IsValid)
+            {
+                // Manejar el estado de modelo no válido según sea necesario
+                // Por ejemplo, redirigir a una página de error o manejar el error de otra manera
+                return BadRequest(ModelState); // O utiliza otro tipo de respuesta adecuada
+            }
+
             return View(category);
         }
+
+
+
 
         [Authorize]
         public IActionResult Create()
@@ -159,6 +167,8 @@ namespace WebKillaDeco.Controllers
             // Eliminar las validaciones de las propiedades de archivo antes de la validación del modelo
             ModelState.Remove(nameof(category.ImageUrl));
             ModelState.Remove(nameof(category.IconUrl));
+            ModelState.Remove(nameof(category.ImageUrlFile));
+            ModelState.Remove(nameof(category.IconUrlFile));
 
             if (ModelState.IsValid)
             {
