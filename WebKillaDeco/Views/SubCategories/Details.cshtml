@@ -1,36 +1,96 @@
 ﻿@model WebKillaDeco.Models.SubCategory
-
+@using WebKillaDeco.Helpers
 @{
     ViewData["Title"] = "Details";
+    Layout = "/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h1>Details</h1>
+<div class="container col-md-12 mt-3 p-3">
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <div class="row mb-2 align-items-center">
+                <div class="col-md-1">
+                    @if (!string.IsNullOrEmpty(Model.Category.ImageUrl))
+                    {
+                        <img src="@Url.Content(Model.Category.ImageUrl)" class="img-fluid rounded border shadow-sm" alt="@Model.Name Image" style="max-width: 100%; display: block; margin-right: auto; margin-left: 0;"> <!-- Adjusted max-width -->
+                    }
+                </div>
+                <div class="col-md-11">
+                    <div class="mb-3">
+                        <h2 class="font-weight-bold text-primary">
+                            @Html.DisplayNameFor(c => c.Name): @Model.Name
+                        </h2>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                        <h5 class="mb-0"><strong>@Html.DisplayNameFor(c => c.IconUrl): </strong></h5>
+                        @if (!string.IsNullOrEmpty(Model.IconUrl))
+                        {
+                            <img src="@Url.Content(Model.IconUrl)" class="icon-img rounded-circle border ml-2" alt="@Model.Name Icon" style="width: 30px; height: 30px;">
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <h5><strong>@Alias.NumberOfProducts:</strong> <span class="text-muted">@(Model.Products?.Count() ?? 0)</span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div>
-    <h4>SubCategory</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IconUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IconUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.SubCategoryId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+        @if (Model.Products != null && Model.Products.Any())
+        {
+            <div class="card mt-3 m-3">
+                <div class="card-body">
+                    <h2 class="card-title mb-4 text-primary">@Alias.Products</h2>
+
+                    <div class="table-responsive">
+                        <div>
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th class="text-center">@Alias.Code</th>
+                                    <th class="text-center">@Alias.PublicationDate</th>
+                                    <th class="text-center">@Alias.Name</th>
+                                    <th class="text-center">@Alias.CurrentPrice</th>
+                                    <th class="text-center">@Alias.Weight</th>
+                                    <th class="text-center">@Alias.Dimensions</th>
+                                    <th class="text-center">@Alias.Color</th>
+                                    <th class="text-center">@Alias.Active</th>
+                                    <th class="text-center">@Alias.AvailableStock</th>
+                                    <th class="text-center">@Alias.Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var products in Model.Products)
+                                {
+                                    <tr>
+                                        <td class="text-center">@products.Sku</td>
+                                        <td class="text-center">@products.PublicationDate</td>
+                                        <td class="text-center">@products.Name</td>
+                                        <td class="text-center">@products.CurrentPrice</td>
+                                        <td class="text-center">@products.Weight</td>
+                                        <td class="text-center">@products.Dimensions</td>
+                                        <td class="text-center">@products.Color</td>
+                                        <td class="text-center">@products.Active</td>
+                                        <td class="text-center">@products.AvailableStock</td>
+                                        <td class="text-center">
+                                            <a class="btn btn-primary btn-sm" asp-controller="Products" asp-action="Details" asp-route-id="@products.ProductId">
+                                                <i class="fa fa-eye"></i> @Alias.ViewProducts
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+        else
+        {
+            <p class="text-center text-muted">No hay productos disponibles.</p>
+        }
+    </div>
 </div>

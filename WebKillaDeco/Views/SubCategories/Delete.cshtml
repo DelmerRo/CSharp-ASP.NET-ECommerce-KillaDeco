@@ -1,39 +1,67 @@
 ﻿@model WebKillaDeco.Models.SubCategory
+@using WebKillaDeco.Helpers
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar SubCategoría";
+    Layout = "/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h1>Delete</h1>
+<div class="container my-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h1 class="text-danger">@Alias.Delete @Html.DisplayNameFor(model => model.Name)</h1>
+            @if (Model != null && !string.IsNullOrEmpty(Model.Name))
+            {
+                <h3>@MessageTemplates.GetDeleteMessage(Model.Name)</h3>
+            }
+            else
+            {
+                <h3>@MessageTemplates.GetDeleteMessage(Alias.AvailableName)</h3>
+            }
+            <div class="mt-4">
+                <h4>@Alias.SubCategoryDetails</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-5 font-weight-bold">
+                        @Html.DisplayNameFor(model => model.Category):
+                    </dt>
+                    <dd class="col-sm-5">
+                        @if (Model?.Category != null && !string.IsNullOrEmpty(Model.Category.Name))
+                        {
+                            @Html.DisplayFor(model => model.Category.Name)
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>SubCategory</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IconUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IconUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="SubCategoryId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+                        }
+                        else
+                        {
+                            <span class="text-danger">Sin categoría asociada</span>
+                        }
+                    </dd>
+                    <dt class="col-sm-5 font-weight-bold">
+                        @Html.DisplayNameFor(model => model.Name):
+                    </dt>
+                    <dd class="col-sm-5">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-5 font-weight-bold">
+                        @Html.DisplayNameFor(model => model.IconUrl):
+                    </dt>
+                    <dd class="col-sm-5">
+                        @if (!string.IsNullOrEmpty(Model?.IconUrl))
+                        {
+                            <img src="@Url.Content(Model.IconUrl)" class="img-fluid rounded border" alt="@Model.Name Image" style="max-width: 35px; height: auto;">
+                        }
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="SubCategoryId" />
+                    <div class="form-group">
+                        <input type="submit" value="Eliminar" class="btn btn-danger" />
+                        |
+                        <a class="btn btn-secondary" asp-action="Index">@Alias.Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

@@ -36,27 +36,21 @@ namespace WebKillaDeco.Controllers
             }
 
             var category = await _context.Categories
-                .Include(c => c.SubCategories)
-                    .ThenInclude(s => s.Products)
+                .Include(c => c.SubCategories) 
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
 
             if (category == null)
             {
                 return NotFound();
             }
-
             if (!ModelState.IsValid)
             {
                 // Manejar el estado de modelo no válido según sea necesario
                 // Por ejemplo, redirigir a una página de error o manejar el error de otra manera
                 return BadRequest(ModelState); // O utiliza otro tipo de respuesta adecuada
             }
-
             return View(category);
         }
-
-
-
 
         [Authorize]
         public IActionResult Create()
@@ -64,23 +58,6 @@ namespace WebKillaDeco.Controllers
             var category = new Category(); // Crear una nueva instancia de Category
             return View(category);
         }
-
-        // POST: Categories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("CategoryId,Name,ImageUrl,IconUrl")] Category category)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(category);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(category);
-        //}
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -121,14 +98,14 @@ namespace WebKillaDeco.Controllers
                     }
 
                     // Guardar la categoría en la base de datos
-                    _context.Add(category);
+                    await _context.AddAsync(category);
                     await _context.SaveChangesAsync();
 
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateException ex)
                 {
-                    // Manejo de errores
+                    Console.WriteLine(ex.Message);
                     ModelState.AddModelError("", "Error al guardar la categoría. Inténtelo de nuevo más tarde.");
                 }
             }
@@ -141,7 +118,7 @@ namespace WebKillaDeco.Controllers
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -151,8 +128,15 @@ namespace WebKillaDeco.Controllers
             {
                 return NotFound();
             }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); 
+            }
+
             return View(category);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -163,7 +147,6 @@ namespace WebKillaDeco.Controllers
                 return NotFound();
             }
 
-            // Eliminar las validaciones de las propiedades de archivo antes de la validación del modelo
             ModelState.Remove(nameof(category.ImageUrl));
             ModelState.Remove(nameof(category.IconUrl));
             ModelState.Remove(nameof(category.ImageUrlFile));
@@ -228,7 +211,7 @@ namespace WebKillaDeco.Controllers
                 }
                 catch (DbUpdateException ex)
                 {
-                    // Manejo de errores
+                    Console.WriteLine(ex.Message);
                     ModelState.AddModelError("", "Error al guardar la categoría. Inténtelo de nuevo más tarde.");
                 }
             }
@@ -244,27 +227,29 @@ namespace WebKillaDeco.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> CategoryNameAvailable(string name)
+        public async Task<IActionResult> CategoryNameAvailable( string name)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("El nombre de la categoría no puede estar vacío.");
+            }
+
             var nameExists = await _context.Categories.AnyAsync(p => p.Name == name);
 
             if (!nameExists)
             {
-                // Si no está el nombre usado, entonces, el nombre está disponible.
                 return Json(true);
             }
             else
             {
-                // El nombre ya está en uso, entonces, no se cumple la validación. Se devuelve un mensaje de error.
                 return Json($"La categoría {name} ya está en uso.");
             }
         }
 
 
-        // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null || _context.Categories == null || !ModelState.IsValid)
             {
                 return NotFound();
             }
@@ -284,7 +269,7 @@ namespace WebKillaDeco.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Categories == null)
+            if (_context.Categories == null || !ModelState.IsValid)
             {
                 return Problem("Entity set 'KillaDbContext.Categories'  is null.");
             }

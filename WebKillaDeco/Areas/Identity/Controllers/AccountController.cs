@@ -15,7 +15,6 @@ namespace WebKillaDeco.Areas.Identity.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<Rol> _rolManager;
-        //private const string passDefault = "Password1!";
         private const string domainAdministrator = "@killa.com.ar";
 
         public AccountController(KillaDbContext context, UserManager<User> userManager, SignInManager<User> signinManager, RoleManager<Rol> rolManager)
@@ -42,14 +41,18 @@ namespace WebKillaDeco.Areas.Identity.Controllers
         public ActionResult Login(string returnurl)
         {
             TempData["returnUrl"] = returnurl;
-            return View();
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                return View();
         }
 
 
         [HttpPost]
         public async Task<ActionResult> Login(Login logInViewModel)
         {
-            string returnUrl = TempData["returnUrl"] as string;
+            string returnUrl = TempData["returnUrl"]?.ToString() ?? string.Empty;
 
             if (ModelState.IsValid)
             {
@@ -68,7 +71,6 @@ namespace WebKillaDeco.Areas.Identity.Controllers
                             return Redirect(returnUrl);
                         }
 
-                        // Redirigir a la raíz del sitio
                         return Redirect("/");
                     }
                     else
@@ -79,7 +81,6 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             }
             return View(logInViewModel);
         }
-
 
 
 

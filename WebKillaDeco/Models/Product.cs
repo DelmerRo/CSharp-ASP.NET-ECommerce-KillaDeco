@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using WebKillaDeco.Helpers;
 
 namespace WebKillaDeco.Models
@@ -23,6 +24,7 @@ namespace WebKillaDeco.Models
         [Display(Name = Alias.Description)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [StringLength(Restrictions.MaxProductDescription, MinimumLength = Restrictions.MinProductDescription, ErrorMessage = ErrorMsgs.StrMaxMin)]
+        [DataType(DataType.MultilineText)]
         public string? Description { get; set; }
 
         [Display(Name = Alias.CurrentPrice)]
@@ -33,6 +35,10 @@ namespace WebKillaDeco.Models
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Display(Name = Alias.Active)]
         public bool Active { get; set; }
+
+        [NotMapped]
+        [Required(ErrorMessage = ErrorMsgs.Required)]
+        public IFormFile? ImageUrlFile { get; set; }
 
         [Display(Name = Alias.UrlCategoryImage)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
