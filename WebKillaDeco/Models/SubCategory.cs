@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using WebKillaDeco.Helpers;
 
 namespace WebKillaDeco.Models
@@ -13,12 +14,14 @@ namespace WebKillaDeco.Models
         [StringLength(Restrictions.MaxSubCategoryName, MinimumLength = Restrictions.MinSubCategoryName, ErrorMessage = ErrorMsgs.StrMaxMin)]
         [Display(Name = Alias.SubCategoryName)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
-        [Remote(action: "SubCategoryNameAvailable", controller: "Categories")]
+        [Remote(action: "SubCategoryNameAvailable", controller: "SubCategories")]
         public string? Name { get; set; }
 
-        [Display(Name = Alias.IconSubCategoryUrl)]
+        [NotMapped]
         [Required(ErrorMessage = ErrorMsgs.Required)]
-        [StringLength(Restrictions.MaxSubCategoryName, MinimumLength = Restrictions.MinSubCategoryName, ErrorMessage = ErrorMsgs.StrMaxMin)]
+        public IFormFile? IconUrlFile { get; set; }
+
+        [Display(Name = Alias.IconSubCategoryUrl)]
         public string? IconUrl { get; set; }
 
         [Display(Name = Alias.CategoryName)]
