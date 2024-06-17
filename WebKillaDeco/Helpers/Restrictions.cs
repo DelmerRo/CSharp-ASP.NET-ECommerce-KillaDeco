@@ -53,7 +53,7 @@
         public const int MinProductName = 2; // Longitud mínima para nombres de productos
         public const int MaxProductName = 100; // Longitud máxima para nombres de productos
         public const int MinProductDescription = 10; // Longitud mínima para descripciones de productos
-        public const int MaxProductDescription = 2000; // Longitud máxima para descripciones de productos
+        public const int MaxProductDescription = 5000; // Longitud máxima para descripciones de productos
         public const int MinProductSku = 1000000; // Longitud mínima para Sku de productos
         public const int MaxProductSku = 9999999; // Longitud máxima para Sku de productos
         public const double MinProductCurrentPrice = 0.01; // Precio mínimo para productos

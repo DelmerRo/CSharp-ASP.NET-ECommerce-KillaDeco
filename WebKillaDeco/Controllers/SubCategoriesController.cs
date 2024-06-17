@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Models;
 
@@ -23,21 +27,23 @@ namespace WebKillaDeco.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            var killaDbContext = _context.SubCategories.Include(s => s.Category);
-            return View(await killaDbContext.ToListAsync());
+            var subCategories = await _context.SubCategories.Include(s => s.Category).ToListAsync();
+            return View(subCategories);
         }
 
         // GET: SubCategories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.SubCategories == null)
+            if (id == null || !ModelState.IsValid)
             {
                 return NotFound();
             }
 
             var subCategory = await _context.SubCategories
                 .Include(s => s.Category)
+                .Include(p => p.Products)
                 .FirstOrDefaultAsync(m => m.SubCategoryId == id);
+
             if (subCategory == null)
             {
                 return NotFound();
@@ -49,70 +55,41 @@ namespace WebKillaDeco.Controllers
         // GET: SubCategories/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
+            ViewData["CategoryId"] = new SelectList(_context.Categories.OrderBy(c => c.Name).ToList(), "CategoryId", "Name");
             return View();
         }
 
         // POST: SubCategories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(SubCategory subCategory)
         {
-            // Eliminar las validaciones de las propiedades de archivo antes de la validación del modelo
             ModelState.Remove(nameof(subCategory.IconUrl));
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    // Guardar el icono (IconUrlFile)
-                    if (subCategory.IconUrlFile != null && subCategory.IconUrlFile.Length > 0)
-                    {
-                        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-icon");
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(subCategory.IconUrlFile.FileName);
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await subCategory.IconUrlFile.CopyToAsync(fileStream);
-                        }
-                        subCategory.IconUrl = "~/images/category-icon/" + uniqueFileName; // Guardar la ruta relativa
-                    }
-
-                    // Guardar la categoría en la base de datos
-                    _context.Add(subCategory);
+                    await SaveIconAsync(subCategory); // Método privado para guardar el icono
+                    await _context.AddAsync(subCategory);
                     await _context.SaveChangesAsync();
-
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateException ex)
                 {
-                    // Manejo de errores
-                    ModelState.AddModelError("", "Error al guardar la categoría. Inténtelo de nuevo más tarde.");
+                    ModelState.AddModelError("", "Error al guardar la subcategoría. Inténtelo de nuevo más tarde.");
+                    Console.WriteLine(ex.Message);
                 }
             }
 
-            // Si llegamos aquí, significa que ha habido errores, devolvemos la vista con el modelo para corregirlos
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", subCategory.CategoryId);
             return View(subCategory);
-
-
-
-
-            //if (ModelState.IsValid)
-            //{
-            //    _context.Add(subCategory);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
-            //ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", subCategory.CategoryId);
-            //return View(subCategory);
         }
 
         // GET: SubCategories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.SubCategories == null)
+            if (id == null || !ModelState.IsValid)
             {
                 return NotFound();
             }
@@ -122,13 +99,15 @@ namespace WebKillaDeco.Controllers
             {
                 return NotFound();
             }
+
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", subCategory.CategoryId);
             return View(subCategory);
         }
 
+        // POST: SubCategories/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,  SubCategory subCategory)
+        public async Task<IActionResult> Edit(int id, SubCategory subCategory)
         {
             if (id != subCategory.SubCategoryId)
             {
@@ -137,12 +116,12 @@ namespace WebKillaDeco.Controllers
 
             ModelState.Remove(nameof(subCategory.IconUrl));
             ModelState.Remove(nameof(subCategory.IconUrlFile));
+            ModelState.Remove(nameof(subCategory.Category));
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    // Obtener la categoría existente de la base de datos
                     var existingSubCategory = await _context.SubCategories.FindAsync(id);
                     if (existingSubCategory == null)
                     {
@@ -150,18 +129,9 @@ namespace WebKillaDeco.Controllers
                     }
 
                     existingSubCategory.Name = subCategory.Name;
+                    existingSubCategory.CategoryId = subCategory.CategoryId;
 
-                    if (subCategory.IconUrlFile != null && subCategory.IconUrlFile.Length > 0)
-                    {
-                        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-icon");
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(subCategory.IconUrlFile.FileName);
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await subCategory.IconUrlFile.CopyToAsync(fileStream);
-                        }
-                        existingSubCategory.IconUrl = "~/images/category-icon/" + uniqueFileName;
-                    }
+                    await SaveIconAsync(subCategory); // Método privado para guardar el icono
 
                     _context.Update(existingSubCategory);
                     await _context.SaveChangesAsync();
@@ -180,13 +150,15 @@ namespace WebKillaDeco.Controllers
                     }
                 }
             }
+
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", subCategory.CategoryId);
             return View(subCategory);
         }
 
         // GET: SubCategories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.SubCategories == null)
+            if (id == null || _context.SubCategories == null || !ModelState.IsValid)
             {
                 return NotFound();
             }
@@ -194,6 +166,7 @@ namespace WebKillaDeco.Controllers
             var subCategory = await _context.SubCategories
                 .Include(s => s.Category)
                 .FirstOrDefaultAsync(m => m.SubCategoryId == id);
+
             if (subCategory == null)
             {
                 return NotFound();
@@ -202,46 +175,53 @@ namespace WebKillaDeco.Controllers
             return View(subCategory);
         }
 
+
         // POST: SubCategories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.SubCategories == null)
-            {
-                return Problem("Entity set 'KillaDbContext.SubCategories'  is null.");
-            }
             var subCategory = await _context.SubCategories.FindAsync(id);
-            if (subCategory != null)
+            if (subCategory == null || !ModelState.IsValid)
             {
-                _context.SubCategories.Remove(subCategory);
+                return NotFound();
             }
-            
+
+            _context.SubCategories.Remove(subCategory);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-
         [HttpGet]
         public async Task<IActionResult> SubCategoryNameAvailable(string name)
         {
-            var nameExists = await _context.SubCategories.AnyAsync(p => p.Name == name);
-
-            if (!nameExists)
+            if (!ModelState.IsValid)
             {
-                // Si no está el nombre usado, entonces, el nombre está disponible.
-                return Json(true);
+                return BadRequest("El nombre de la categoría no puede estar vacío.");
             }
-            else
+
+            var nameExists = await _context.SubCategories.AnyAsync(p => p.Name == name);
+            return Json(!nameExists);
+        }
+
+        private async Task SaveIconAsync(SubCategory subCategory)
+        {
+            if (subCategory.IconUrlFile != null && subCategory.IconUrlFile.Length > 0)
             {
-                // El nombre ya está en uso, entonces, no se cumple la validación. Se devuelve un mensaje de error.
-                return Json($"La subcategoría {name} ya está en uso.");
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-icon");
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(subCategory.IconUrlFile.FileName);
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await subCategory.IconUrlFile.CopyToAsync(fileStream);
+                }
+                subCategory.IconUrl = "~/images/category-icon/" + uniqueFileName;
             }
         }
 
         private bool SubCategoryExists(int id)
         {
-          return (_context.SubCategories?.Any(e => e.SubCategoryId == id)).GetValueOrDefault();
+            return _context.SubCategories.Any(e => e.SubCategoryId == id);
         }
     }
 }

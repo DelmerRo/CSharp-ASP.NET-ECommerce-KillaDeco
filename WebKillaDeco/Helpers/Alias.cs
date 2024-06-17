@@ -54,8 +54,8 @@
         public const string SelectCategory = "Seleccione Categoría";
 
         public const string SubCategoryId = "ID de SubCategoría";
-        public const string SubCategoryName = "Nombre de SubCategoría";
-        public const string IconSubCategoryUrl = "URL de Icono de SubCategoría";
+        public const string SubCategoryName = "SubCategoría";
+        public const string IconSubCategoryUrl = "Icono de SubCategoría";
         public const string CreateNewSubCategory = "Crear nueva SubCategoría";
         public const string SubCategories = "SubCategorías";
         public const string EditSubCategory = "Editar SubCategoría";
@@ -135,7 +135,10 @@
         public const string Actions = "Acciones";
         public const string DeleteThisCategory = "¿Realmente desea eliminar esta Categoría?";
         public const string CategoryDetails = "Detalles de la Categoría";
-       
+        public const string SubCategoryDetails = "Detalles de la SubCategoría";
+        public const string DeleteThisSubCategory = "¿Realmente desea eliminar esta SubCategoría?";
+        public const string AvailableName = "Nombre no disponible";
+
 
         //Button
         public const string Edit = "Editar";

@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "/Views/Shared/_LayoutEmployee.cshtml";
-    var categories = Model.Select(m => m.Category).Distinct().ToList();
+    var categories = Model.Select(m => m.Category).Distinct().OrderBy(c =>c.Name).ToList();
 }
 
 <div class="container my-4">

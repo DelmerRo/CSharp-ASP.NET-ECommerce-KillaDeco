@@ -425,12 +425,24 @@
       "PackagePath": "staticwebassets\\images\\carousel\\banner_9.jpg"
     },
     {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\0b5ffdbc-a8f3-4796-8898-bd21bbc071b7_muebles.png",
+      "PackagePath": "staticwebassets\\images\\category-icon\\0b5ffdbc-a8f3-4796-8898-bd21bbc071b7_muebles.png"
+    },
+    {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\53bddde4-25aa-44fd-8821-43f8f34cbc47_muebles.png",
       "PackagePath": "staticwebassets\\images\\category-icon\\53bddde4-25aa-44fd-8821-43f8f34cbc47_muebles.png"
     },
     {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\685df455-dd98-4b7e-b44c-0fc5978dafb5_vajilla.png",
       "PackagePath": "staticwebassets\\images\\category-icon\\685df455-dd98-4b7e-b44c-0fc5978dafb5_vajilla.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\864d1cc9-2453-46b4-ac9c-ca542be14686_decoracion.png",
+      "PackagePath": "staticwebassets\\images\\category-icon\\864d1cc9-2453-46b4-ac9c-ca542be14686_decoracion.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\94c930e0-8efa-4356-aa13-5199469200ac_utensilios-de-cocina.png",
+      "PackagePath": "staticwebassets\\images\\category-icon\\94c930e0-8efa-4356-aa13-5199469200ac_utensilios-de-cocina.png"
     },
     {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\99b3d1e8-412d-4faf-96b0-405d14ec0a30_mesa-redonda (1).png",
@@ -467,6 +479,10 @@
     {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\e413d19b-0d8d-46cb-ac3b-a54d70cb2ecb_muebles.png",
       "PackagePath": "staticwebassets\\images\\category-icon\\e413d19b-0d8d-46cb-ac3b-a54d70cb2ecb_muebles.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\ff1ceb3f-b76b-491e-9861-179063866a62_banera.png",
+      "PackagePath": "staticwebassets\\images\\category-icon\\ff1ceb3f-b76b-491e-9861-179063866a62_banera.png"
     },
     {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\category-icon\\utensilios-de-cocina.png",

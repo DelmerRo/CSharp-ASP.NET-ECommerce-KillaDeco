@@ -25,6 +25,7 @@ namespace WebKillaDeco.Models
         public string? IconUrl { get; set; }
 
         [Display(Name = Alias.CategoryName)]
+        [Required(ErrorMessage = ErrorMsgs.Required)]
         public Category? Category { get; set; }
 
         public List<Product>? Products { get; set; }
