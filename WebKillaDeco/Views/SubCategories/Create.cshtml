@@ -1,42 +1,45 @@
 ﻿@model WebKillaDeco.Models.SubCategory
+@using WebKillaDeco.Helpers
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h1>Create</h1>
+<div class="container my-5">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title text-center mb-4">@ViewData["Title"]</h1>
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="control-label">@Alias.Category</label>
+                    <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                </div>
 
-<h4>SubCategory</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IconUrl" class="control-label"></label>
-                <input asp-for="IconUrl" class="form-control" />
-                <span asp-validation-for="IconUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">SubCategory Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IconUrlFile" class="control-label">Icon File</label>
+                    <input type="file" asp-for="IconUrlFile" class="form-control" />
+                    <span asp-validation-for="IconUrlFile" class="text-danger"></span>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">@Alias.Create</button>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">@Alias.Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+

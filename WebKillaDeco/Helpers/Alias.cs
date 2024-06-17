@@ -50,11 +50,15 @@
         public const string CreateNewCategory = "Crear nueva Categoría";
         public const string EditCategory = "Editar Categoría";
         public const string NumberOfSubCategories = "Cantidad de Subcategorías";
+        public const string AllCategories = "Todas las Categorías";
+        public const string SelectCategory = "Seleccione Categoría";
 
         public const string SubCategoryId = "ID de SubCategoría";
         public const string SubCategoryName = "Nombre de SubCategoría";
         public const string IconSubCategoryUrl = "URL de Icono de SubCategoría";
+        public const string CreateNewSubCategory = "Crear nueva SubCategoría";
         public const string SubCategories = "SubCategorías";
+        public const string EditSubCategory = "Editar SubCategoría";
 
         public const string PurchaseId = "ID de Compra";
         public const string PurchaseDate = "Fecha de Compra";
@@ -142,6 +146,7 @@
         public const string Cancel = "Cancelar";
         public const string ViewProducts = "Ver Productos";
         public const string ViewSubCategories = "Ver SubCategorías";
+        public const string Save = "Guardar";
     }
 
 }

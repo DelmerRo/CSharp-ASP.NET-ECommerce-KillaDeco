@@ -1,48 +1,81 @@
 ﻿@model IEnumerable<WebKillaDeco.Models.SubCategory>
-
+@using WebKillaDeco.Helpers
 @{
     ViewData["Title"] = "Index";
     Layout = "/Views/Shared/_LayoutEmployee.cshtml";
+    var categories = Model.Select(m => m.Category).Distinct().ToList();
 }
 
-<h1>Index</h1>
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="input-group">
+            <h5>@Alias.SelectCategory: </h5>
+            <select class="form-select form-select-sm" id="categoryFilter" onchange="filterByCategory()">
+                <option value="">@Alias.AllCategories</option>
+                @foreach (var category in categories)
+                {
+                    <option value="@category.Name">@category.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <a class="btn btn-success btn-sm ms-2" asp-action="Create">@Alias.CreateNewSubCategory</a>
+        </div>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IconUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IconUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.SubCategoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SubCategoryId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SubCategoryId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="mb-0 text-center">@Alias.SubCategories</h1>
+            <table class="table table-bordered table-hover text-center">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">@Alias.Icon</th>
+                        <th scope="col">@Alias.CategoryName</th>
+                        <th scope="col">@Alias.SubCategoryName</th>
+                        <th scope="col">@Alias.Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="subcategoryContainer">
+                    @foreach (var item in Model)
+                    {
+                        <tr class="subcategory-card" data-category="@item.Category.Name">
+                            <td class="align-middle">
+                                @if (!string.IsNullOrEmpty(item.IconUrl))
+                                {
+                                    <img src="@Url.Content(item.IconUrl)" class="icon-img rounded-circle" alt="@item.Name Icon" style="width: 30px; height: 30px;">
+                                }
+                            </td>
+                            <td class="align-middle">@item.Category.Name</td>
+                            <td class="align-middle">@item.Name</td>
+                            <td class="align-middle">
+                                <div class="mt-auto text-center">
+                                    <a class="btn btn-primary btn-sm me-4" asp-action="Edit" asp-route-id="@item.SubCategoryId">@Alias.Edit</a>
+                                    <a class="btn btn-info btn-sm me-4" asp-action="Details" asp-route-id="@item.SubCategoryId">@Alias.Details</a>
+                                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.SubCategoryId">@Alias.Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function filterByCategory() {
+        var filter = document.getElementById("categoryFilter").value.toLowerCase();
+        var rows = document.getElementsByClassName("subcategory-card");
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var category = row.getAttribute("data-category").toLowerCase();
+
+            if (filter === "" || category === filter) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    }
+</script>
