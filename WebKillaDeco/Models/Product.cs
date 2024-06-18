@@ -41,8 +41,6 @@ namespace WebKillaDeco.Models
         public IFormFile? ImageUrlFile { get; set; }
 
         [Display(Name = Alias.UrlCategoryImage)]
-        [Required(ErrorMessage = ErrorMsgs.Required)]
-        [StringLength(Restrictions.MaxProductDescription, MinimumLength = Restrictions.MinProductDescription, ErrorMessage = ErrorMsgs.StrMaxMin)]
         public string? ImageUrl { get; set; }
 
         [Display(Name = Alias.AvailableStock)]
@@ -54,11 +52,21 @@ namespace WebKillaDeco.Models
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductWeight, Restrictions.MaxProductWeight, ErrorMessage = ErrorMsgs.RangeMinMax)]
         public decimal Weight { get; set; }
-       
-        [Display(Name = Alias.Dimensions)]
+
+        [Display(Name = Alias.Width)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
-        [StringLength(Restrictions.MaxProductDimensions, MinimumLength = Restrictions.MinProductDimensions, ErrorMessage = ErrorMsgs.StrMaxMin)]
-        public string? Dimensions { get; set; }
+        [Range(Restrictions.MinProductWidth, Restrictions.MaxProductWidth, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        public decimal Width { get; set; }
+
+        [Display(Name = Alias.Height)]
+        [Required(ErrorMessage = ErrorMsgs.Required)]
+        [Range(Restrictions.MinProductHeight, Restrictions.MaxProductHeight, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        public decimal Height { get; set; }
+
+        [Display(Name = Alias.Depth)]
+        [Required(ErrorMessage = ErrorMsgs.Required)]
+        [Range(Restrictions.MinProductDepth, Restrictions.MaxProductDepth, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        public decimal Depth { get; set; }
 
         [Display(Name = Alias.Color)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
@@ -76,11 +84,21 @@ namespace WebKillaDeco.Models
 
         [Display(Name = Alias.SubCategoryName)]
         public SubCategory? SubCategories { get; set; }
-        
+
         public List<StockItem>? StockItems { get; set; }
         public List<Qualification>? Qualifications { get; set; }
         public List<Favorite>? Favorites { get; set; }
         public List<CartItem>? CartItems { get; set; }
         public List<Question>? Questions { get; set; }
+
+
+        public void GenerateSku(int categoryId, int subCategoryId, int productId)
+        {
+            string categoryIdPart = categoryId.ToString("D2"); // 2 dígitos para el ID de categoría
+            string subCategoryIdPart = subCategoryId.ToString("D3"); // 3 dígitos para el ID de subcategoría
+            string productIdPart = productId.ToString("D5"); // 5 dígitos para el ID del producto
+            Sku = int.Parse($"{categoryIdPart}{subCategoryIdPart}{productIdPart}");
+        }
+
     }
 }

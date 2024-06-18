@@ -36,7 +36,8 @@
         public const string ClientId = "ID del Cliente";
         public const string PublicationDate = "Fecha de Publicación";
 
-        public const string Active = "Disponible para la venta";
+        public const string Active = "Activo";
+        public const string NotActive = "No Activo";
         public const string Subtotal = "Subtotal";
         public const string CartId = "ID del Carrito";
         public const string UnitPrice = "Precio Unitario";
@@ -103,6 +104,9 @@
         public const string CurrentPrice = "Precio Actual";
         public const string UrlProductImage = "URL de Imagen de Producto";
         public const string AvailableStock = "Stock Disponible";
+        public const string Width = "Ancho";
+        public const string Height = "Alto";
+        public const string Depth = "Profundidad";
 
         public const string Address = "Dirección";
         public const string Answers = "Respuestas";

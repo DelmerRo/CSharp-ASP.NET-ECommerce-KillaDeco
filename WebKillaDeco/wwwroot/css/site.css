@@ -102,3 +102,15 @@ body {
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.color-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #CCCCCC;
+    outline: none;
+}
