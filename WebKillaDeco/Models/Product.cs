@@ -30,6 +30,8 @@ namespace WebKillaDeco.Models
         [Display(Name = Alias.CurrentPrice)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductCurrentPrice, Restrictions.MaxProductCurrentPrice, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Currency)]
         public decimal CurrentPrice { get; set; }
 
         [Required(ErrorMessage = ErrorMsgs.Required)]
@@ -51,21 +53,25 @@ namespace WebKillaDeco.Models
         [Display(Name = Alias.Weight)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductWeight, Restrictions.MaxProductWeight, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Weight { get; set; }
 
         [Display(Name = Alias.Width)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductWidth, Restrictions.MaxProductWidth, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Width { get; set; }
 
         [Display(Name = Alias.Height)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductHeight, Restrictions.MaxProductHeight, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Height { get; set; }
 
         [Display(Name = Alias.Depth)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductDepth, Restrictions.MaxProductDepth, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Depth { get; set; }
 
         [Display(Name = Alias.Color)]
@@ -80,6 +86,7 @@ namespace WebKillaDeco.Models
         [Display(Name = Alias.Discount)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductDiscount, Restrictions.MaxProductDiscount, ErrorMessage = ErrorMsgs.RangeMinMax)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Discount { get; set; }
 
         [Display(Name = Alias.SubCategoryName)]

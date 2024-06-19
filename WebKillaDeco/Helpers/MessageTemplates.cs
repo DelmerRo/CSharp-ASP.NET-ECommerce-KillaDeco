@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.AspNetCore.Mvc;
+
 namespace WebKillaDeco.Helpers
 {
     public static class MessageTemplates
@@ -16,10 +18,18 @@ namespace WebKillaDeco.Helpers
 
         private static String GetArticle(String entityName)
         {
-            return entityName[entityName.Length - 1] == 'o' ? "este" : "esta";
-            
+                return entityName[entityName.Length - 1] == 'o' ? "este" : "esta";
         }
 
-       
+        internal static string GetPropertyIsRequired(string propertyName)
+        {
+            return $" {propertyName} es requerido?";
+        }
+
+        internal static string GetErrorSaving(string entityName)
+        {
+            return $"Se produjo un error al intentar guardar el/la {entityName}. Por favor, inténtelo de nuevo más tarde. Si el problema persiste, contacte al soporte técnico.";
+
+        }
     }
 }

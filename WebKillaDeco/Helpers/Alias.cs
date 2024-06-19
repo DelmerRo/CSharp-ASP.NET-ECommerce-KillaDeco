@@ -102,7 +102,7 @@
         public const string Product = "Producto";
         public const string NumberOfProducts = "Cantidad de Productos";
         public const string CurrentPrice = "Precio Actual";
-        public const string UrlProductImage = "URL de Imagen de Producto";
+        public const string ProductImage = "Imagen de Producto";
         public const string AvailableStock = "Stock Disponible";
         public const string Width = "Ancho";
         public const string Height = "Alto";
@@ -142,6 +142,10 @@
         public const string SubCategoryDetails = "Detalles de la SubCategoría";
         public const string DeleteThisSubCategory = "¿Realmente desea eliminar esta SubCategoría?";
         public const string AvailableName = "Nombre no disponible";
+        public const string CategoryIconPath = "category-icon";
+        public const string CategoryImagePath = "category-image";
+        public const string ProductImagePath = "product-image";
+        public const string UserImagePath = "user-image";
 
 
         //Button

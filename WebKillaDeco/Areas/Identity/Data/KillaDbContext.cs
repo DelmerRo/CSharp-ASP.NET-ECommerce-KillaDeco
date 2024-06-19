@@ -168,6 +168,11 @@ namespace WebKillaDeco.Areas.Identity.Data
             modelBuilder.Entity<IdentityUserRole<int>>().ToTable("UsersRoles");
         }
 
+        internal async Task SaveIconAsync(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Rol> Roles { get; set; }
         public DbSet<User> Admins { get; set; }
         public DbSet<Employee> Employees { get; set; }
