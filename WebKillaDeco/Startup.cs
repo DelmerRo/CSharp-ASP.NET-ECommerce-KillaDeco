@@ -7,7 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Globalization;
 using WebKillaDeco.Areas.Identity.Data;
+using WebKillaDeco.Helpers;
 using WebKillaDeco.Models;
 
 namespace WebKillaDeco
@@ -67,9 +69,10 @@ namespace WebKillaDeco
                 options.AccessDeniedPath = "/Identity/Account/AccessDenied";
             });
             #endregion
-
+            // Controladores con vistas
             services.AddControllersWithViews();
-
+            // Servicio para manejo de imágenes
+            services.AddTransient<ImageService>();
             // Agregar servicios de páginas de Razor
             services.AddRazorPages();
         }
@@ -77,6 +80,14 @@ namespace WebKillaDeco
         // Este método es llamado por el runtime. Configura el pipeline de HTTP.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, KillaDbContext killaDbContext)
         {
+            var cultureInfo = new CultureInfo("es-AR"); // Cultura Argentina
+            cultureInfo.NumberFormat.CurrencySymbol = "ARS"; // Símbolo de la moneda Argentina
+            cultureInfo.NumberFormat.NumberDecimalSeparator = "."; // Separador decimal punto
+
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+
+            // Resto de la configuración de la aplicación
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

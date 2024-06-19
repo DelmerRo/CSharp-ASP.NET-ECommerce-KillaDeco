@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebKillaDeco.Areas.Identity.Data;
+using WebKillaDeco.Helpers;
 using WebKillaDeco.Models;
 
 namespace WebKillaDeco.Controllers
@@ -10,15 +11,14 @@ namespace WebKillaDeco.Controllers
     public class SubCategoriesController : Controller
     {
         private readonly KillaDbContext _context;
-        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ImageService _imageService;
 
-        public SubCategoriesController(KillaDbContext context, IWebHostEnvironment webHostEnvironment)
+        public SubCategoriesController(KillaDbContext context, ImageService imageService)
         {
             _context = context;
-            _webHostEnvironment = webHostEnvironment;
+            _imageService = imageService;
         }
 
-        // GET: SubCategories
         [Authorize]
         public async Task<IActionResult> Index()
         {
@@ -26,7 +26,6 @@ namespace WebKillaDeco.Controllers
             return View(subCategories);
         }
 
-        // GET: SubCategories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || !ModelState.IsValid)
@@ -47,14 +46,12 @@ namespace WebKillaDeco.Controllers
             return View(subCategory);
         }
 
-        // GET: SubCategories/Create
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories.OrderBy(c => c.Name).ToList(), "CategoryId", "Name");
             return View();
         }
 
-        // POST: SubCategories/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(SubCategory subCategory)
@@ -65,7 +62,7 @@ namespace WebKillaDeco.Controllers
             {
                 try
                 {
-                    await SaveIconAsync(subCategory); // Método privado para guardar el icono
+                    await _imageService.SaveImageAsync(subCategory.IconUrlFile, Alias.CategoryIconPath); 
                     await _context.AddAsync(subCategory);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -99,7 +96,6 @@ namespace WebKillaDeco.Controllers
             return View(subCategory);
         }
 
-        // POST: SubCategories/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, SubCategory subCategory)
@@ -126,7 +122,7 @@ namespace WebKillaDeco.Controllers
                     existingSubCategory.Name = subCategory.Name;
                     existingSubCategory.CategoryId = subCategory.CategoryId;
 
-                    await SaveIconAsync(subCategory); // Método privado para guardar el icono
+                    await _imageService.SaveImageAsync(subCategory.IconUrlFile, Alias.CategoryIconPath); 
 
                     _context.Update(existingSubCategory);
                     await _context.SaveChangesAsync();
@@ -150,7 +146,6 @@ namespace WebKillaDeco.Controllers
             return View(subCategory);
         }
 
-        // GET: SubCategories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.SubCategories == null || !ModelState.IsValid)
@@ -170,8 +165,6 @@ namespace WebKillaDeco.Controllers
             return View(subCategory);
         }
 
-
-        // POST: SubCategories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -197,21 +190,6 @@ namespace WebKillaDeco.Controllers
 
             var nameExists = await _context.SubCategories.AnyAsync(p => p.Name == name);
             return Json(!nameExists);
-        }
-
-        private async Task SaveIconAsync(SubCategory subCategory)
-        {
-            if (subCategory.IconUrlFile != null && subCategory.IconUrlFile.Length > 0)
-            {
-                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-icon");
-                string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(subCategory.IconUrlFile.FileName);
-                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await subCategory.IconUrlFile.CopyToAsync(fileStream);
-                }
-                subCategory.IconUrl = "~/images/category-icon/" + uniqueFileName;
-            }
         }
 
         private bool SubCategoryExists(int id)

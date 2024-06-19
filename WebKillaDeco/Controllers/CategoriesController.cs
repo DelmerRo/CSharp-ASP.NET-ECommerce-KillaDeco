@@ -1,8 +1,10 @@
 ﻿
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebKillaDeco.Areas.Identity.Data;
+using WebKillaDeco.Helpers;
 using WebKillaDeco.Models;
 
 namespace WebKillaDeco.Controllers
@@ -10,21 +12,21 @@ namespace WebKillaDeco.Controllers
     public class CategoriesController : Controller
     {
         private readonly KillaDbContext _context;
-        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ImageService _imageService;
 
-        public CategoriesController(KillaDbContext context, IWebHostEnvironment webHostEnvironment)
+        public CategoriesController(KillaDbContext context, ImageService imageService)
         {
             _context = context;
-            _webHostEnvironment = webHostEnvironment;
+            _imageService = imageService;
         }
 
         // GET: Categories
         [Authorize]
         public async Task<IActionResult> Index()
         {
-              return _context.Categories != null ? 
-                          View(await _context.Categories.ToListAsync()) :
-                          Problem("Entity set 'KillaDbContext.Categories'  is null.");
+            return _context.Categories != null ?
+                        View(await _context.Categories.ToListAsync()) :
+                        Problem("Entity set 'KillaDbContext.Categories'  is null.");
         }
 
         // GET: Categories/Details/5
@@ -36,7 +38,7 @@ namespace WebKillaDeco.Controllers
             }
 
             var category = await _context.Categories
-                .Include(c => c.SubCategories) 
+                .Include(c => c.SubCategories)
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
 
             if (category == null)
@@ -45,9 +47,7 @@ namespace WebKillaDeco.Controllers
             }
             if (!ModelState.IsValid)
             {
-                // Manejar el estado de modelo no válido según sea necesario
-                // Por ejemplo, redirigir a una página de error o manejar el error de otra manera
-                return BadRequest(ModelState); // O utiliza otro tipo de respuesta adecuada
+                return BadRequest(ModelState);
             }
             return View(category);
         }
@@ -55,7 +55,7 @@ namespace WebKillaDeco.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            var category = new Category(); // Crear una nueva instancia de Category
+            var category = new Category();
             return View(category);
         }
 
@@ -63,7 +63,6 @@ namespace WebKillaDeco.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Category category)
         {
-            // Eliminar las validaciones de las propiedades de archivo antes de la validación del modelo
             ModelState.Remove(nameof(category.ImageUrl));
             ModelState.Remove(nameof(category.IconUrl));
 
@@ -71,33 +70,24 @@ namespace WebKillaDeco.Controllers
             {
                 try
                 {
-                    // Guardar la imagen principal (ImageUrlFile)
                     if (category.ImageUrlFile != null && category.ImageUrlFile.Length > 0)
                     {
-                        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-image");
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.ImageUrlFile.FileName);
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await category.ImageUrlFile.CopyToAsync(fileStream);
-                        }
-                        category.ImageUrl = "~/images/category-image/" + uniqueFileName; // Guardar la ruta relativa
+                        category.ImageUrl = await _imageService.SaveImageAsync(category.ImageUrlFile, Alias.CategoryImagePath);
                     }
-
-                    // Guardar el icono (IconUrlFile)
+                    else
+                    {
+                        ModelState.AddModelError(nameof(category.ImageUrlFile), MessageTemplates.GetPropertyIsRequired(Alias.UrlCategoryImage));
+                        return View(category);
+                    }
                     if (category.IconUrlFile != null && category.IconUrlFile.Length > 0)
                     {
-                        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-icon");
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.IconUrlFile.FileName);
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await category.IconUrlFile.CopyToAsync(fileStream);
-                        }
-                        category.IconUrl = "~/images/category-icon/" + uniqueFileName; // Guardar la ruta relativa
+                        category.IconUrl = await _imageService.SaveImageAsync(category.IconUrlFile, Alias.CategoryIconPath);
                     }
-
-                    // Guardar la categoría en la base de datos
+                    else
+                    {
+                        ModelState.AddModelError(nameof(category.IconUrlFile), MessageTemplates.GetPropertyIsRequired(Alias.Icon));
+                        return View(category);
+                    }
                     await _context.AddAsync(category);
                     await _context.SaveChangesAsync();
 
@@ -106,13 +96,12 @@ namespace WebKillaDeco.Controllers
                 catch (DbUpdateException ex)
                 {
                     Console.WriteLine(ex.Message);
-                    ModelState.AddModelError("", "Error al guardar la categoría. Inténtelo de nuevo más tarde.");
+                    ModelState.AddModelError("", MessageTemplates.GetErrorSaving(Alias.Category));
                 }
             }
-
-            // Si llegamos aquí, significa que ha habido errores, devolvemos la vista con el modelo para corregirlos
             return View(category);
         }
+
 
 
         // GET: Categories/Edit/5
@@ -131,7 +120,7 @@ namespace WebKillaDeco.Controllers
 
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState); 
+                return BadRequest(ModelState);
             }
 
             return View(category);
@@ -156,40 +145,22 @@ namespace WebKillaDeco.Controllers
             {
                 try
                 {
-                    // Obtener la categoría existente de la base de datos
                     var existingCategory = await _context.Categories.FindAsync(id);
+
                     if (existingCategory == null)
                     {
                         return NotFound();
                     }
-
-                    // Actualizar el nombre
                     existingCategory.Name = category.Name;
 
-                    // Guardar la nueva imagen principal (ImageUrlFile) si se proporciona
                     if (category.ImageUrlFile != null && category.ImageUrlFile.Length > 0)
                     {
-                        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-image");
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.ImageUrlFile.FileName);
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await category.ImageUrlFile.CopyToAsync(fileStream);
-                        }
-                        existingCategory.ImageUrl = "~/images/category-image/" + uniqueFileName; // Guardar la ruta relativa
+                        existingCategory.ImageUrl = await _imageService.SaveImageAsync(category.ImageUrlFile, Alias.CategoryImagePath);
                     }
 
-                    // Guardar el nuevo icono (IconUrlFile) si se proporciona
                     if (category.IconUrlFile != null && category.IconUrlFile.Length > 0)
                     {
-                        string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images", "category-icon");
-                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(category.IconUrlFile.FileName);
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await category.IconUrlFile.CopyToAsync(fileStream);
-                        }
-                        existingCategory.IconUrl = "~/images/category-icon/" + uniqueFileName; // Guardar la ruta relativa
+                        existingCategory.IconUrl = await _imageService.SaveImageAsync(category.IconUrlFile, Alias.CategoryIconPath);
                     }
 
                     // Actualizar la categoría en la base de datos
@@ -227,7 +198,7 @@ namespace WebKillaDeco.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> CategoryNameAvailable( string name)
+        public async Task<IActionResult> CategoryNameAvailable(string name)
         {
             if (!ModelState.IsValid)
             {
@@ -278,7 +249,7 @@ namespace WebKillaDeco.Controllers
             {
                 _context.Categories.Remove(category);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

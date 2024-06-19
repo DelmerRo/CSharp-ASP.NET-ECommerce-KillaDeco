@@ -1,104 +1,189 @@
 ﻿@model WebKillaDeco.Models.Product
+@using WebKillaDeco.Helpers
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Producto";
+    Layout = "/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h1>Edit</h1>
+<style>
+    .color-button.selected {
+        border: 2px solid #000;
+        transform: scale(1.1);
+        transition: transform 0.2s;
+    }
+</style>
 
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ProductId" />
-            <div class="form-group">
-                <label asp-for="SubCategoryId" class="control-label"></label>
-                <select asp-for="SubCategoryId" class="form-control" asp-items="ViewBag.SubCategoryId"></select>
-                <span asp-validation-for="SubCategoryId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sku" class="control-label"></label>
-                <input asp-for="Sku" class="form-control" />
-                <span asp-validation-for="Sku" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CurrentPrice" class="control-label"></label>
-                <input asp-for="CurrentPrice" class="form-control" />
-                <span asp-validation-for="CurrentPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AvailableStock" class="control-label"></label>
-                <input asp-for="AvailableStock" class="form-control" />
-                <span asp-validation-for="AvailableStock" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Weight" class="control-label"></label>
-                <input asp-for="Weight" class="form-control" />
-                <span asp-validation-for="Weight" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Width" class="control-label"></label>
-                <input asp-for="Width" class="form-control" />
-                <span asp-validation-for="Width" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Height" class="control-label"></label>
-                <input asp-for="Height" class="form-control" />
-                <span asp-validation-for="Height" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Depth" class="control-label"></label>
-                <input asp-for="Depth" class="form-control" />
-                <span asp-validation-for="Depth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Color" class="control-label"></label>
-                <input asp-for="Color" class="form-control" />
-                <span asp-validation-for="Color" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PublicationDate" class="control-label"></label>
-                <input asp-for="PublicationDate" class="form-control" />
-                <span asp-validation-for="PublicationDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Discount" class="control-label"></label>
-                <input asp-for="Discount" class="form-control" />
-                <span asp-validation-for="Discount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container my-5">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title text-center mb-4">@ViewData["Title"]</h1>
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="ProductId" />
+
+                <div class="form-group">
+                    <label asp-for="SubCategoryId" class="control-label">@Alias.SubCategories</label>
+                    <select asp-for="SubCategoryId" class="form-control" asp-items="ViewBag.SubCategoryId"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="10"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentPrice" class="control-label">Current Price</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input asp-for="CurrentPrice" class="form-control col-sm-1" aria-describedby="priceHelp" />
+                        <div class="input-group-append">
+                            <span class="input-group-text">USD</span>
+                        </div>
+                    </div>
+                    <small id="priceHelp" class="form-text text-muted">Enter the price in USD.</small>
+                    <span asp-validation-for="CurrentPrice" class="text-danger"></span>
+                </div>
+
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageUrl"></label>
+                    <input type="file" asp-for="ImageUrl" class="form-control" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="AvailableStock" class="control-label">Available Stock</label>
+                    <input asp-for="AvailableStock" class="form-control col-sm-1" />
+                    <span asp-validation-for="AvailableStock" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Weight" class="control-label">Weight</label>
+                    <input asp-for="Weight" class="form-control col-sm-1" />
+                    <span asp-validation-for="Weight" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Dimensions</label>
+                    <div class="input-group">
+                        <input asp-for="Width" class="form-control col-sm-2 mr-5" placeholder="Width" aria-label="Width">
+                        <input asp-for="Height" class="form-control col-sm-2 mr-5" placeholder="Height" aria-label="Height">
+                        <input asp-for="Depth" class="form-control col-sm-2 mr-5" placeholder="Depth" aria-label="Depth">
+                    </div>
+                    <span asp-validation-for="Width" class="text-danger"></span>
+                    <span asp-validation-for="Height" class="text-danger"></span>
+                    <span asp-validation-for="Depth" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Color" class="control-label">Color</label>
+                    <div class="color-palette">
+                        <button type="button" class="color-button" style="background-color: #FFFFFF;" onclick="setColor('#FFFFFF', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #F0F8FF;" onclick="setColor('#F0F8FF', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #FAEBD7;" onclick="setColor('#FAEBD7', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #FFEBCD;" onclick="setColor('#FFEBCD', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #FFE4C4;" onclick="setColor('#FFE4C4', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #FFDAB9;" onclick="setColor('#FFDAB9', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #EEE8AA;" onclick="setColor('#EEE8AA', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #F0FFFF;" onclick="setColor('#F0FFFF', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #00FFFF;" onclick="setColor('#00FFFF', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #7FFFD4;" onclick="setColor('#7FFFD4', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #ADD8E6;" onclick="setColor('#ADD8E6', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #F5F5DC;" onclick="setColor('#F5F5DC', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #FFE4B5;" onclick="setColor('#FFE4B5', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #FFE4C4;" onclick="setColor('#FFE4C4', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #FFF8DC;" onclick="setColor('#FFF8DC', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #D3D3D3;" onclick="setColor('#D3D3D3', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #C0C0C0;" onclick="setColor('#C0C0C0', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #A9A9A9;" onclick="setColor('#A9A9A9', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #808080;" onclick="setColor('#808080', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #696969;" onclick="setColor('#696969', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #708090;" onclick="setColor('#708090', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #778899;" onclick="setColor('#778899', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #B0C4DE;" onclick="setColor('#B0C4DE', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #4682B4;" onclick="setColor('#4682B4', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #4169E1;" onclick="setColor('#4169E1', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #0000FF;" onclick="setColor('#0000FF', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #000080;" onclick="setColor('#000080', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #00008B;" onclick="setColor('#00008B', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #000080;" onclick="setColor('#000080', event)"></button>
+                        <button type="button" class="color-button" style="background-color: #000000;" onclick="setColor('#000000', event)"></button>
+                    </div>
+
+                    <input asp-for="Color" class="form-control" id="color-input" style="display:none;" /> <!-- Input oculto para enviar el valor seleccionado -->
+                    <span asp-validation-for="Color" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Discount" class="control-label">Discount (%)</label>
+                    <div class="input-group">
+                        <input asp-for="Discount" class="form-control col-sm-1" aria-label="Discount" />
+                        <div class="input-group-append">
+                            <span class="input-group-text">%</span>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Discount" class="text-danger"></span>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function setColor(color, event) {
+            var buttons = document.querySelectorAll('.color-button');
+            buttons.forEach(function (button) {
+                button.classList.remove('selected');
+            });
+            event.target.classList.add('selected');
+            document.getElementById('color-input').value = color;
+        }
+
+        // Seleccionar y resaltar el color cargado al cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            var selectedColor = '@Model.Color';
+            if (selectedColor) {
+                var buttons = document.querySelectorAll('.color-button');
+                buttons.forEach(function (button) {
+                    var buttonColor = rgbToHex(button.style.backgroundColor);
+                    if (buttonColor.toLowerCase() === selectedColor.toLowerCase()) {
+                        button.classList.add('selected');
+                        document.getElementById('color-input').value = selectedColor;
+                    }
+                });
+            }
+        });
+
+        function rgbToHex(rgb) {
+            var rgbValues = rgb.match(/\d+/g);
+            if (rgbValues) {
+                return '#' + rgbValues.map(function (value) {
+                    return ('0' + parseInt(value).toString(16)).slice(-2);
+                }).join('');
+            }
+            return rgb;
+        }
+    </script>
 }
