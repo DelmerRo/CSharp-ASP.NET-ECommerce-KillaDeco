@@ -44,43 +44,61 @@
 
                     <div class="table-responsive">
                         <div>
-                        <table class="table table-bordered table-hover">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th class="text-center">@Alias.Code</th>
-                                    <th class="text-center">@Alias.PublicationDate</th>
-                                    <th class="text-center">@Alias.Name</th>
-                                    <th class="text-center">@Alias.CurrentPrice</th>
-                                    <th class="text-center">@Alias.Weight</th>
-                                    <th class="text-center">@Alias.Dimensions</th>
-                                    <th class="text-center">@Alias.Color</th>
-                                    <th class="text-center">@Alias.Active</th>
-                                    <th class="text-center">@Alias.AvailableStock</th>
-                                    <th class="text-center">@Alias.Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var products in Model.Products)
-                                {
+                            <table class="table table-bordered table-hover">
+                                <thead class="thead-light">
                                     <tr>
-                                        <td class="text-center">@products.Sku</td>
-                                        <td class="text-center">@products.PublicationDate</td>
-                                        <td class="text-center">@products.Name</td>
-                                        <td class="text-center">@products.CurrentPrice</td>
-                                        <td class="text-center">@products.Weight</td>
-                                        <td class="text-center">@products.Dimensions</td>
-                                        <td class="text-center">@products.Color</td>
-                                        <td class="text-center">@products.Active</td>
-                                        <td class="text-center">@products.AvailableStock</td>
-                                        <td class="text-center">
-                                            <a class="btn btn-primary btn-sm" asp-controller="Products" asp-action="Details" asp-route-id="@products.ProductId">
-                                                <i class="fa fa-eye"></i> @Alias.ViewProducts
-                                            </a>
-                                        </td>
+                                        <th class="text-center">@Alias.Code</th>
+                                        <th class="text-center">@Alias.PublicationDate</th>
+                                        <th class="text-center">@Alias.Name</th>
+                                        <th class="text-center">@Alias.CurrentPrice</th>
+                                        <th class="text-center">@Alias.Weight</th>
+                                        <th class="text-center">@Alias.Width</th>
+                                        <th class="text-center">@Alias.Height</th>
+                                        <th class="text-center">@Alias.Depth</th>
+                                        <th class="text-center">@Alias.Color</th>
+                                        <th class="text-center">@Alias.Active</th>
+                                        <th class="text-center">@Alias.AvailableStock</th>
+                                        <th class="text-center">@Alias.Actions</th>
                                     </tr>
-                                }
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach (var products in Model.Products)
+                                    {
+                                        <tr>
+                                            <td class="text-center align-middle">@products.Sku</td>
+                                            <td class="text-center align-middle">@products.PublicationDate.ToString("dd/MM/yyyy")</td>
+                                            <td class="text-center align-middle">@products.Name</td>
+                                            <td class="text-center align-middle">@products.CurrentPrice.ToString("C")</td>
+                                            <td class="text-center align-middle">@products.Weight.ToString("N2") kg</td>
+                                            <td class="text-center align-middle">@products.Width.ToString("N2") cm</td>
+                                            <td class="text-center align-middle">@products.Height.ToString("N2") cm</td>
+                                            <td class="text-center align-middle">@products.Depth.ToString("N2") cm</td>
+                                            <td class="text-center align-middle">
+                                                <span style="background-color:@products.Color; display:inline-block; width:20px; height:20px; border:1px solid #000;"></span>
+                                            </td>
+                                            <td class="text-center align-middle">
+                                                @if (products.Active)
+                                                {
+                                                    <i class="fas fa-toggle-on text-success"></i>
+                                                    <span class="text-success">@Alias.Active</span>
+                                                }
+                                                else
+                                                {
+                                                    <i class="fas fa-toggle-off text-danger"></i>
+                                                    <span class="text-danger">@Alias.NotActive</span>
+                                                }
+                                            </td>
+                                            <td class="text-center align-middle">@products.AvailableStock</td>
+                                            <td class="text-center align-middle">
+                                                <a class="btn btn-primary btn-sm" asp-controller="Products" asp-action="Details" asp-route-id="@products.ProductId">
+                                                    <i class="fa fa-eye"></i> @Alias.ViewProducts
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                    }
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

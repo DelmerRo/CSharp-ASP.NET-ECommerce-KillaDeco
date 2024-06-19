@@ -64,17 +64,38 @@ namespace WebKillaDeco.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Create([Bind("ProductId,SubCategoryId,Sku,Name,Description,CurrentPrice,Active,ImageUrl,AvailableStock,Weight,Dimensions,Color,PublicationDate,Discount")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,SubCategoryId,Name,Description,CurrentPrice,Active,ImageUrlFile,AvailableStock,Weight,Width,Height,Depth,Color,PublicationDate,Discount")] Product product)
         {
+            ModelState.Remove(nameof(product.ImageUrl));
+            ModelState.Remove(nameof(product.Sku));
             if (ModelState.IsValid)
             {
-                _context.Add(product);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                
+                // Obtener el ID de la categoría
+                var subCategory = await _context.SubCategories.Include(sc => sc.Category).FirstOrDefaultAsync(sc => sc.SubCategoryId == product.SubCategoryId);
+                if (subCategory != null)
+                {
+                    // Guardar el producto para generar el ProductId
+                    _context.Add(product);
+                    await _context.SaveChangesAsync();
+
+                    // Generar el SKU
+                    product.GenerateSku(subCategory.CategoryId, product.SubCategoryId, product.ProductId);
+
+                    // Actualizar el producto con el SKU generado
+                    _context.Update(product);
+                    await _context.SaveChangesAsync();
+
+                    return RedirectToAction(nameof(Index));
+                }
+
+                ModelState.AddModelError(string.Empty, "Subcategory not found.");
             }
+
             ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "SubCategoryId", "Name", product.SubCategoryId);
             return View(product);
         }
+
 
         // GET: Products/Edit/5
         [Authorize]

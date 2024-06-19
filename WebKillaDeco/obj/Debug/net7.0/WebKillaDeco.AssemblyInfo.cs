@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebKillaDeco")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eac101fd24f7353cc7154cf185a390ae92574a64")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e5018d803008be22684bab78915d0fd08201758")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebKillaDeco")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebKillaDeco")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
