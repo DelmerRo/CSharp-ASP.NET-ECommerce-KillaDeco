@@ -163,8 +163,4 @@
     <None Include="wwwroot\login\scss\style.scss" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\images\product-image\" />
-  </ItemGroup>
-
 </Project>

@@ -30,7 +30,7 @@ namespace WebKillaDeco.Models
         [Display(Name = Alias.CurrentPrice)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductCurrentPrice, Restrictions.MaxProductCurrentPrice, ErrorMessage = ErrorMsgs.RangeMinMax)]
-        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:N2} USD", ApplyFormatInEditMode = true)]
         [DataType(DataType.Currency)]
         public decimal CurrentPrice { get; set; }
 
@@ -39,11 +39,10 @@ namespace WebKillaDeco.Models
         public bool Active { get; set; }
 
         [NotMapped]
-        [Required(ErrorMessage = ErrorMsgs.Required)]
         public IFormFile? ImageUrlFile { get; set; }
 
         [Display(Name = Alias.UrlCategoryImage)]
-        public string? ImageUrl { get; set; }
+        public string? ImageUrl { get; set; } = "/images/product-image/defaultproductimage.jpg";
 
         [Display(Name = Alias.AvailableStock)]
         [Required(ErrorMessage = ErrorMsgs.Required)]

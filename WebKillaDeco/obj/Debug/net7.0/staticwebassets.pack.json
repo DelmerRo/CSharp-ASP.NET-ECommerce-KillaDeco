@@ -625,6 +625,10 @@
       "PackagePath": "staticwebassets\\images\\faces-clipart\\pic-4.png"
     },
     {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\faces\\defaultuserimage.jpg",
+      "PackagePath": "staticwebassets\\images\\faces\\defaultuserimage.jpg"
+    },
+    {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\faces\\face1.jpg",
       "PackagePath": "staticwebassets\\images\\faces\\face1.jpg"
     },
@@ -903,6 +907,10 @@
     {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\646fa67a-5190-4c40-bd83-4a69efdfbc09_bañolavabo.jpg",
       "PackagePath": "staticwebassets\\images\\product-image\\646fa67a-5190-4c40-bd83-4a69efdfbc09_bañolavabo.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\defaultproductimage.jpg",
+      "PackagePath": "staticwebassets\\images\\product-image\\defaultproductimage.jpg"
     },
     {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\samples\\1280x768\\1.jpg",

@@ -60,13 +60,13 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="index.html"><img src="~/client/img/core-img/logo.png" alt=""></a>
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/client/img/core-img/logo.png" alt=""></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
+                    <li class="active"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a href="~/shop.html">Shop</a></li>
                     <li><a href="product-details.html">Product</a></li>
                     <li><a href="cart.html">Cart</a></li>
                     <li><a href="checkout.html">Checkout</a></li>

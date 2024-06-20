@@ -71,9 +71,9 @@ namespace WebKillaDeco.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError(nameof(product.ImageUrlFile), MessageTemplates.GetPropertyIsRequired(Alias.ProductImage));
-                        ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "SubCategoryId", "Name", product.SubCategoryId);
-                        return View(product);
+                        //ModelState.AddModelError(nameof(product.ImageUrlFile), MessageTemplates.GetPropertyIsRequired(Alias.ProductImage));
+                        //ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "SubCategoryId", "Name", product.SubCategoryId);
+                        //return View(product);
                     }
                     var subCategory = await _context.SubCategories.Include(sc => sc.Category).FirstOrDefaultAsync(sc => sc.SubCategoryId == product.SubCategoryId);
                     if (subCategory != null)
