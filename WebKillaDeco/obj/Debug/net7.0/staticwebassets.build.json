@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xycE5cROkQR4viPGhPK7RnBec/PGLnZd02kUpbsFgGQ=",
+  "Hash": "Ju34tq0EVLd/EGQdgYg8dDsaSvKr/r729g79eqlyZN8=",
   "Source": "WebKillaDeco",
   "BasePath": "_content/WebKillaDeco",
   "Mode": "Default",
@@ -2924,6 +2924,25 @@
       "OriginalItemSpec": "wwwroot\\images\\dashboard\\img_5.jpg"
     },
     {
+      "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\faces\\defaultuserimage.jpg",
+      "SourceId": "WebKillaDeco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\",
+      "BasePath": "_content/WebKillaDeco",
+      "RelativePath": "images/faces/defaultuserimage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\faces\\defaultuserimage.jpg"
+    },
+    {
       "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\faces\\face1.jpg",
       "SourceId": "WebKillaDeco",
       "SourceType": "Discovered",
@@ -4328,6 +4347,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product-image\\646fa67a-5190-4c40-bd83-4a69efdfbc09_bañolavabo.jpg"
+    },
+    {
+      "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\defaultproductimage.jpg",
+      "SourceId": "WebKillaDeco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\",
+      "BasePath": "_content/WebKillaDeco",
+      "RelativePath": "images/product-image/defaultproductimage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product-image\\defaultproductimage.jpg"
     },
     {
       "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\samples\\1280x768\\1.jpg",

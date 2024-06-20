@@ -101,7 +101,7 @@
         public const string Client = "Cliente";
         public const string Product = "Producto";
         public const string NumberOfProducts = "Cantidad de Productos";
-        public const string CurrentPrice = "Precio Actual";
+        public const string CurrentPrice = "Precio Actual ($USD)";
         public const string ProductImage = "Imagen de Producto";
         public const string AvailableStock = "Stock Disponible";
         public const string Width = "Ancho";
@@ -131,7 +131,7 @@
         public const string Products = "Productos";
         public const string ActiveStatus = "Estado Activo";
         public const string Availability = "Disponibilidad";
-        public const string Dimensions = "Dimensiones";
+        public const string Dimensions = "Dimensiones en cm";
         public const string Weight = "Peso";
         public const string Color = "Color";
 
@@ -153,7 +153,7 @@
         public const string Details = "Detalles";
         public const string Delete = "Eliminar";
         public const string Create = "Crear";
-        public const string Back = "Volver";
+        public const string Back = "Volver a la lista";
         public const string Cancel = "Cancelar";
         public const string ViewProducts = "Ver Productos";
         public const string ViewSubCategories = "Ver SubCategorías";
