@@ -3,7 +3,65 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+    .single-product-wrapper {
+        margin-bottom: 30px;
+        border: 1px solid #ddd;
+        border-radius: 15px; /* Borde redondeado */
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    }
 
+        .single-product-wrapper:hover {
+            transform: scale(1.05); /* Efecto hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda al hacer hover */
+        }
+
+    .product-img {
+        height: 400px; /* Altura fija para las imágenes */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
+        }
+
+    .product-description {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-price {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .product-meta-data h6 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .ratings i {
+        color: #ffcc00; /* Color de las estrellas de calificación */
+    }
+
+    .cart img {
+        width: 24px;
+        height: 24px;
+    }
+</style>
 <!-- Mobile Nav (max width 767px)-->
 <div class="mobile-nav">
     <!-- Navbar Brand -->
@@ -139,43 +197,43 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                @foreach (var product in Model)
-                {
-                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
-                        <div class="single-product-wrapper">
-                            <div class="product-img">
-                                <img src="@Url.Content(product.ImageUrl)" alt="@product.Name Image">
-                                <img class="hover-img" src="@Url.Content("~/client/img/product-img/product2.jpg")" alt="">
-                            </div>
-                            <div class="product-description d-flex align-items-center justify-content-between">
-                                <div class="product-meta-data">
-                                    <div class="line"></div>
-                                    <p class="product-price">USD @product.CurrentPrice</p>
-                                    <a href="@Url.Action("Details", "Products", new { id = product.ProductId })">
-                                        <h6>@product.Name</h6>
-                                    </a>
+                <div class="row">
+                    @foreach (var product in Model)
+                    {
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                            <div class="card single-product-wrapper">
+                                <div class="product-img">
+                                    <img src="@Url.Content(product.ImageUrl)" alt="@product.Name Image" >
+                                    <img class="hover-img" src="@Url.Content("~/client/img/product-img/product2.jpg")" alt="">
                                 </div>
-                                <div class="ratings-cart text-right">
-                                    <div class="ratings">
-                                        <i class="fa fa-star" aria-hidden="false"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="cart">
-                                        <a href="@Url.Action("AddToCart", "Cart", new { id = product.ProductId })" data-toggle="tooltip" data-placement="left" title="Add to Cart">
-                                            <img src="@Url.Content("~/client/img/core-img/cart.png")" alt="">
+                                <div class="product-description card-body">
+                                    <div class="product-meta-data">
+                                        <div class="line"></div>
+                                        <p class="product-price">USD @product.CurrentPrice</p>
+                                        <a href="@Url.Action("Details", "Products", new { id = product.ProductId })">
+                                            <h6>@product.Name</h6>
                                         </a>
+                                    </div>
+                                    <div class="ratings-cart text-right">
+                                        <div class="ratings">
+                                            <i class="fa fa-star" aria-hidden="false"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="cart">
+                                            <a href="@Url.Action("AddToCart", "Cart", new { id = product.ProductId })" data-toggle="tooltip" data-placement="left" title="Add to Cart">
+                                                <img src="@Url.Content("~/client/img/core-img/cart.png")" alt="">
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                }
-            </div>
+                    }
+                </div>
+
 
             <div class="row">
                 <div class="col-12">

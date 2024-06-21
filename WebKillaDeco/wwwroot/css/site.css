@@ -13,12 +13,12 @@ html {
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
+/*
 html {
     position: relative;
     min-height: 100%;
 }
-
+*/
 body {
     margin-bottom: 60px;
 }
@@ -45,10 +45,6 @@ body {
         transform: scale(1.005);
     }
 
-.card-title {
-    color: #333;
-    font-weight: bold;
-}
 
 .btn {
     border-radius: 20px;
@@ -116,5 +112,61 @@ body {
     outline: none;
 }
 
-  
+.single-product-wrapper {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 15px; /* Borde redondeado */
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación para hover */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+    .single-product-wrapper:hover {
+        transform: scale(1.1); /* Efecto hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más profunda al hacer hover */
+    }
+
+.product-img {
+    height: 200px; /* Altura fija para las imágenes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+    .product-img img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
+    }
+
+.product-description {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.product-meta-data h6 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.ratings i {
+    color: #ffcc00; /* Color de las estrellas de calificación */
+}
+
+.cart img {
+    width: 24px;
+    height: 24px;
+}
 
