@@ -22,7 +22,7 @@ namespace WebKillaDeco.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            var killaDbContext = _context.Products.Include(p => p.SubCategories);
+            var killaDbContext = _context.Products.Include(p => p.SubCategories).OrderByDescending(d => d.PublicationDate);
             return View(await killaDbContext.ToListAsync());
         }
 

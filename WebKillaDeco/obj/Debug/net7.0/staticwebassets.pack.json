@@ -1081,6 +1081,122 @@
       "PackagePath": "staticwebassets\\images\\sprites\\yellow.png"
     },
     {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\1.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\1.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\2.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\2.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\3.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\3.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\4.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\4.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\5.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\5.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\6.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\6.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\7.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\7.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\8.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\8.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\9.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\9.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\cart1.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\cart1.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\cart2.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\cart2.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\bg-img\\cart3.jpg",
+      "PackagePath": "staticwebassets\\img\\bg-img\\cart3.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\core-img\\cart.png",
+      "PackagePath": "staticwebassets\\img\\core-img\\cart.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\core-img\\favicon.ico",
+      "PackagePath": "staticwebassets\\img\\core-img\\favicon.ico"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\core-img\\favorites.png",
+      "PackagePath": "staticwebassets\\img\\core-img\\favorites.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\core-img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\core-img\\logo.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\core-img\\logo2.png",
+      "PackagePath": "staticwebassets\\img\\core-img\\logo2.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\core-img\\paypal.png",
+      "PackagePath": "staticwebassets\\img\\core-img\\paypal.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\core-img\\search.png",
+      "PackagePath": "staticwebassets\\img\\core-img\\search.png"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\pro-big-1.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\pro-big-1.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\pro-big-2.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\pro-big-2.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\pro-big-3.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\pro-big-3.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\pro-big-4.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\pro-big-4.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\product1.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\product1.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\product2.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\product2.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\product3.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\product3.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\product4.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\product4.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\product5.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\product5.jpg"
+    },
+    {
+      "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\img\\product-img\\product6.jpg",
+      "PackagePath": "staticwebassets\\img\\product-img\\product6.jpg"
+    },
+    {
       "Id": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\js\\chart.js",
       "PackagePath": "staticwebassets\\js\\chart.js"
     },
