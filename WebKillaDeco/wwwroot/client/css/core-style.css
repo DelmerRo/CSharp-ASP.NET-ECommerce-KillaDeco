@@ -1150,44 +1150,70 @@ img {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
 
+
 /* :: 8.0 Footer Area CSS */
 .footer_area {
-  position: relative;
-  z-index: 1;
-  background-color: #252525;
-  padding: 80px 0; }
-  .footer_area .single_widget_area .copywrite {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-    margin-top: 10px; }
-    .footer_area .single_widget_area .copywrite a {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.4); }
-      .footer_area .single_widget_area .copywrite a:hover {
-        color: #fff; }
-  .footer_area .single_widget_area .footer_menu {
     position: relative;
     z-index: 1;
-    margin-left: auto; }
-    .footer_area .single_widget_area .footer_menu .navbar {
-      padding: 0; }
+    background-color: #252525;
+    padding: 80px 0;
+}
+
+    .footer_area .single_widget_area .copywrite {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+        margin-top: 10px;
+    }
+
+        .footer_area .single_widget_area .copywrite a {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+            .footer_area .single_widget_area .copywrite a:hover {
+                color: #fff;
+            }
+
+    .footer_area .single_widget_area .footer_menu {
+        position: relative;
+        z-index: 1;
+        margin-left: auto;
+    }
+
+        .footer_area .single_widget_area .footer_menu .navbar {
+            padding: 0;
+        }
+
+        .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link {
+            padding: 10px 30px;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
     .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link {
-      padding: 10px 30px;
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 14px; }
-      @media only screen and (min-width: 768px) and (max-width: 991px) {
-        .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link {
-          padding: 10px 0; } }
-      @media only screen and (max-width: 767px) {
-        .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link {
-          padding: 10px 0; } }
-      .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link:hover, .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link:focus {
-        color: #fbb710; }
-    .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item.active .nav-link {
-      color: #fbb710; }
-    .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item:last-child .nav-link {
-      padding-right: 0; }
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link {
+        padding: 10px 0;
+    }
+}
+
+.footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link:hover, .footer_area .single_widget_area .footer_menu .navbar-nav .nav-item .nav-link:focus {
+    color: #fbb710;
+}
+
+.footer_area .single_widget_area .footer_menu .navbar-nav .nav-item.active .nav-link {
+    color: #fbb710;
+}
+
+.footer_area .single_widget_area .footer_menu .navbar-nav .nav-item:last-child .nav-link {
+    padding-right: 0;
+}
 
 /* :: 9.0 Product Sidebar Area CSS */
 .widget {

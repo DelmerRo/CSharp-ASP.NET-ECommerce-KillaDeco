@@ -17,7 +17,7 @@ namespace WebKillaDeco.DataInMemory
                     Description = "Cuchara de acero inoxidable de alta calidad",
                     CurrentPrice = 5.99m,
                     Active = true,
-                    ImageUrl = "url_to_image_cuchara",
+                    ImageUrl = "/images/product-image/defaultproductimage.jpg",
                     AvailableStock = 200,
                     Weight = 0.1m,
                       Width  = 200,
