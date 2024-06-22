@@ -27,6 +27,11 @@ namespace WebKillaDeco.Models
         [DataType(DataType.MultilineText)]
         public string? Description { get; set; }
 
+        [Display(Name = Alias.Brands)]
+        [Required(ErrorMessage = ErrorMsgs.Required)]
+        [StringLength(Restrictions.MaxProductBrand, MinimumLength = Restrictions.MinProductBrand, ErrorMessage = ErrorMsgs.StrMaxMin)]
+        public string? Brand { get; set; }
+
         [Display(Name = Alias.CurrentPrice)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductCurrentPrice, Restrictions.MaxProductCurrentPrice, ErrorMessage = ErrorMsgs.RangeMinMax)]
@@ -43,6 +48,24 @@ namespace WebKillaDeco.Models
 
         [Display(Name = Alias.UrlCategoryImage)]
         public string? ImageUrl { get; set; } = "/images/product-image/defaultproductimage.jpg";
+
+        [NotMapped]
+        public IFormFile? ImageUrlFile1 { get; set; }
+
+        [Display(Name = Alias.UrlCategoryImage)]
+        public string? ImageUrl1 { get; set; } = "/images/product-image/defaultproductimage.jpg";
+
+        [NotMapped]
+        public IFormFile? ImageUrlFile2 { get; set; }
+
+        [Display(Name = Alias.UrlCategoryImage)]
+        public string? ImageUrl2 { get; set; } = "/images/product-image/defaultproductimage.jpg";
+
+        [NotMapped]
+        public IFormFile? ImageUrlFile3 { get; set; }
+
+        [Display(Name = Alias.UrlCategoryImage)]
+        public string? ImageUrl3 { get; set; } = "/images/product-image/defaultproductimage.jpg";
 
         [Display(Name = Alias.AvailableStock)]
         [Required(ErrorMessage = ErrorMsgs.Required)]
@@ -83,7 +106,7 @@ namespace WebKillaDeco.Models
         public DateTime PublicationDate { get; set; } = DateTime.Now;
 
         [Display(Name = Alias.Discount)]
-        [Required(ErrorMessage = ErrorMsgs.Required)]
+        //[Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductDiscount, Restrictions.MaxProductDiscount, ErrorMessage = ErrorMsgs.RangeMinMax)]
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Discount { get; set; }

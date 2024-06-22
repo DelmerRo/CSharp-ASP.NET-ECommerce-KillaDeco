@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Helpers;
 using WebKillaDeco.Models;
+using WebKillaDeco.ViewModels;
 
 namespace WebKillaDeco.Controllers
 {
@@ -22,14 +23,64 @@ namespace WebKillaDeco.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            var killaDbContext = _context.Products.Include(p => p.SubCategories).OrderByDescending(d => d.PublicationDate);
-            return View(await killaDbContext.ToListAsync());
+            var productActiveDescending = await _context.Products
+                                                        .Include(p => p.SubCategories)
+                                                        .Where(p => p.Active)
+                                                        .OrderByDescending(d => d.PublicationDate)
+                                                        .ToListAsync();
+
+            var brandsWithMaxDiscount = productActiveDescending
+                .GroupBy(p => p.Brand)
+                .Select(group => new
+                {
+                    Brand = group.Key,
+                    MaxDiscount = group.Max(p => p.Discount)
+                })
+                .OrderByDescending(item => item.MaxDiscount)
+                .Take(5) // Tomar las primeras 5 marcas con el mayor descuento
+                .Select(item => item.Brand) // Seleccionar solo el nombre de la marca
+                .ToList();
+
+            var categories = await _context.Categories.Include(c => c.SubCategories).OrderByDescending(c => c.Name).ToListAsync();
+
+            var viewModel = new ProductCategoryViewModel
+            {
+                Products = productActiveDescending,
+                Categories = categories,
+                Brands = brandsWithMaxDiscount
+            };
+
+            return View(viewModel);
+        }
+
+        // Acción para obtener productos por subcategoría mediante AJAX
+        [HttpGet]
+        public IActionResult GetProductsBySubcategory(int subcategoryId)
+        {
+            var products = _context.Products
+                                   .Include(p => p.SubCategories)
+                                   .Where(p => p.SubCategoryId == subcategoryId)
+                                   .ToList();
+
+            return PartialView("_ProductListPartial", products);
+        }
+
+        // Acción para obtener productos por marca mediante AJAX
+        [HttpGet]
+        public IActionResult GetProductsByBrand(List<string> brands)
+        {
+            var products = _context.Products
+                                   .Include(p => p.SubCategories)
+                                   .Where(p => brands.Contains(p.Brand))
+                                   .ToList();
+
+            return PartialView("_ProductListPartial", products);
         }
 
         [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -37,6 +88,7 @@ namespace WebKillaDeco.Controllers
             var product = await _context.Products
                 .Include(p => p.SubCategories)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
+
             if (product == null)
             {
                 return NotFound();
@@ -45,7 +97,6 @@ namespace WebKillaDeco.Controllers
             return View(product);
         }
 
-        // GET: Products/Create
         [Authorize]
         public IActionResult Create()
         {
@@ -56,7 +107,7 @@ namespace WebKillaDeco.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Create([Bind("ProductId,SubCategoryId,Name,Description,CurrentPrice,Active,ImageUrlFile,AvailableStock,Weight,Width,Height,Depth,Color,PublicationDate,Discount")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,SubCategoryId,Name,Description,Brand,CurrentPrice,Active,ImageUrlFile,AvailableStock,Weight,Width,Height,Depth,Color,PublicationDate,Discount")] Product product, List<IFormFile> imageFiles)
         {
             ModelState.Remove(nameof(product.ImageUrl));
             ModelState.Remove(nameof(product.Sku));
@@ -65,20 +116,31 @@ namespace WebKillaDeco.Controllers
             {
                 try
                 {
-                    if (product.ImageUrlFile != null)
+                    if (imageFiles.Count <= 4)
                     {
-                        product.ImageUrl = await _imageService.SaveImageAsync(product.ImageUrlFile, Alias.ProductImagePath);
+                        if (imageFiles != null && imageFiles.Count > 0)
+                        {
+                            var imageUrls = await _imageService.SaveImagesAsync(imageFiles, Alias.ProductImagePath);
+
+                            // Asignar las URLs de las imágenes al producto
+                            if (imageUrls.Count > 0) product.ImageUrl = imageUrls[0];
+                            if (imageUrls.Count > 1) product.ImageUrl1 = imageUrls[1];
+                            if (imageUrls.Count > 2) product.ImageUrl2 = imageUrls[2];
+                            if (imageUrls.Count > 3) product.ImageUrl3 = imageUrls[3];
+                        }
                     }
                     else
                     {
-                        //ModelState.AddModelError(nameof(product.ImageUrlFile), MessageTemplates.GetPropertyIsRequired(Alias.ProductImage));
-                        //ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "SubCategoryId", "Name", product.SubCategoryId);
-                        //return View(product);
+                        ModelState.AddModelError(nameof(product.ImageUrlFile), ErrorMsgs.QuantityInvalidFiles);
+                        ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "SubCategoryId", "Name", product.SubCategoryId);
+                        return View(product);
                     }
+
                     var subCategory = await _context.SubCategories.Include(sc => sc.Category).FirstOrDefaultAsync(sc => sc.SubCategoryId == product.SubCategoryId);
+
                     if (subCategory != null)
                     {
-                        await _context.AddAsync(product);
+                        _context.Add(product);
                         await _context.SaveChangesAsync();
                         product.GenerateSku(subCategory.CategoryId, product.SubCategoryId, product.ProductId);
                         _context.Update(product);
@@ -86,6 +148,7 @@ namespace WebKillaDeco.Controllers
 
                         return RedirectToAction(nameof(Index));
                     }
+
                     ModelState.AddModelError(string.Empty, "Subcategory not found.");
                 }
                 catch (Exception ex)
@@ -94,23 +157,25 @@ namespace WebKillaDeco.Controllers
                 }
             }
 
-            ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "SubCategoryId", "Name", product.SubCategoryId);
+            ViewData["SubCategoryId"] = new SelectList(_context.SubCategories.OrderBy(sc => sc.Name).ToList(), "SubCategoryId", "Name", product.SubCategoryId);
             return View(product);
         }
 
         [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
             var product = await _context.Products.FindAsync(id);
+
             if (product == null)
             {
                 return NotFound();
             }
+
             ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "SubCategoryId", "Name", product.SubCategoryId);
             return View(product);
         }
@@ -124,6 +189,7 @@ namespace WebKillaDeco.Controllers
             {
                 return NotFound();
             }
+
             ModelState.Remove(nameof(product.Sku));
             ModelState.Remove(nameof(product.ImageUrl));
             ModelState.Remove(nameof(product.ImageUrlFile));
@@ -187,7 +253,7 @@ namespace WebKillaDeco.Controllers
         [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -195,6 +261,7 @@ namespace WebKillaDeco.Controllers
             var product = await _context.Products
                 .Include(p => p.SubCategories)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
+
             if (product == null)
             {
                 return NotFound();
@@ -208,23 +275,22 @@ namespace WebKillaDeco.Controllers
         [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Products == null)
-            {
-                return Problem("Entity set 'KillaDbContext.Products'  is null.");
-            }
             var product = await _context.Products.FindAsync(id);
-            if (product != null)
+
+            if (product == null)
             {
-                _context.Products.Remove(product);
+                return NotFound();
             }
 
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProductExists(int id)
         {
-            return (_context.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
+            return _context.Products.Any(e => e.ProductId == id);
         }
+
     }
 }
