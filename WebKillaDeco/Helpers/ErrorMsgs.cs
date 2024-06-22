@@ -18,6 +18,7 @@ namespace WebKillaDeco.Helpers
         public const string ErrMsgRequired = "Este campo es requerido.";
         public const string ErrMsgNotNumeric = "El valor ingresado en el campo {0} debe ser numérico.";
         public const string FormatCelularInvalid = "El numero de celular debe tener un formato 11-1111-1111.";
+        public const string QuantityInvalidFiles = "La cantidad de imágenes excede el máximo que es de 4.";
 
         // New error messages
         public const string EmailFormat = "El formato de {0} no es válido";

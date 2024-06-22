@@ -4112,6 +4112,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\logo_minidark.svg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\234558a7-ce5a-43a1-8a53-68bb912e9c30_frasco-tapa-corcho.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebKillaDeco</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebKillaDeco</BasePath>
+      <RelativePath>images/product-image/234558a7-ce5a-43a1-8a53-68bb912e9c30_frasco-tapa-corcho.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\234558a7-ce5a-43a1-8a53-68bb912e9c30_frasco-tapa-corcho.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\2e6177ff-fa4c-4528-87b0-42ff37b8a021_juego-utensilios-madera.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebKillaDeco</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebKillaDeco</BasePath>
+      <RelativePath>images/product-image/2e6177ff-fa4c-4528-87b0-42ff37b8a021_juego-utensilios-madera.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\2e6177ff-fa4c-4528-87b0-42ff37b8a021_juego-utensilios-madera.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\45ee0c51-cf4c-4dc2-ba0b-adfdef2e4ed2_mesa.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>WebKillaDeco</SourceId>
@@ -4127,6 +4159,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\45ee0c51-cf4c-4dc2-ba0b-adfdef2e4ed2_mesa.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\6200beec-643c-490a-876f-8b7552a7a18b_cuchara-inoxidable.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebKillaDeco</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebKillaDeco</BasePath>
+      <RelativePath>images/product-image/6200beec-643c-490a-876f-8b7552a7a18b_cuchara-inoxidable.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\6200beec-643c-490a-876f-8b7552a7a18b_cuchara-inoxidable.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\646fa67a-5190-4c40-bd83-4a69efdfbc09_bañolavabo.jpg))">
       <SourceType>Package</SourceType>
@@ -4159,6 +4207,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\6a26f427-4fd0-46b6-a84c-24f2334e0164_cuchara-inoxidable.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\8a048db7-37bb-41a0-9295-4c73422c6f9e_lampara-mesa.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebKillaDeco</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebKillaDeco</BasePath>
+      <RelativePath>images/product-image/8a048db7-37bb-41a0-9295-4c73422c6f9e_lampara-mesa.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\8a048db7-37bb-41a0-9295-4c73422c6f9e_lampara-mesa.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\b03f9af3-2266-413c-b308-3a80520c9383_juego-de-medidores.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebKillaDeco</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebKillaDeco</BasePath>
+      <RelativePath>images/product-image/b03f9af3-2266-413c-b308-3a80520c9383_juego-de-medidores.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\b03f9af3-2266-413c-b308-3a80520c9383_juego-de-medidores.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\product-image\defaultproductimage.jpg))">
       <SourceType>Package</SourceType>

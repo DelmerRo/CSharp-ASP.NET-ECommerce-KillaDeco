@@ -52,6 +52,8 @@
         // Product Restrictions (Restricciones para productos)
         public const int MinProductName = 2; // Longitud mínima para nombres de productos
         public const int MaxProductName = 100; // Longitud máxima para nombres de productos
+        public const int MinProductBrand= 2; // Longitud mínima para marcas de productos
+        public const int MaxProductBrand = 100; // Longitud máxima para marcas de productos
         public const int MinProductDescription = 10; // Longitud mínima para descripciones de productos
         public const int MaxProductDescription = 5000; // Longitud máxima para descripciones de productos
         public const int MinProductSku = 1000000; // Longitud mínima para Sku de productos
@@ -62,11 +64,11 @@
         public const double MaxProductAvailableStock = 9999; // Stock máximo para productos
         public const double MinProductWeight = 1; // Peso mínimo para productos
         public const double MaxProductWeight = 1000; // Peso máximo para productos
-        public const int MinProductWidth = 3; // Dimensión mínima para ancho producto
+        public const int MinProductWidth = 1; // Dimensión mínima para ancho producto
         public const int MaxProductWidth = 30000; // Dimensión máxima para ancho producto
-        public const int MinProductHeight = 3; // Dimensión mínima para alto producto
+        public const int MinProductHeight = 1; // Dimensión mínima para alto producto
         public const int MaxProductHeight = 30000; // Dimensión máxima alto ancho producto
-        public const int MinProductDepth = 3; // Dimensión mínima para profundidad producto
+        public const int MinProductDepth = 1; // Dimensión mínima para profundidad producto
         public const int MaxProductDepth = 30000; // Dimensión máxima para profundidad producto
         public const int MinProductColors = 3; // Dimensión mínima para productos
         public const int MaxProductColors = 100; // Dimensión máxima para productos

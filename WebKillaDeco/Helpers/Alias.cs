@@ -134,6 +134,7 @@
         public const string Dimensions = "Dimensiones en cm";
         public const string Weight = "Peso";
         public const string Color = "Color";
+        public const string Brands = "Marcas";
 
         //Head table
         public const string Actions = "Acciones";

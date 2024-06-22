@@ -90,39 +90,8 @@
 
                 <div class="form-group">
                     <label asp-for="Color" class="control-label">Color</label>
-                    <div class="color-palette">
-                        <button type="button" class="color-button" style="background-color: #FFFFFF;" onclick="setColor('#FFFFFF', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #F0F8FF;" onclick="setColor('#F0F8FF', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #FAEBD7;" onclick="setColor('#FAEBD7', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #FFEBCD;" onclick="setColor('#FFEBCD', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #FFE4C4;" onclick="setColor('#FFE4C4', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #FFDAB9;" onclick="setColor('#FFDAB9', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #EEE8AA;" onclick="setColor('#EEE8AA', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #F0FFFF;" onclick="setColor('#F0FFFF', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #00FFFF;" onclick="setColor('#00FFFF', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #7FFFD4;" onclick="setColor('#7FFFD4', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #ADD8E6;" onclick="setColor('#ADD8E6', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #F5F5DC;" onclick="setColor('#F5F5DC', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #FFE4B5;" onclick="setColor('#FFE4B5', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #FFE4C4;" onclick="setColor('#FFE4C4', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #FFF8DC;" onclick="setColor('#FFF8DC', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #D3D3D3;" onclick="setColor('#D3D3D3', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #C0C0C0;" onclick="setColor('#C0C0C0', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #A9A9A9;" onclick="setColor('#A9A9A9', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #808080;" onclick="setColor('#808080', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #696969;" onclick="setColor('#696969', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #708090;" onclick="setColor('#708090', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #778899;" onclick="setColor('#778899', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #B0C4DE;" onclick="setColor('#B0C4DE', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #4682B4;" onclick="setColor('#4682B4', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #4169E1;" onclick="setColor('#4169E1', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #0000FF;" onclick="setColor('#0000FF', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #000080;" onclick="setColor('#000080', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #00008B;" onclick="setColor('#00008B', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #000080;" onclick="setColor('#000080', event)"></button>
-                        <button type="button" class="color-button" style="background-color: #000000;" onclick="setColor('#000000', event)"></button>
-                    </div>
-
+                    <!-- Incluye la paleta de colores en una vista asincrónica -->
+                    @await Html.PartialAsync("_ColorPalette")
                     <input asp-for="Color" class="form-control" id="color-input" style="display:none;" /> <!-- Input oculto para enviar el valor seleccionado -->
                     <span asp-validation-for="Color" class="text-danger"></span>
                 </div>
