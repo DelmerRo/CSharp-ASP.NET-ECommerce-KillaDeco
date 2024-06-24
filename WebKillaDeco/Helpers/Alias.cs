@@ -159,6 +159,7 @@
         public const string ViewProducts = "Ver Productos";
         public const string ViewSubCategories = "Ver SubCategorías";
         public const string Save = "Guardar";
+        public const string ApplyFilter = "Aplicar Filtro";
     }
 
 }

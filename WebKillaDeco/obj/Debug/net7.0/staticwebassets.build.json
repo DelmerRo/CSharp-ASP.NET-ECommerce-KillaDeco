@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SqySLgBcpHcKFVDiExKBVVOv7DGkf6Em0kLZOyeAJmw=",
+  "Hash": "hpB+7J4Opy6EskZ5spdtHDjHIXwLSO5sb8fSzeeXfs0=",
   "Source": "WebKillaDeco",
   "BasePath": "_content/WebKillaDeco",
   "Mode": "Default",
@@ -4385,6 +4385,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product-image\\45ee0c51-cf4c-4dc2-ba0b-adfdef2e4ed2_mesa.jpg"
+    },
+    {
+      "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\46c26ef7-4d6b-4b81-9246-a36583450f70_difusor-aromas.jpg",
+      "SourceId": "WebKillaDeco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\",
+      "BasePath": "_content/WebKillaDeco",
+      "RelativePath": "images/product-image/46c26ef7-4d6b-4b81-9246-a36583450f70_difusor-aromas.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product-image\\46c26ef7-4d6b-4b81-9246-a36583450f70_difusor-aromas.jpg"
     },
     {
       "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\6200beec-643c-490a-876f-8b7552a7a18b_cuchara-inoxidable.jpg",

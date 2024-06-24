@@ -53,6 +53,38 @@ namespace WebKillaDeco.Controllers
             return View(viewModel);
         }
 
+        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice)
+        {
+            var products = _context.Products.AsQueryable();
+
+            if (subcategoryId.HasValue)
+            {
+                products = products.Where(p => p.SubCategoryId == subcategoryId.Value);
+            }
+
+            if (brands != null && brands.Any())
+            {
+                products = products.Where(p => brands.Contains(p.Brand));
+            }
+
+            if (!string.IsNullOrEmpty(color))
+            {
+                products = products.Where(p => p.Color == color);
+            }
+
+            if (minPrice.HasValue)
+            {
+                products = products.Where(p => p.CurrentPrice >= minPrice.Value);
+            }
+
+            if (maxPrice.HasValue)
+            {
+                products = products.Where(p => p.CurrentPrice <= maxPrice.Value);
+            }
+
+            return PartialView("_ProductListPartial", products.ToList());
+        }
+
         // Acción para obtener productos por subcategoría mediante AJAX
         [HttpGet]
         public IActionResult GetProductsBySubcategory(int subcategoryId)
