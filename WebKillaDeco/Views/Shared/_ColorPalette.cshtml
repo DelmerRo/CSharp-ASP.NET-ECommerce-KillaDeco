@@ -1,5 +1,55 @@
 ﻿<!-- Views/Shared/_ColorPalette.cshtml -->
+<style>
+    /* Estilos para la paleta de colores */
+    .color-palette {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    /* Estilos para los botones de color */
+    .color-button {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc; /* Borde sólido de 1px gris */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative; /* Permite posicionar correctamente el pseudo-elemento */
+        transition: transform 0.3s ease;
+    }
+
+        .color-button:hover {
+            transform: scale(1.1);
+        }
+
+    /* Estilos para el botón "Sin Color" */
+    .no-color {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc; /* Borde sólido de 1px gris */
+        cursor: pointer;
+        position: relative; /* Asegura que el pseudo-elemento se posicione correctamente */
+        background-color: none; /* Fondo transparente */
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+    }
+
+        /* Estilo para el pseudo-elemento que representa la franja roja */
+        .no-color::before {
+            content: '';
+            position: absolute;
+            width: 100%; /* Ancho del pseudo-elemento */
+            height: 2px; /* Altura de la franja */
+            background-color: red; /* Color de la franja */
+            transform: rotate(-45deg); /* Rotación diagonal */
+            top: 50%; /* Posicionamiento vertical centrado */
+            transform-origin:  center; /* Origen de la transformación */
+        }
+
+</style>
 <div class="color-palette">
+    <button type="button" class="color-button no-color" onclick="clearColorFilter(event)"></button>
     <button type="button" class="color-button" style="background-color: #FFFFFF;" onclick="setColor('#FFFFFF', event)"></button>
     <button type="button" class="color-button" style="background-color: #F0F8FF;" onclick="setColor('#F0F8FF', event)"></button>
     <button type="button" class="color-button" style="background-color: #FAEBD7;" onclick="setColor('#FAEBD7', event)"></button>

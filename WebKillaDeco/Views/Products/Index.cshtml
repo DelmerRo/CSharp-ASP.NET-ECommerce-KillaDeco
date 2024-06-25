@@ -2,157 +2,10 @@
 @using WebKillaDeco.Helpers
 @{
     ViewData["Title"] = "Index";
+    var getProductsByFiltersUrl = Url.Action("GetProductsByFilters", "Products");
 }
 
-<!-- Estilos CSS -->
-<style>
-    .single-product-wrapper {
-        margin-bottom: 30px;
-        border: 1px solid #ddd;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: transform 0.2s, box-shadow 0.2s;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-        .single-product-wrapper:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-    .product-img {
-        height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-    }
-
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.5s;
-        }
-
-        .product-img .hover-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s, visibility 0.5s;
-            object-fit: cover;
-        }
-
-    .single-product-wrapper:hover .hover-img {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .product-description {
-        padding: 15px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .product-price {
-        font-size: 1.25rem;
-        font-weight: bold;
-    }
-
-    .product-meta-data h6 {
-        margin: 0;
-        font-size: 1.1rem;
-        color: #333;
-    }
-
-    .ratings i {
-        color: #ffcc00;
-    }
-
-    .cart img {
-        width: 24px;
-        height: 24px;
-    }
-    /* Estilos para la categoría principal */
-    .category-link {
-        font-weight: bold;
-        color: #333; /* Color más oscuro para las categorías */
-    }
-
-    /* Estilos para las subcategorías */
-    .subcategory-link {
-        color: #666; /* Color más claro para las subcategorías */
-        font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
-        padding-left: 30px; /* Espacio adicional a la izquierda para indentación */
-    }
-    /* Estilos para la categoría principal */
-    .category-link {
-        display: block;
-        font-weight: bold;
-        color: #333; /* Color más oscuro para las categorías */
-        padding: 10px 15px;
-        border-bottom: 1px solid #ddd; /* Borde inferior para separar las categorías */
-        transition: background-color 0.3s ease;
-    }
-
-        .category-link:hover {
-            background-color: #f5f5f5; /* Color de fondo al pasar el ratón */
-        }
-
-    /* Estilos para las subcategorías */
-    .subcategory-list {
-        display: none; /* Oculta por defecto las subcategorías */
-        list-style: none;
-        padding-left: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-        .subcategory-list li {
-            padding-left: 20px; /* Indentación para subcategorías */
-        }
-
-    .subcategory-link {
-        display: block;
-        padding: 10px 30px; /* Espaciado de las subcategorías */
-        color: #666; /* Color más claro para las subcategorías */
-        transition: background-color 0.3s ease;
-    }
-
-        .subcategory-link:hover {
-            background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
-        }
-
-    .price-range {
-        .price-range
-
-    {
-        display: flex;
-        gap: 0.5rem;
-        width: 100%;
-    }
-
-    .form-control-sm {
-        width: 80px;
-    }
-
-    #apply-price-filter {
-        align-self: flex-start;
-        font-size: 0.9rem;
-        padding: 0.2rem 0.5rem;
-    }
-</style>
-
+<link href="~/css/product-styles.css" rel="stylesheet">
 <!-- Contenido HTML -->
 <div class="container-fluid">
     <div class="row">
@@ -190,16 +43,11 @@
                             }
                         </ul>
                     </div>
-
-
-
-
                 </div>
 
-                <!-- ##### Single Widget ##### -->
+                <!-- Widget Marcas -->
                 <div class="widget brands mb-50">
-                    <!-- Widget Title -->
-                    <h6 class="widget-title mb-30">Brands</h6>
+                    <h6 class="widget-title mb-30">Marcas</h6>
                     <div class="widget-desc">
                         @foreach (var brand in Model.Brands)
                         {
@@ -211,10 +59,8 @@
                     </div>
                 </div>
 
-
-                <!-- ##### Single Widget ##### -->
+                <!-- Widget Color -->
                 <div class="widget color mb-50">
-                    <!-- Widget Title -->
                     <h6 class="widget-title mb-30">Color</h6>
                     <div class="widget-desc">
                         <!-- Aquí integramos el _ColorPalette.cshtml -->
@@ -222,8 +68,9 @@
                     </div>
                 </div>
 
+                <!-- Widget Precio -->
                 <div class="widget price mb-50">
-                    <h6 class="widget-title mb-30">Price</h6>
+                    <h6 class="widget-title mb-30">Precio</h6>
                     <div class="align-items-center">
                         <input type="text" id="price-slider" name="price-slider" class="form-control">
                         <button id="apply-price-filter" class="btn amado-btn mt-2">@Alias.ApplyFilter</button>
@@ -231,9 +78,6 @@
                     <input type="hidden" id="min-price" name="min-price" /> <!-- Input oculto para el mínimo precio -->
                     <input type="hidden" id="max-price" name="max-price" /> <!-- Input oculto para el máximo precio -->
                 </div>
-
-
-
             </div>
         </div>
 
@@ -260,111 +104,12 @@
         </div>
     </div>
 </div>
-
-
+<!-- Scripts JavaScript -->
 @section scripts {
-   <script>
-    // Función para manejar la selección de colores
-    function setColor(colorCode, event) {
-        event.preventDefault(); // Prevenir comportamiento predeterminado del enlace
-        $('#selected-color').val(colorCode); // Asignar el código de color al campo oculto
-        applyFilters(); // Aplicar filtros después de seleccionar un color
-    }
-
-    // Función para aplicar filtros
-    function applyFilters() {
-        var selectedSubcategory = $('.subcategory-link.selected').data('subcategory-id');
-        var selectedBrands = [];
-        $('.brand-checkbox:checked').each(function () {
-            selectedBrands.push($(this).val());
-        });
-        var minPrice = $('#min-price').val();
-        var maxPrice = $('#max-price').val();
-        var selectedColor = $('#selected-color').val(); // Obtener el color seleccionado
-
-        $.ajax({
-            url: '@Url.Action("GetProductsByFilters", "Products")',
-            type: 'GET',
-            data: {
-                subcategoryId: selectedSubcategory,
-                brands: selectedBrands,
-                minPrice: minPrice,
-                maxPrice: maxPrice,
-                color: selectedColor // Pasar el color como parámetro
-            },
-            traditional: true,
-            success: function (result) {
-                $('#product-list').html(result);
-            },
-            error: function (error) {
-                console.error('Error al cargar productos:', error);
-            }
-        });
-    }
-
-    $(document).ready(function () {
-        // Inicialización del slider de precios con ion.rangeSlider
-        var priceSlider = $("#price-slider").ionRangeSlider({
-            type: "double",
-            min: 10,
-            max: 1000,
-            from: 10,
-            to: 1000,
-            step: 1,
-            grid: true,
-            grid_num: 10,
-            postfix: "$",
-            onStart: function (data) {
-                $("#min-price").val(data.from);
-                $("#max-price").val(data.to);
-            },
-            onChange: function (data) {
-                $("#min-price").val(data.from);
-                $("#max-price").val(data.to);
-            }
-        }).data("ionRangeSlider");
-
-        // Evento para el botón de aplicar filtro de precio
-        $('#apply-price-filter').click(function () {
-            applyFilters();
-        });
-
-        // Evento para checkbox de marcas
-        $('.brand-checkbox').change(function () {
-            applyFilters();
-        });
-
-        // Evento para enlaces de categorías
-        $('.category-link').click(function (e) {
-            e.preventDefault();
-            var $this = $(this);
-            var $subcategoryList = $this.next('.subcategory-list');
-            $('.subcategory-list').not($subcategoryList).slideUp();
-            $subcategoryList.slideToggle();
-            applyFilters(); // Aplicar filtros al seleccionar una categoría
-        });
-
-        // Evento para enlaces de subcategorías
-        $('.subcategory-link').click(function (e) {
-            e.preventDefault();
-            $('.subcategory-link').removeClass('selected');
-            $(this).addClass('selected');
-            applyFilters(); // Aplicar filtros al seleccionar una subcategoría
-        });
-
-        // Inicializar los valores de los inputs min-price y max-price
-        $("#min-price").val(priceSlider.result.from);
-        $("#max-price").val(priceSlider.result.to);
-
-    });
-</script>
-
-}
-
-
-}
-
-
-
+    <script src="~/lib/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+    <script>
+        var getProductsByFiltersUrl = '@getProductsByFiltersUrl';
+    </script>
+    <script src="~/js/product-list.js"></script> 
 }
 
