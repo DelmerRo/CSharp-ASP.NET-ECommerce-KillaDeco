@@ -16,7 +16,7 @@ function clearColorFilter(event) {
     applyFilters(); // Aplicar filtros después de limpiar el color seleccionado
 }
 
-function applyFilters() {
+function applyFilters(pageNumber = 1) {
     var selectedSubcategory = $('.subcategory-link.selected').data('subcategory-id');
     var selectedBrands = [];
     $('.brand-checkbox:checked').each(function () {
@@ -36,7 +36,8 @@ function applyFilters() {
             brands: selectedBrands,
             minPrice: minPrice,
             maxPrice: maxPrice,
-            color: selectedColor // Pasar el color como parámetro
+            color: selectedColor, // Pasar el color como parámetro
+            pageNumber: pageNumber // Pasar el número de página como parámetro
         },
         traditional: true,
         success: function (result) {
@@ -57,9 +58,9 @@ $(document).ready(function () {
     // Inicialización del slider de precios con ion.rangeSlider
     var priceSlider = $("#price-slider").ionRangeSlider({
         type: "double",
-        min: 10,
+        min: 1,
         max: 1000,
-        from: 10,
+        from: 1,
         to: 1000,
         step: 1,
         grid: true,

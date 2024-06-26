@@ -1,5 +1,6 @@
-﻿@model IEnumerable<WebKillaDeco.Models.Product>
-@foreach (var product in Model)
+﻿@model WebKillaDeco.ViewModels.ProductCategoryViewModel
+
+@foreach (var product in Model.Products)
 {
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
         <div class="card single-product-wrapper">
@@ -33,3 +34,17 @@
         </div>
     </div>
 }
+
+<!-- Paginación -->
+<div class="col-12">
+    <nav aria-label="navigation">
+        <ul class="pagination justify-content-end mt-50">
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="javascript:void(0);" onclick="applyFilters(@i)">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
