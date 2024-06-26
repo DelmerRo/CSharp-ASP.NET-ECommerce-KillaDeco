@@ -133,3 +133,7 @@
 .text-orange {
     color: orange !important;
 }
+
+.custom-sidebar-background {
+    background-color: #f5f7fa;
+}

@@ -11,11 +11,27 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <!-- Incluir ion.rangeSlider CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
-
-
-
 </head>
 <body>
+    <div class="custom-sidebar-background" style="padding: 12px 0;">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-6 text-right">
+                    <form id="searchForm" class="form-inline my-2 my-lg-0" onsubmit="return false;">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text border-0 bg-transparent">
+                                    <i class="fa fa-search text-muted"></i>
+                                </span>
+                            </div>
+                            <input class="form-control" type="search" placeholder="Buscar" style="height: 50px; font-size: 18px; border-radius: 8px; width:400px" aria-label="Buscar" id="searchInput">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container-scroller">
         <!-- Search Wrapper Area Start -->
         <div class="search-wrapper section-padding-100">
@@ -173,6 +189,16 @@
      <script src="~/client/js/active.js"></script>
     <!-- Incluir ion.rangeSlider JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <!-- Incluir el archivo JS para el listado de productos -->
+    <script src="~/client/js/product-list.js"></script>
     @RenderSection("Scripts", required: false)
+     <script>
+        $(document).ready(function () {
+            $('#searchForm').on('submit', function (e) {
+                e.preventDefault();
+                applyFilters();
+            });
+        });
+    </script>
 </body>
 </html>

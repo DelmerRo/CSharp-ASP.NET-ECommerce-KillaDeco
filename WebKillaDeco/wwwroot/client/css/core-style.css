@@ -324,55 +324,67 @@ img {
 
 /* :: 4.0 Search Wrapper Area CSS */
 .search-wrapper {
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  height: 260px;
-  z-index: 5000;
-  top: -350px;
-  left: 0;
-  background-color: #f5f7fa;
-  -webkit-transition-duration: 500ms;
-  transition-duration: 500ms; }
-  .search-wrapper .search-content form {
-    position: relative;
+    position: fixed;
     z-index: 1;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.075); }
-    .search-wrapper .search-content form input {
-      width: 100%;
-      height: 60px;
-      border: none;
-      padding-left: 50px;
-      font-size: 14px;
-      color: #6b6b6b; }
-    .search-wrapper .search-content form button {
-      position: absolute;
-      top: 0;
-      left: 0;
-      border: none;
-      width: 50px;
-      height: 60px;
-      z-index: 10;
-      cursor: pointer;
-      background-color: transparent;
-      text-align: center; }
-  .search-wrapper .search-close {
+    width: 100%;
+    height: 130px; /* Ajuste de altura a la mitad */
+    z-index: 5000;
+    top: -350px;
+    left: 0;
+    background-color: #f5f7fa;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: red;
-    text-align: center;
-    color: #fff;
-    line-height: 40px;
-    font-size: 12px;
-    cursor: pointer;
-    background-color: #fbb710; }
-    .search-wrapper .search-close:hover {
-      background-color: #131212; }
+}
+
+    .search-wrapper .search-content form {
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.075);
+    }
+
+        .search-wrapper .search-content form input {
+            width: 100%;
+            height: 60px;
+            border: none;
+            padding-left: 50px;
+            font-size: 14px;
+            color: #6b6b6b;
+        }
+
+        .search-wrapper .search-content form button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+            width: 50px;
+            height: 60px;
+            z-index: 10;
+            cursor: pointer;
+            background-color: transparent;
+            text-align: center;
+        }
+
+    .search-wrapper .search-close {
+        -webkit-transition-duration: 500ms;
+        transition-duration: 500ms;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: red;
+        text-align: center;
+        color: #fff;
+        line-height: 40px;
+        font-size: 12px;
+        cursor: pointer;
+        background-color: #fbb710;
+    }
+
+        .search-wrapper .search-close:hover {
+            background-color: #131212;
+        }
+
 
 /* :: 5.0 Welcome Area CSS */
 .main-content-wrapper {
