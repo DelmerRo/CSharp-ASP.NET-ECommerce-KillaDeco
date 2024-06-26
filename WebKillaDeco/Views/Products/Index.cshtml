@@ -13,8 +13,9 @@
             <!-- Sidebar -->
             <div class="shop_sidebar_area">
                 <!-- Widget Categorías -->
-                <div class="widget catagory mb-50">
-                    <h6 class="widget-title mb-30">Categorías</h6>
+                <div class="widget catagory mb-30">
+                    <a asp-action="Index" id="remove-filters-link" class="text-orange">@Alias.RemoveFilters</a>
+                    <h6 class="widget-title mb-10">@Alias.Categories</h6>
                     <div class="catagories-menu">
                         <ul>
                             @if (Model.Categories != null && Model.Categories.Any())
@@ -46,8 +47,8 @@
                 </div>
 
                 <!-- Widget Marcas -->
-                <div class="widget brands mb-50">
-                    <h6 class="widget-title mb-30">Marcas</h6>
+                <div class="widget brands mb-30">
+                    <h6 class="widget-title mb-10">Marcas</h6>
                     <div class="widget-desc">
                         @foreach (var brand in Model.Brands)
                         {
@@ -82,6 +83,19 @@
         </div>
 
         <div class="col-lg-10">
+            <!-- Contenido principal -->
+            <div class="row mt-4 mr-1">
+                <div class="col-lg-12">
+                    <!-- Selectbox de Ordenamiento -->
+                    <div class="form-group float-right ">
+                        <select class="form-control" id="orderSelect">
+                            <option value="relevance" selected>Relevancia</option>
+                            <option value="low-price">Precio más bajo</option>
+                            <option value="high-price">Precio más alto</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <!-- Contenido principal -->
             <div id="product-list" class="row">
                 @Html.Partial("_ProductListPartial", Model.Products)

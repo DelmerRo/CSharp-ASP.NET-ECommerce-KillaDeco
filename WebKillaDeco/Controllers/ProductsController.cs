@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Helpers;
@@ -53,7 +54,7 @@ namespace WebKillaDeco.Controllers
             return View(viewModel);
         }
 
-        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice)
+        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string sortOrder)
         {
             var products = _context.Products.AsQueryable();
 
@@ -80,6 +81,20 @@ namespace WebKillaDeco.Controllers
             if (maxPrice.HasValue)
             {
                 products = products.Where(p => p.CurrentPrice <= maxPrice.Value);
+            }
+
+            // Ordenar según el tipo de sortOrder
+            switch (sortOrder)
+            {
+                case "low-price":
+                    products = products.OrderBy(p => p.CurrentPrice);
+                    break;
+                case "high-price":
+                    products = products.OrderByDescending(p => p.CurrentPrice);
+                    break;
+                default:
+                    products = products.OrderByDescending(d => d.PublicationDate);
+                    break;
             }
 
             return PartialView("_ProductListPartial", products.ToList());

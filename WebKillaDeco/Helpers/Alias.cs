@@ -143,6 +143,7 @@
         public const string SubCategoryDetails = "Detalles de la SubCategoría";
         public const string DeleteThisSubCategory = "¿Realmente desea eliminar esta SubCategoría?";
         public const string AvailableName = "Nombre no disponible";
+        public const string RemoveFilters = "Quitar Filtros";
         public const string CategoryIconPath = "category-icon";
         public const string CategoryImagePath = "category-image";
         public const string ProductImagePath = "product-image";

@@ -25,11 +25,13 @@ function applyFilters() {
     var minPrice = $('#min-price').val();
     var maxPrice = $('#max-price').val();
     var selectedColor = $('#selected-color').val(); // Obtener el color seleccionado
+    var selectedValue = $('#orderSelect').val(); // Obtener el valor seleccionado del orden
 
     $.ajax({
         url: getProductsByFiltersUrl, // Usar la URL generada
         type: 'GET',
         data: {
+            sortOrder: selectedValue,
             subcategoryId: selectedSubcategory,
             brands: selectedBrands,
             minPrice: minPrice,
@@ -99,6 +101,11 @@ $(document).ready(function () {
         $('.subcategory-link').removeClass('selected');
         $(this).addClass('selected');
         applyFilters(); // Aplicar filtros al seleccionar una subcategoría
+    });
+
+    // Evento para el cambio del selectbox de ordenamiento
+    $('#orderSelect').change(function () {
+        applyFilters();
     });
 
     // Inicializar los valores de los inputs min-price y max-price
