@@ -1,33 +1,83 @@
-﻿<!-- Views/Shared/_ColorPalette.cshtml -->
+﻿<style>
+    /* Estilos para la paleta de colores */
+    .color-palette {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    /* Estilos para los botones de color */
+    .color-button {
+        width: 25px;
+        height: 25px;
+        border: 1px solid #ccc; /* Borde sólido de 1px gris */
+        cursor: pointer;
+        border-radius: 50%;
+        position: relative; /* Permite posicionar correctamente el pseudo-elemento */
+        transition: transform 0.3s ease;
+    }
+
+        .color-button:hover {
+            transform: scale(1.1);
+        }
+
+    /* Estilo para el botón "Sin Color" */
+    .no-color {
+        width: 25px;
+        height: 25px;
+        border: 1px solid #ccc; /* Borde sólido de 1px gris */
+        cursor: pointer;
+        position: relative; /* Asegura que el pseudo-elemento se posicione correctamente */
+        background-color: none; /* Fondo transparente */
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+    }
+
+        /* Estilo para el pseudo-elemento que representa la franja roja */
+        .no-color::before {
+            content: '';
+            position: absolute;
+            width: 100%; /* Ancho del pseudo-elemento */
+            height: 2px; /* Altura de la franja */
+            background-color: red; /* Color de la franja */
+            transform: rotate(-45deg); /* Rotación diagonal */
+            top: 50%; /* Posicionamiento vertical centrado */
+            transform-origin: center; /* Origen de la transformación */
+        }
+</style>
+
 <div class="color-palette">
-    <button type="button" class="color-button" style="background-color: #FFFFFF;" onclick="setColor('#FFFFFF', event)"></button>
-    <button type="button" class="color-button" style="background-color: #F0F8FF;" onclick="setColor('#F0F8FF', event)"></button>
-    <button type="button" class="color-button" style="background-color: #FAEBD7;" onclick="setColor('#FAEBD7', event)"></button>
-    <button type="button" class="color-button" style="background-color: #FFEBCD;" onclick="setColor('#FFEBCD', event)"></button>
-    <button type="button" class="color-button" style="background-color: #FFE4C4;" onclick="setColor('#FFE4C4', event)"></button>
-    <button type="button" class="color-button" style="background-color: #FFDAB9;" onclick="setColor('#FFDAB9', event)"></button>
-    <button type="button" class="color-button" style="background-color: #EEE8AA;" onclick="setColor('#EEE8AA', event)"></button>
-    <button type="button" class="color-button" style="background-color: #F0FFFF;" onclick="setColor('#F0FFFF', event)"></button>
-    <button type="button" class="color-button" style="background-color: #00FFFF;" onclick="setColor('#00FFFF', event)"></button>
-    <button type="button" class="color-button" style="background-color: #7FFFD4;" onclick="setColor('#7FFFD4', event)"></button>
-    <button type="button" class="color-button" style="background-color: #ADD8E6;" onclick="setColor('#ADD8E6', event)"></button>
-    <button type="button" class="color-button" style="background-color: #F5F5DC;" onclick="setColor('#F5F5DC', event)"></button>
-    <button type="button" class="color-button" style="background-color: #FFE4B5;" onclick="setColor('#FFE4B5', event)"></button>
-    <button type="button" class="color-button" style="background-color: #FFE4C4;" onclick="setColor('#FFE4C4', event)"></button>
-    <button type="button" class="color-button" style="background-color: #FFF8DC;" onclick="setColor('#FFF8DC', event)"></button>
-    <button type="button" class="color-button" style="background-color: #D3D3D3;" onclick="setColor('#D3D3D3', event)"></button>
-    <button type="button" class="color-button" style="background-color: #C0C0C0;" onclick="setColor('#C0C0C0', event)"></button>
-    <button type="button" class="color-button" style="background-color: #A9A9A9;" onclick="setColor('#A9A9A9', event)"></button>
-    <button type="button" class="color-button" style="background-color: #808080;" onclick="setColor('#808080', event)"></button>
-    <button type="button" class="color-button" style="background-color: #696969;" onclick="setColor('#696969', event)"></button>
-    <button type="button" class="color-button" style="background-color: #708090;" onclick="setColor('#708090', event)"></button>
-    <button type="button" class="color-button" style="background-color: #778899;" onclick="setColor('#778899', event)"></button>
-    <button type="button" class="color-button" style="background-color: #B0C4DE;" onclick="setColor('#B0C4DE', event)"></button>
-    <button type="button" class="color-button" style="background-color: #4682B4;" onclick="setColor('#4682B4', event)"></button>
-    <button type="button" class="color-button" style="background-color: #4169E1;" onclick="setColor('#4169E1', event)"></button>
-    <button type="button" class="color-button" style="background-color: #0000FF;" onclick="setColor('#0000FF', event)"></button>
-    <button type="button" class="color-button" style="background-color: #000080;" onclick="setColor('#000080', event)"></button>
-    <button type="button" class="color-button" style="background-color: #00008B;" onclick="setColor('#00008B', event)"></button>
-    <button type="button" class="color-button" style="background-color: #000080;" onclick="setColor('#000080', event)"></button>
-    <button type="button" class="color-button" style="background-color: #000000;" onclick="setColor('#000000', event)"></button>
+    <button type="button" class="color-button no-color" onclick="clearColorFilter(event)"></button>
+    <!-- Colores ajustados -->
+    <button type="button" class="color-button" style="background-color: #FFFFFF;" onclick="setColor('#FFFFFF', event)"></button> <!-- Blanco -->
+    <button type="button" class="color-button" style="background-color: #F0F8FF;" onclick="setColor('#F0F8FF', event)"></button> <!-- Azul pastel -->
+    <button type="button" class="color-button" style="background-color: #FAEBD7;" onclick="setColor('#FAEBD7', event)"></button> <!-- Marrón claro -->
+    <button type="button" class="color-button" style="background-color: #FFEBCD;" onclick="setColor('#FFEBCD', event)"></button> <!-- Amarillo pastel -->
+    <button type="button" class="color-button" style="background-color: #FFE4C4;" onclick="setColor('#FFE4C4', event)"></button> <!-- Beige -->
+    <button type="button" class="color-button" style="background-color: #FFDAB9;" onclick="setColor('#FFDAB9', event)"></button> <!-- Melocotón -->
+    <button type="button" class="color-button" style="background-color: #EEE8AA;" onclick="setColor('#EEE8AA', event)"></button> <!-- Verde claro -->
+    <button type="button" class="color-button" style="background-color: #F0FFFF;" onclick="setColor('#F0FFFF', event)"></button> <!-- Azul claro -->
+    <button type="button" class="color-button" style="background-color: #00FFFF;" onclick="setColor('#00FFFF', event)"></button> <!-- Cian -->
+    <button type="button" class="color-button" style="background-color: #7FFFD4;" onclick="setColor('#7FFFD4', event)"></button> <!-- Verde agua -->
+    <button type="button" class="color-button" style="background-color: #ADD8E6;" onclick="setColor('#ADD8E6', event)"></button> <!-- Azul claro pastel -->
+    <button type="button" class="color-button" style="background-color: #F5F5DC;" onclick="setColor('#F5F5DC', event)"></button> <!-- Beige claro -->
+    <button type="button" class="color-button" style="background-color: #FFE4B5;" onclick="setColor('#FFE4B5', event)"></button> <!-- Melocotón claro -->
+    <button type="button" class="color-button" style="background-color: #FFF8DC;" onclick="setColor('#FFF8DC', event)"></button> <!-- Amarillo claro -->
+    <button type="button" class="color-button" style="background-color: #D3D3D3;" onclick="setColor('#D3D3D3', event)"></button> <!-- Gris claro -->
+    <button type="button" class="color-button" style="background-color: #C0C0C0;" onclick="setColor('#C0C0C0', event)"></button> <!-- Plata -->
+    <button type="button" class="color-button" style="background-color: #A9A9A9;" onclick="setColor('#A9A9A9', event)"></button> <!-- Gris -->
+    <button type="button" class="color-button" style="background-color: #808080;" onclick="setColor('#808080', event)"></button> <!-- Gris oscuro -->
+    <button type="button" class="color-button" style="background-color: #696969;" onclick="setColor('#696969', event)"></button> <!-- Gris muy oscuro -->
+    <button type="button" class="color-button" style="background-color: #708090;" onclick="setColor('#708090', event)"></button> <!-- Gris pizarra -->
+    <button type="button" class="color-button" style="background-color: #778899;" onclick="setColor('#778899', event)"></button> <!-- Azul pizarra -->
+    <button type="button" class="color-button" style="background-color: #B0C4DE;" onclick="setColor('#B0C4DE', event)"></button> <!-- Azul acero -->
+    <button type="button" class="color-button" style="background-color: #4682B4;" onclick="setColor('#4682B4', event)"></button> <!-- Azul acero claro -->
+    <button type="button" class="color-button" style="background-color: #4169E1;" onclick="setColor('#4169E1', event)"></button> <!-- Azul real -->
+    <button type="button" class="color-button" style="background-color: #008000;" onclick="setColor('#00FF00', event)"></button> <!-- Verde planta -->
+    <button type="button" class="color-button" style="background-color: #0000FF;" onclick="setColor('#0000FF', event)"></button> <!-- Azul -->
+    <button type="button" class="color-button" style="background-color: #000080;" onclick="setColor('#000080', event)"></button> <!-- Azul marino -->
+    <button type="button" class="color-button" style="background-color: #00008B;" onclick="setColor('#00008B', event)"></button> <!-- Azul marino -->
+    <button type="button" class="color-button" style="background-color: #000080;" onclick="setColor('#000080', event)"></button> <!-- Azul marino -->
+    <button type="button" class="color-button" style="background-color: #000000;" onclick="setColor('#000000', event)"></button> <!-- Negro -->
 </div>
