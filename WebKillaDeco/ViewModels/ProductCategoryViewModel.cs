@@ -7,5 +7,7 @@ namespace WebKillaDeco.ViewModels
         public List<Product> Products { get; set; }
         public List<Category>? Categories { get; set; }
         public List<string?> Brands { get; set; }
+        public int TotalPages { get; set; }
+        public int CurrentPage { get; set; }
     }
 }

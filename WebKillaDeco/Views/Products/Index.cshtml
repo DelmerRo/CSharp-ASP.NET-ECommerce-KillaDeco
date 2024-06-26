@@ -6,7 +6,6 @@
 }
 
 <link href="~/css/product-styles.css" rel="stylesheet">
-<!-- Contenido HTML -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 bg-light">
@@ -98,23 +97,11 @@
             </div>
             <!-- Contenido principal -->
             <div id="product-list" class="row">
-                @Html.Partial("_ProductListPartial", Model.Products)
+                @Html.Partial("_ProductListPartial", Model)
             </div>
             <input type="hidden" id="selected-color" name="selected-color" /> <!-- Input hidden para almacenar el color seleccionado -->
             <!-- Paginación -->
-            <div class="row">
-                <div class="col-12">
-                    <nav aria-label="navigation">
-                        <ul class="pagination justify-content-end mt-50">
-                            <!-- Aquí van los botones de paginación -->
-                            <li class="page-item active"><a class="page-link" href="#">01.</a></li>
-                            <li class="page-item"><a class="page-link" href="#">02.</a></li>
-                            <li class="page-item"><a class="page-link" href="#">03.</a></li>
-                            <li class="page-item"><a class="page-link" href="#">04.</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -126,4 +113,3 @@
     </script>
     <script src="~/js/product-list.js"></script> 
 }
-

@@ -22,7 +22,7 @@ namespace WebKillaDeco.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 20)
         {
             var productActiveDescending = await _context.Products
                                                         .Include(p => p.SubCategories)
@@ -44,17 +44,23 @@ namespace WebKillaDeco.Controllers
 
             var categories = await _context.Categories.Include(c => c.SubCategories).OrderByDescending(c => c.Name).ToListAsync();
 
+            int totalProducts = productActiveDescending.Count;
+            int totalPages = (int)Math.Ceiling(totalProducts / (double)pageSize);
+            var paginatedProducts = productActiveDescending.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+
             var viewModel = new ProductCategoryViewModel
             {
-                Products = productActiveDescending,
+                Products = paginatedProducts,
                 Categories = categories,
-                Brands = brandsWithMaxDiscount
+                Brands = brandsWithMaxDiscount,
+                CurrentPage = pageNumber,
+                TotalPages = totalPages
             };
 
             return View(viewModel);
         }
 
-        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string sortOrder)
+        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string sortOrder, int pageNumber = 1, int pageSize = 20)
         {
             var products = _context.Products.AsQueryable();
 
@@ -83,7 +89,6 @@ namespace WebKillaDeco.Controllers
                 products = products.Where(p => p.CurrentPrice <= maxPrice.Value);
             }
 
-            // Ordenar según el tipo de sortOrder
             switch (sortOrder)
             {
                 case "low-price":
@@ -97,8 +102,23 @@ namespace WebKillaDeco.Controllers
                     break;
             }
 
-            return PartialView("_ProductListPartial", products.ToList());
+            int totalProducts = products.Count();
+            int totalPages = (int)Math.Ceiling(totalProducts / (double)pageSize);
+            var paginatedProducts = products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+
+            var viewModel = new ProductCategoryViewModel
+            {
+                Products = paginatedProducts,
+                CurrentPage = pageNumber,
+                TotalPages = totalPages
+            };
+
+            return PartialView("_ProductListPartial", viewModel);
+
         }
+
+
+
 
         // Acción para obtener productos por subcategoría mediante AJAX
         [HttpGet]
