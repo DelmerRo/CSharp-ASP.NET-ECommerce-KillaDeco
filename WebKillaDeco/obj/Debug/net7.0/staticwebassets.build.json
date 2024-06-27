@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SY86Dj4nm++ERvrscRaBjL4zQSAfp9YhOcousRPPSK0=",
+  "Hash": "jyOkp8TncrYQGHErfYkWpVV8Je81qS2HnuNdCGQbVtQ=",
   "Source": "WebKillaDeco",
   "BasePath": "_content/WebKillaDeco",
   "Mode": "Default",
@@ -4368,6 +4368,25 @@
       "OriginalItemSpec": "wwwroot\\images\\product-image\\234558a7-ce5a-43a1-8a53-68bb912e9c30_frasco-tapa-corcho.jpg"
     },
     {
+      "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\2c79a5b7-b6ef-460c-8624-4c2e9d0629e7_home.jpg",
+      "SourceId": "WebKillaDeco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\",
+      "BasePath": "_content/WebKillaDeco",
+      "RelativePath": "images/product-image/2c79a5b7-b6ef-460c-8624-4c2e9d0629e7_home.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product-image\\2c79a5b7-b6ef-460c-8624-4c2e9d0629e7_home.jpg"
+    },
+    {
       "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\2e6177ff-fa4c-4528-87b0-42ff37b8a021_juego-utensilios-madera.jpg",
       "SourceId": "WebKillaDeco",
       "SourceType": "Discovered",
@@ -4499,6 +4518,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product-image\\8a048db7-37bb-41a0-9295-4c73422c6f9e_lampara-mesa.jpg"
+    },
+    {
+      "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\a88e32cb-fcb9-4a6b-8392-4ea89805beb0_cocina-mesa-cocina-madera-contenedor-utensilios-cocina-cocina-ventana-al-fondo_865967-209921.jpg",
+      "SourceId": "WebKillaDeco",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\",
+      "BasePath": "_content/WebKillaDeco",
+      "RelativePath": "images/product-image/a88e32cb-fcb9-4a6b-8392-4ea89805beb0_cocina-mesa-cocina-madera-contenedor-utensilios-cocina-cocina-ventana-al-fondo_865967-209921.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product-image\\a88e32cb-fcb9-4a6b-8392-4ea89805beb0_cocina-mesa-cocina-madera-contenedor-utensilios-cocina-cocina-ventana-al-fondo_865967-209921.jpg"
     },
     {
       "Identity": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\wwwroot\\images\\product-image\\b03f9af3-2266-413c-b308-3a80520c9383_juego-de-medidores.jpg",

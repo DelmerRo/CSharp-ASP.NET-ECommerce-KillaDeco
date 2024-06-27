@@ -1,108 +1,149 @@
 ﻿@model WebKillaDeco.Models.Product
-
+@using WebKillaDeco.Helpers
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<!-- Product Details Area Start -->
+<div class="single-product-area section-padding-100 clearfix me-100" style="margin-right: 200px;">
+    <div class="container-fluid">
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Sku)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Sku)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CurrentPrice)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CurrentPrice)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Active)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Active)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AvailableStock)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AvailableStock)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Width)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Width)
-        </dd>
-         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Depth)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Depth)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PublicationDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PublicationDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Discount)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SubCategories)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SubCategories.Name)
-        </dd>
-    </dl>
+        <!-- Breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-50">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Products")">@Alias.Products</a></li>
+                        <li class="breadcrumb-item"><a href="#">@Model.SubCategories.Category.Name</a></li>
+                        <li class="breadcrumb-item"><a href="#">@Model.SubCategories.Name</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="row">
+            <!-- Product Images -->
+            <div class="col-12 col-lg-7">
+                <div class="single_product_thumb">
+                    <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                            {
+                                <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url('@Url.Content(Model.ImageUrl)');"></li>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl1))
+                            {
+                                <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url('@Url.Content(Model.ImageUrl1)');"></li>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl2))
+                            {
+                                <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url('@Url.Content(Model.ImageUrl2)');"></li>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl3))
+                            {
+                                <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url('@Url.Content(Model.ImageUrl3)');"></li>
+                            }
+                        </ol>
+                        <div class="carousel-inner">
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                            {
+                                <div class="carousel-item active">
+                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl)">
+                                        <img class="d-block w-100" src="@Url.Content(Model.ImageUrl)" alt="First slide" style="max-width: 1920px; max-height: 1080px;">
+                                    </a>
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl1))
+                            {
+                                <div class="carousel-item">
+                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl1)">
+                                        <img class="d-block w-100" src="@Url.Content(Model.ImageUrl1)" alt="Second slide" style="max-width: 1920px; max-height: 1080px;">
+                                    </a>
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl2))
+                            {
+                                <div class="carousel-item">
+                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl2)">
+                                        <img class="d-block w-100" src="@Url.Content(Model.ImageUrl2)" alt="Third slide" style="max-width: 1920px; max-height: 1080px;">
+                                    </a>
+                                </div>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl3))
+                            {
+                                <div class="carousel-item">
+                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl3)">
+                                        <img class="d-block w-100" src="@Url.Content(Model.ImageUrl3)" alt="Fourth slide" style="max-width: 1920px; max-height: 1080px;">
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Description -->
+            <div class="col-12 col-lg-5">
+                <div class="single_product_desc">
+                    <!-- Product Meta Data -->
+                    <div class="product-meta-data">
+                        <div class="line"></div>
+                        <p class="product-price">$@Model.CurrentPrice</p>
+                        <h6>@Model.Name</h6>
+                        <!-- Ratings & Review -->
+                        <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            <div class="review">
+                                <a href="#">Write A Review</a>
+                            </div>
+                        </div>
+                        <!-- Availability -->
+                        @* <p class="avaibility"><i class="fa fa-circle"></i> @if (Model.AvailableStock > 0) { In Stock } else { Out of Stock }</p> *@
+                    </div>
+
+                    <!-- Short Overview -->
+                    <div class="short_overview my-5">
+                        <p>@Model.Description</p>
+                    </div>
+
+                    <!-- Add to Cart Form -->
+                    <form class="cart clearfix" method="post" action="@Url.Action("AddToCart", "Cart")">
+                        <div class="cart-btn d-flex mb-50">
+                            <p>Qty</p>
+                            <div class="quantity">
+                                <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) effect.value--;return false;">
+                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                </span>
+                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="@Model.AvailableStock" name="quantity" value="1">
+                                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;">
+                                    <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <button type="submit" name="addtocart" value="@Model.ProductId" class="btn amado-btn">Add to cart</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.ProductId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<!-- Product Details Area End -->
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.carousel-indicators li').on('click', function () {
+                var slideTo = $(this).data('slide-to');
+                $('#product_details_slider').carousel(slideTo);
+            });
+        });
+    </script>
+}

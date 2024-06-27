@@ -60,10 +60,32 @@ namespace WebKillaDeco.Controllers
             return View(viewModel);
         }
 
-        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string sortOrder, int pageNumber = 1, int pageSize = 20)
+        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string sortOrder, int pageNumber = 1, int pageSize = 20, string searchString = "")
         {
             var products = _context.Products.AsQueryable();
 
+            // Here you can use searchString to filter products based on the search input
+
+            products = FilterProducts(products, subcategoryId, brands, color, minPrice, maxPrice, searchString);
+            products = SortProducts(products, sortOrder);
+
+            int totalProducts = products.Count();
+            int totalPages = (int)Math.Ceiling(totalProducts / (double)pageSize);
+            var paginatedProducts = PaginateProducts(products, pageNumber, pageSize);
+
+            var viewModel = new ProductCategoryViewModel
+            {
+                Products = paginatedProducts,
+                CurrentPage = pageNumber,
+                TotalPages = totalPages
+            };
+
+            return PartialView("_ProductListPartial", viewModel);
+        }
+
+
+        private IQueryable<Product> FilterProducts(IQueryable<Product> products, int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string searchString)
+        {
             if (subcategoryId.HasValue)
             {
                 products = products.Where(p => p.SubCategoryId == subcategoryId.Value);
@@ -88,36 +110,31 @@ namespace WebKillaDeco.Controllers
             {
                 products = products.Where(p => p.CurrentPrice <= maxPrice.Value);
             }
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                products = products.Where(p => p.Name.Contains(searchString) || p.Description.Contains(searchString));
+            }
 
+            return products;
+        }
+
+        private IQueryable<Product> SortProducts(IQueryable<Product> products, string sortOrder)
+        {
             switch (sortOrder)
             {
                 case "low-price":
-                    products = products.OrderBy(p => p.CurrentPrice);
-                    break;
+                    return products.OrderBy(p => p.CurrentPrice);
                 case "high-price":
-                    products = products.OrderByDescending(p => p.CurrentPrice);
-                    break;
+                    return products.OrderByDescending(p => p.CurrentPrice);
                 default:
-                    products = products.OrderByDescending(d => d.PublicationDate);
-                    break;
+                    return products.OrderByDescending(d => d.PublicationDate);
             }
-
-            int totalProducts = products.Count();
-            int totalPages = (int)Math.Ceiling(totalProducts / (double)pageSize);
-            var paginatedProducts = products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
-
-            var viewModel = new ProductCategoryViewModel
-            {
-                Products = paginatedProducts,
-                CurrentPage = pageNumber,
-                TotalPages = totalPages
-            };
-
-            return PartialView("_ProductListPartial", viewModel);
-
         }
 
-
+        private List<Product> PaginateProducts(IQueryable<Product> products, int pageNumber, int pageSize)
+        {
+            return products.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+        }
 
 
         // Acción para obtener productos por subcategoría mediante AJAX
@@ -154,6 +171,7 @@ namespace WebKillaDeco.Controllers
 
             var product = await _context.Products
                 .Include(p => p.SubCategories)
+                .ThenInclude(c => c.Category)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
 
             if (product == null)
