@@ -171,6 +171,7 @@ namespace WebKillaDeco.Controllers
 
             var product = await _context.Products
                 .Include(p => p.SubCategories)
+                .ThenInclude(c => c.Category)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
 
             if (product == null)
