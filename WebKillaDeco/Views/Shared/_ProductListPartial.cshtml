@@ -17,13 +17,8 @@
                     </a>
                 </div>
                 <div class="ratings-cart text-right">
-                    <div class="ratings">
-                        <i class="fa fa-star" aria-hidden="false"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
+                  @Html.Partial("_Rating", product)
+
                     <div class="cart">
                         <a href="@Url.Action("AddToCart", "Cart", new { id = product.ProductId })" data-toggle="tooltip" data-placement="left" title="Add to Cart">
                             <img src="@Url.Content("~/client/img/core-img/cart.png")" alt="">

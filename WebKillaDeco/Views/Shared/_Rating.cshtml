@@ -1,0 +1,17 @@
+﻿@model WebKillaDeco.Models.Product
+
+<div class="ratings">
+    @{
+        double averageRating = 0;
+        if (Model.Qualifications.Any())
+        {
+            averageRating = Model.Qualifications.Average(q => q.Rating);
+        }
+        int roundedRating = (int)Math.Round(averageRating);
+    }
+
+    @for (int i = 1; i <= 5; i++)
+    {
+        <i class="fa fa-star @(i <= roundedRating ? "active" : "")" style="color: @(i <= roundedRating ? "gold" : "lightgray");" aria-hidden="true"></i>
+    }
+</div>

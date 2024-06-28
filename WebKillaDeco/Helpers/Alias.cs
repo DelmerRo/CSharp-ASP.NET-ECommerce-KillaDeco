@@ -107,6 +107,8 @@
         public const string Width = "Ancho";
         public const string Height = "Alto";
         public const string Depth = "Profundidad";
+        public const string InStock = "En Stock";
+        public const string OutOfStock = "Agotado";
 
         public const string Address = "Dirección";
         public const string Answers = "Respuestas";

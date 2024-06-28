@@ -4,6 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
+<!-- Lightbox2 CSS -->
+<link href="~/lib/lightbox2/css/lightbox.min.css" rel="stylesheet" />
+
 <!-- Product Details Area Start -->
 <div class="single-product-area section-padding-100 clearfix me-100" style="margin-right: 200px;">
     <div class="container-fluid">
@@ -50,7 +53,7 @@
                             @if (!string.IsNullOrEmpty(Model.ImageUrl))
                             {
                                 <div class="carousel-item active">
-                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl)">
+                                    <a href="@Url.Content(Model.ImageUrl)" data-lightbox="product-gallery">
                                         <img class="d-block w-100" src="@Url.Content(Model.ImageUrl)" alt="First slide" style="max-width: 1920px; max-height: 1080px;">
                                     </a>
                                 </div>
@@ -58,7 +61,7 @@
                             @if (!string.IsNullOrEmpty(Model.ImageUrl1))
                             {
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl1)">
+                                    <a href="@Url.Content(Model.ImageUrl1)" data-lightbox="product-gallery">
                                         <img class="d-block w-100" src="@Url.Content(Model.ImageUrl1)" alt="Second slide" style="max-width: 1920px; max-height: 1080px;">
                                     </a>
                                 </div>
@@ -66,7 +69,7 @@
                             @if (!string.IsNullOrEmpty(Model.ImageUrl2))
                             {
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl2)">
+                                    <a href="@Url.Content(Model.ImageUrl2)" data-lightbox="product-gallery">
                                         <img class="d-block w-100" src="@Url.Content(Model.ImageUrl2)" alt="Third slide" style="max-width: 1920px; max-height: 1080px;">
                                     </a>
                                 </div>
@@ -74,7 +77,7 @@
                             @if (!string.IsNullOrEmpty(Model.ImageUrl3))
                             {
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="@Url.Content(Model.ImageUrl3)">
+                                    <a href="@Url.Content(Model.ImageUrl3)" data-lightbox="product-gallery">
                                         <img class="d-block w-100" src="@Url.Content(Model.ImageUrl3)" alt="Fourth slide" style="max-width: 1920px; max-height: 1080px;">
                                     </a>
                                 </div>
@@ -90,34 +93,61 @@
                     <!-- Product Meta Data -->
                     <div class="product-meta-data">
                         <div class="line"></div>
-                        <p class="product-price">$@Model.CurrentPrice</p>
-                        <h6>@Model.Name</h6>
+
+                        @if (Model.Discount != 0 && Model.Discount < Model.CurrentPrice)
+                        {
+                            decimal discountPercent = Model.Discount * 100;
+                            decimal price = Model.CurrentPrice;
+                            decimal discountedPrice = price - (price * discountPercent / 100);
+                            <p class="product-price">
+                                <del class="original-price">$@price.ToString("0.##")</del>
+                                <span style="color: #9ACD32; font-size: smaller;">
+                                    @discountPercent.ToString("0")% OFF<br />
+                                </span>
+                                <span class="discount-info">$@discountedPrice.ToString("0.##")</span>
+                            </p>
+
+                        }
+                        else
+                        {
+                            <p class="product-price">$@Model.CurrentPrice.ToString("0.##")</p>
+                        }
+
+                        <h5>@Model.Name</h5>
+
                         <!-- Ratings & Review -->
                         <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
-                            <div class="ratings">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </div>
+                            @Html.Partial("_Rating", Model)
                             <div class="review">
-                                <a href="#">Write A Review</a>
+                                <a asp-action="Review" asp-route-id="@Model.ProductId">Ver Reseñas</a>
                             </div>
                         </div>
+
                         <!-- Availability -->
-                        @* <p class="avaibility"><i class="fa fa-circle"></i> @if (Model.AvailableStock > 0) { In Stock } else { Out of Stock }</p> *@
+                        <p class="availability">
+                            <i class="fa fa-circle" style="color: green;"></i>
+                            @if (Model.AvailableStock > 0)
+                            {
+                                <span>@Alias.InStock</span>
+                            }
+                            else
+                            {
+                                <span>@Alias.OutOfStock</span>
+                            }
+                        </p>
+
                     </div>
 
                     <!-- Short Overview -->
                     <div class="short_overview my-5">
-                        <p>@Model.Description</p>
+                        <small style="line-height: 1.1;">@Model.Description</small>
                     </div>
+
 
                     <!-- Add to Cart Form -->
                     <form class="cart clearfix" method="post" action="@Url.Action("AddToCart", "Cart")">
                         <div class="cart-btn d-flex mb-50">
-                            <p>Qty</p>
+                            <p>@Alias.Quantity:</p>
                             <div class="quantity">
                                 <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) effect.value--;return false;">
                                     <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -133,16 +163,82 @@
 
                 </div>
             </div>
+            <!-- Product Features -->
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-white">
+                    <tr>
+                        <th colspan="2" class="text-center" style="background-color: #FBB808; color: white; padding: 10px;">
+                            Características del Producto
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.SubCategories.Category.Name):</strong></td>
+                        <td> @Html.DisplayFor(model => model.SubCategories.Category.Name)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.SubCategories.Name):</strong></td>
+                        <td> @Html.DisplayFor(model => model.SubCategories.Name)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Brand):</strong></td>
+                        <td> @Html.DisplayFor(model => model.Brand)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Weight):</strong></td>
+                        <td> @Html.DisplayFor(model => model.Weight) kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Width):</strong></td>
+                        <td> @Html.DisplayFor(model => model.Weight) cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Height):</strong></td>
+                        <td> @Html.DisplayFor(model => model.Height) cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Depth):</strong></td>
+                        <td> @Html.DisplayFor(model => model.Depth) cm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>@Html.DisplayNameFor(model => model.Color):</strong></td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(Model.Color) && Model.Color.StartsWith("#"))
+                            {
+                                <span style="background-color:@Model.Color; display: inline-block; width: 30px; height: 30px; border-radius: 50%; border: 1px solid;"></span>
+                            }
+                            else
+                            {
+                                <span>No color specified</span>
+                            }
+                        </td>
+                    </tr>
+                    <!-- Agrega más características según sea necesario -->
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 <!-- Product Details Area End -->
+<!-- Lightbox2 JS -->
+
 @section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
     <script>
         $(document).ready(function () {
-            $('.carousel-indicators li').on('click', function () {
-                var slideTo = $(this).data('slide-to');
-                $('#product_details_slider').carousel(slideTo);
+            // Lightbox initializaton
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
             });
         });
     </script>

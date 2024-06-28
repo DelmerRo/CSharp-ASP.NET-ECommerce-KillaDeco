@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
@@ -14,6 +15,8 @@ namespace WebKillaDeco.Controllers
     {
         private readonly KillaDbContext _context;
         private readonly ImageService _imageService;
+        private const int PageSize = 20;
+        private const int MaxNumberImages = 4;
 
         public ProductsController(KillaDbContext context, ImageService imageService)
         {
@@ -21,11 +24,33 @@ namespace WebKillaDeco.Controllers
             _imageService = imageService;
         }
 
+        public async Task<IActionResult> Review(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products
+                                        .Include(p => p.Qualifications)
+                                        .FirstOrDefaultAsync(p => p.ProductId == id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return PartialView("Review", product);
+        }
+
+
+
         [Authorize]
-        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 20)
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = PageSize)
         {
             var productActiveDescending = await _context.Products
                                                         .Include(p => p.SubCategories)
+                                                        .Include(P => P.Qualifications)
                                                         .Where(p => p.Active)
                                                         .OrderByDescending(d => d.PublicationDate)
                                                         .ToListAsync();
@@ -60,9 +85,9 @@ namespace WebKillaDeco.Controllers
             return View(viewModel);
         }
 
-        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string sortOrder, int pageNumber = 1, int pageSize = 20, string searchString = "")
+        public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string sortOrder, int pageNumber = 1, int pageSize = PageSize, string searchString = "")
         {
-            var products = _context.Products.AsQueryable();
+            var products = _context.Products.Include(p => p.Qualifications).AsQueryable();
 
             // Here you can use searchString to filter products based on the search input
 
@@ -138,28 +163,28 @@ namespace WebKillaDeco.Controllers
 
 
         // Acción para obtener productos por subcategoría mediante AJAX
-        [HttpGet]
-        public IActionResult GetProductsBySubcategory(int subcategoryId)
-        {
-            var products = _context.Products
-                                   .Include(p => p.SubCategories)
-                                   .Where(p => p.SubCategoryId == subcategoryId)
-                                   .ToList();
+        //[HttpGet]
+        //public IActionResult GetProductsBySubcategory(int subcategoryId)
+        //{
+        //    var products = _context.Products
+        //                           .Include(p => p.SubCategories)
+        //                           .Where(p => p.SubCategoryId == subcategoryId)
+        //                           .ToList();
 
-            return PartialView("_ProductListPartial", products);
-        }
+        //    return PartialView("_ProductListPartial", products);
+        //}
 
-        // Acción para obtener productos por marca mediante AJAX
-        [HttpGet]
-        public IActionResult GetProductsByBrand(List<string> brands)
-        {
-            var products = _context.Products
-                                   .Include(p => p.SubCategories)
-                                   .Where(p => brands.Contains(p.Brand))
-                                   .ToList();
+        //// Acción para obtener productos por marca mediante AJAX
+        //[HttpGet]
+        //public IActionResult GetProductsByBrand(List<string> brands)
+        //{
+        //    var products = _context.Products
+        //                           .Include(p => p.SubCategories)
+        //                           .Where(p => brands.Contains(p.Brand))
+        //                           .ToList();
 
-            return PartialView("_ProductListPartial", products);
-        }
+        //    return PartialView("_ProductListPartial", products);
+        //}
 
         [Authorize]
         public async Task<IActionResult> Details(int? id)
@@ -171,7 +196,8 @@ namespace WebKillaDeco.Controllers
 
             var product = await _context.Products
                 .Include(p => p.SubCategories)
-                .ThenInclude(c => c.Category)
+                .ThenInclude(p => p.Category)
+                 .Include(p => p.Qualifications)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
 
             if (product == null)
@@ -201,7 +227,7 @@ namespace WebKillaDeco.Controllers
             {
                 try
                 {
-                    if (imageFiles.Count <= 4)
+                    if (imageFiles.Count <= MaxNumberImages)
                     {
                         if (imageFiles != null && imageFiles.Count > 0)
                         {
@@ -293,6 +319,7 @@ namespace WebKillaDeco.Controllers
                     existingProduct.SubCategoryId = product.SubCategoryId;
                     existingProduct.Name = product.Name;
                     existingProduct.Description = product.Description;
+                    existingProduct.Brand = product.Brand;
                     existingProduct.CurrentPrice = product.CurrentPrice;
                     existingProduct.Active = product.Active;
                     existingProduct.AvailableStock = product.AvailableStock;
