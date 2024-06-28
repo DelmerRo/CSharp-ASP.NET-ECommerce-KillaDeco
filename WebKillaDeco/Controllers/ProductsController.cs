@@ -32,8 +32,8 @@ namespace WebKillaDeco.Controllers
             }
 
             var product = await _context.Products
-                                        .Include(p => p.Qualifications)
-                                        .FirstOrDefaultAsync(p => p.ProductId == id);
+                                         .Include(p => p.Qualifications)
+                                         .FirstOrDefaultAsync(p => p.ProductId == id);
 
             if (product == null)
             {
@@ -42,6 +42,7 @@ namespace WebKillaDeco.Controllers
 
             return PartialView("Review", product);
         }
+
 
 
 
