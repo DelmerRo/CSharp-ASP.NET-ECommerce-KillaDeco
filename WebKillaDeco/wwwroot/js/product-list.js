@@ -15,7 +15,6 @@ function clearColorFilter(event) {
     $('#selected-color').val(''); // Limpiar el campo oculto de color seleccionado
     applyFilters(); // Aplicar filtros después de limpiar el color seleccionado
 }
-
 function applyFilters(pageNumber = 1) {
     var selectedSubcategory = $('.subcategory-link.selected').data('subcategory-id');
     var selectedBrands = [];
@@ -26,6 +25,7 @@ function applyFilters(pageNumber = 1) {
     var maxPrice = $('#max-price').val();
     var selectedColor = $('#selected-color').val(); // Obtener el color seleccionado
     var selectedValue = $('#orderSelect').val(); // Obtener el valor seleccionado del orden
+    var searchString = $('#searchInput').val(); // Obtener el valor del input de búsqueda
 
     $.ajax({
         url: getProductsByFiltersUrl, // Usar la URL generada
@@ -37,7 +37,8 @@ function applyFilters(pageNumber = 1) {
             minPrice: minPrice,
             maxPrice: maxPrice,
             color: selectedColor, // Pasar el color como parámetro
-            pageNumber: pageNumber // Pasar el número de página como parámetro
+            pageNumber: pageNumber, // Pasar el número de página como parámetro
+            searchString: searchString // Pasar el valor de búsqueda como parámetro
         },
         traditional: true,
         success: function (result) {
@@ -50,7 +51,6 @@ function applyFilters(pageNumber = 1) {
                 responseText: xhr.responseText
             });
         }
-
     });
 }
 
@@ -106,6 +106,11 @@ $(document).ready(function () {
 
     // Evento para el cambio del selectbox de ordenamiento
     $('#orderSelect').change(function () {
+        applyFilters();
+    });
+
+    // Evento para el input de búsqueda
+    $('#searchInput').on('input', function () {
         applyFilters();
     });
 
