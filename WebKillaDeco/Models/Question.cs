@@ -9,6 +9,6 @@
         public DateTime publicationDate { get; set; }
         public Product? Product { get; set; }
         public Client? Client { get; set; }
-        public List<Answer>? Answers { get; set; }
+        public Answer? Answer { get; set; }
     }
 }

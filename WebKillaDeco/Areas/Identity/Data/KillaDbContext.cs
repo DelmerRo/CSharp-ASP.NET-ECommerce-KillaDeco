@@ -143,9 +143,9 @@ namespace WebKillaDeco.Areas.Identity.Data
                 .HasForeignKey(ci => ci.CartId);
 
             modelBuilder.Entity<Question>()
-                .HasMany(q => q.Answers)
+                .HasOne(q => q.Answer)
                 .WithOne(a => a.Question)
-                .HasForeignKey(a => a.QuestionId);
+                .HasForeignKey<Answer>(a => a.QuestionId);
 
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Answers)

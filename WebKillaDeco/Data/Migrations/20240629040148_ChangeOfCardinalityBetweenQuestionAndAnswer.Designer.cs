@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebKillaDeco.Areas.Identity.Data;
 
@@ -11,9 +12,11 @@ using WebKillaDeco.Areas.Identity.Data;
 namespace WebKillaDeco.Data.Migrations
 {
     [DbContext(typeof(KillaDbContext))]
-    partial class KillaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240629040148_ChangeOfCardinalityBetweenQuestionAndAnswer")]
+    partial class ChangeOfCardinalityBetweenQuestionAndAnswer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

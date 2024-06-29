@@ -226,6 +226,51 @@
         </div>
     </div>
 </div>
+<hr />
+<div class="reviews-container mt-5">
+    <h3>Preguntas y Respuestas</h3>
+    @if (Model.Questions.Any())
+    {
+        @foreach (var question in Model.Questions)
+        {
+            <div class="question-item p-3 bg-light rounded mb-3">
+                <div class="review-header d-flex align-items-center justify-content-between border-bottom pb-2 mb-2">
+                    <div class="date text-muted">
+                        <p class="mb-0"><i class="fa fa-calendar"></i> @question.publicationDate.ToShortDateString()</p>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <div class="comment-user-info">
+                        <div class="comment mb-2">
+                            <p class="mb-1"><i class="fa fa-question-circle"></i> @question.description</p>
+                            <p class="ml-4 mb-0"><i class="fa fa-reply"></i> @question.Answer.description</p>
+                        </div>
+                        <div class="user-info text-right text-muted mt-2">
+                            <small><i class="fa fa-user"></i> @(question.Client != null ? question.Client.Name : "Cliente desconocido")</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        }
+    }
+    else
+    {
+        <p>Aún no existen preguntas</p>
+    }
+
+    <h4>Agregar una nueva pregunta</h4>
+    <form asp-action="CreateQuestion" method="post">
+        <input type="hidden" name="ProductId" value="@Model.ProductId" />
+        <div class="form-group">
+            <label for="description">Pregunta</label>
+            <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+
 <!-- Product Details Area End -->
 <!-- Lightbox2 JS -->
 @section Scripts {
