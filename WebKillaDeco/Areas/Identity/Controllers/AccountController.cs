@@ -24,7 +24,7 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             _signInManager = signinManager;
             _rolManager = rolManager;
         }
-
+        [Authorize]
         public async Task<ActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
