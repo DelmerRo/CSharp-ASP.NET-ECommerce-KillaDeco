@@ -227,40 +227,35 @@
     </div>
 </div>
 <hr />
+
+<!-- Preguntas y Respuestas -->
 <div class="reviews-container mt-5">
     <h3>Preguntas y Respuestas</h3>
-    @if (Model.Questions.Any())
-    {
-        @foreach (var question in Model.Questions)
+
+    <!-- Listado de Preguntas -->
+    <div id="questionList">
+        @if (Model.Questions.Any())
         {
-            <div class="question-item p-3 bg-light rounded mb-3">
-                <div class="review-header d-flex align-items-center justify-content-between border-bottom pb-2 mb-2">
-                    <div class="date text-muted">
-                        <p class="mb-0"><i class="fa fa-calendar"></i> @question.publicationDate.ToShortDateString()</p>
-                    </div>
-                </div>
-                <div class="review-body">
-                    <div class="comment-user-info">
-                        <div class="comment mb-2">
-                            <p class="mb-1"><i class="fa fa-question-circle"></i> @question.description</p>
-                            <p class="ml-4 mb-0"><i class="fa fa-reply"></i> @question.Answer.description</p>
-                        </div>
-                        <div class="user-info text-right text-muted mt-2">
-                            <small><i class="fa fa-user"></i> @(question.Client != null ? question.Client.Name : "Cliente desconocido")</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr />
+            // Ordenar las preguntas por fecha de publicación descendente y tomar las primeras 10
+            var recentQuestions = Model.Questions.OrderByDescending(q => q.PublicationDate).Take(5);
+
+            foreach (var question in recentQuestions)
+            {
+                @Html.Partial("_QuestionPartial", question)
+                <hr />
+            }
         }
-    }
-    else
-    {
-        <p>Aún no existen preguntas</p>
-    }
+        else
+        {
+            <p>Aún no existen preguntas</p>
+        }
+        <div class="d-flex justify-content-center mt-3">
+            <a class="text-warning font-weight-bold" asp-controller="Questions" asp-action="Index">Ver todas las preguntas</a>
+        </div>
+    </div>
 
     <h4>Agregar una nueva pregunta</h4>
-    <form asp-action="CreateQuestion" method="post">
+    <form id="questionForm" asp-controller="Questions" asp-action="Create" method="post">
         <input type="hidden" name="ProductId" value="@Model.ProductId" />
         <div class="form-group">
             <label for="description">Pregunta</label>
@@ -270,11 +265,42 @@
     </form>
 </div>
 
-
-<!-- Product Details Area End -->
-<!-- Lightbox2 JS -->
 @section Scripts {
     <script>
+        $(document).ready(function () {
+            $('#questionForm').submit(function (e) {
+                e.preventDefault();
+
+                var formData = $(this).serialize();
+
+                $.post($(this).attr('action'), formData)
+                    .done(function (response) {
+                        if (response.success) {
+                            $('#description').val('');
+
+                            // Obtener la última pregunta y agregarla a la lista existente
+                            $.ajax({
+                                url: '@Url.Action("GetQuestionsPartial", "Questions")',
+                                type: 'GET',
+                                data: { productId: '@Model.ProductId' },
+                                success: function (html) {
+                                    $('#questionList').append(html); // Agregar la última pregunta a la lista existente
+                                },
+                                error: function (xhr, status, error) {
+                                    console.error('Error al obtener la última pregunta:', error);
+                                    alert('Error al obtener la última pregunta.');
+                                }
+                            });
+                        } else {
+                            alert('Error al enviar la pregunta.');
+                        }
+                    })
+                    .fail(function () {
+                        alert('Error de conexión al enviar la pregunta.');
+                    });
+            });
+        });
+
         $(document).ready(function () {
             $('.review-link').on('click', function (e) {
                 e.preventDefault();

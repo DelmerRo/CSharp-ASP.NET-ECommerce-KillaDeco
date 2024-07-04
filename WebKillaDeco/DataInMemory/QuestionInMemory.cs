@@ -12,36 +12,36 @@ namespace WebKillaDeco.DataInMemory
                 {
                     ClientId = 1,
                     ProductId = 1,
-                    description = "¿Cuál es el material de este producto?",
-                    publicationDate = DateTime.Now.AddDays(-10)
+                    Description = "¿Cuál es el material de este producto?",
+                    PublicationDate = DateTime.Now.AddDays(-10)
                 },
                 new Question
                 {
                     ClientId = 2,
                     ProductId = 2,
-                    description = "¿Tiene garantía este producto?",
-                    publicationDate = DateTime.Now.AddDays(-8)
+                    Description = "¿Tiene garantía este producto?",
+                    PublicationDate = DateTime.Now.AddDays(-8)
                 },
                 new Question
                 {
                     ClientId = 3,
                     ProductId = 3,
-                    description = "¿Cuánto tiempo tarda en llegar el envío?",
-                    publicationDate = DateTime.Now.AddDays(-6)
+                    Description = "¿Cuánto tiempo tarda en llegar el envío?",
+                    PublicationDate = DateTime.Now.AddDays(-6)
                 },
                 new Question
                 {
                     ClientId = 4,
                     ProductId = 4,
-                    description = "¿Es apto para lavavajillas?",
-                    publicationDate = DateTime.Now.AddDays(-4)
+                    Description = "¿Es apto para lavavajillas?",
+                    PublicationDate = DateTime.Now.AddDays(-4)
                 },
                 new Question
                 {
                     ClientId = 5,
                     ProductId = 5,
-                    description = "¿Viene con pilas incluidas?",
-                    publicationDate = DateTime.Now.AddDays(-2)
+                    Description = "¿Viene con pilas incluidas?",
+                    PublicationDate = DateTime.Now.AddDays(-2)
                 }
             };
 
