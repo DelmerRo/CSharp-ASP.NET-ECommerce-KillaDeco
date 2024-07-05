@@ -10,14 +10,14 @@ namespace WebKillaDeco.DataInMemory
             {
                 new Question
                 {
-                    ClientId = 1,
+                    ClientId = 3,
                     ProductId = 1,
                     Description = "¿Cuál es el material de este producto?",
                     PublicationDate = DateTime.Now.AddDays(-10)
                 },
                 new Question
                 {
-                    ClientId = 2,
+                    ClientId = 3,
                     ProductId = 2,
                     Description = "¿Tiene garantía este producto?",
                     PublicationDate = DateTime.Now.AddDays(-8)
@@ -38,7 +38,7 @@ namespace WebKillaDeco.DataInMemory
                 },
                 new Question
                 {
-                    ClientId = 5,
+                    ClientId = 4,
                     ProductId = 5,
                     Description = "¿Viene con pilas incluidas?",
                     PublicationDate = DateTime.Now.AddDays(-2)

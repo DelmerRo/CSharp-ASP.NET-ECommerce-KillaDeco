@@ -229,6 +229,8 @@
 <hr />
 
 <!-- Preguntas y Respuestas -->
+ @if (User.IsInRole("Client"))
+    {
 <div class="reviews-container mt-5">
     <h3>Preguntas y Respuestas</h3>
 
@@ -255,15 +257,17 @@
     </div>
 
     <h4>Agregar una nueva pregunta</h4>
-    <form id="questionForm" asp-controller="Questions" asp-action="Create" method="post">
-        <input type="hidden" name="ProductId" value="@Model.ProductId" />
-        <div class="form-group">
-            <label for="description">Pregunta</label>
-            <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+   
+        <form id="questionForm" asp-controller="Questions" asp-action="Create" method="post">
+            <input type="hidden" name="ProductId" value="@Model.ProductId" />
+            <div class="form-group">
+                <label for="description">Pregunta</label>
+                <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
 </div>
+ }
 
 @section Scripts {
     <script>
