@@ -32,8 +32,9 @@ namespace WebKillaDeco.Controllers
             }
 
             var product = await _context.Products
-                                         .Include(p => p.Qualifications)
-                                         .FirstOrDefaultAsync(p => p.ProductId == id);
+                .Include(p => p.Qualifications)  // Incluye las calificaciones del producto
+                    .ThenInclude(q => q.Client)  // Subincluye el cliente asociado a cada calificación
+                .FirstOrDefaultAsync(p => p.ProductId == id);
 
             if (product == null)
             {
@@ -201,7 +202,7 @@ namespace WebKillaDeco.Controllers
                 .Include(p => p.SubCategories)
                 .ThenInclude(p => p.Category)
                  .Include(p => p.Qualifications)
-                             
+                 .ThenInclude(p => p.Client)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
 
             if (product == null)

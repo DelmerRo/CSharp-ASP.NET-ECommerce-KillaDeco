@@ -147,6 +147,30 @@ namespace WebKillaDeco.Areas.Identity.Data
                 .WithOne(a => a.Question)
                 .HasForeignKey<Answer>(a => a.QuestionId);
 
+            //Agregado
+            modelBuilder.Entity<Question>()
+               .HasOne(q => q.Product)
+               .WithMany(p => p.Questions)
+               .HasForeignKey(q => q.ProductId);
+
+            //Agregado
+            modelBuilder.Entity<Question>()
+                .HasOne(q => q.Client)
+                .WithMany(c => c.Questions)
+                .HasForeignKey(q => q.ClientId);
+
+            //Agregado
+            modelBuilder.Entity<Qualification>()
+               .HasOne(q => q.Client)
+               .WithMany(c => c.Qualifications)
+               .HasForeignKey(q => q.ClientId);
+
+            //Agregado
+            modelBuilder.Entity<Qualification>()
+                .HasOne(q => q.Product)
+                .WithMany(p => p.Qualifications)
+                .HasForeignKey(q => q.ProductId);
+
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Answers)
                 .WithOne(a => a.Employee)

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using WebKillaDeco.Areas.Identity.Data;
+using WebKillaDeco.Helpers;
 using WebKillaDeco.Models;
 
 namespace WebKillaDeco.Controllers
@@ -24,15 +26,37 @@ namespace WebKillaDeco.Controllers
             _userManager = userManager;
         }
 
-        // GET: Questions
-        public async Task<IActionResult> Index(int? id)
-        {
-            var killaDbContext = _context.Questions
-                .Include(q => q.Client)
-                .Include(q => q.Product)
-                .Where(q => q.ProductId == id);
-            return View(await killaDbContext.ToListAsync());
-        }
+       // GET: Questions
+public async Task<IActionResult> Index(int? id)
+{
+    if (id == null)
+    {
+        return NotFound();
+    }
+
+            var questions = await _context.Questions
+                .Include(a =>a.Answer)
+                .Include(a => a.Client)
+                .Include(a => a.Product)
+                .Where(q => q.ProductId == id)
+             .ToListAsync();
+
+            foreach (var question in questions)
+            {
+                if (question.Client == null)
+                {
+                    Console.WriteLine($"Question {question.Id} tiene un ClientId null");
+                }
+                else
+                {
+                    Console.WriteLine($"Question {question.Id} tiene un ClientId {question.ClientId}");
+                }
+            }
+
+            return View(questions);
+}
+
+
 
         // GET: Questions/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -55,6 +79,7 @@ namespace WebKillaDeco.Controllers
         }
 
         // GET: Questions/Create
+        [Authorize(Roles = Config.RolClient)]
         public IActionResult Create()
         {
             ViewData["ClientId"] = new SelectList(_context.Clients, "Id", "Discriminator");
@@ -67,7 +92,8 @@ namespace WebKillaDeco.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
       [HttpPost]
 [ValidateAntiForgeryToken]
-public async Task<IActionResult> Create(int productId, string description)
+        [Authorize(Roles = Config.RolClient)]
+        public async Task<IActionResult> Create(int productId, string description)
 {
     try
     {
