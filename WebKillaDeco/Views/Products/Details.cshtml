@@ -237,7 +237,7 @@
         @if (Model.Questions.Any())
         {
             // Ordenar las preguntas por fecha de publicación descendente y tomar las primeras 10
-            var recentQuestions = Model.Questions.OrderByDescending(q => q.PublicationDate).Take(5);
+            var recentQuestions = Model.Questions.OrderByDescending(q => q.PublicationDate).Take(4);
 
             foreach (var question in recentQuestions)
             {
@@ -249,9 +249,9 @@
         {
             <p>Aún no existen preguntas</p>
         }
-        <div class="d-flex justify-content-center mt-3">
-            <a class="text-warning font-weight-bold" asp-controller="Questions" asp-action="Index">Ver todas las preguntas</a>
-        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+        <a class="text-warning font-weight-bold" asp-controller="Questions" asp-action="Index" asp-route-id="@Model.ProductId">Ver todas las preguntas</a>
     </div>
 
     <h4>Agregar una nueva pregunta</h4>

@@ -152,6 +152,9 @@
         public const string UserImagePath = "user-image";
 
 
+        //Question
+        public const string QuestionsAndAnswers = "Preguntas y Respuestas";
+
         //Button
         public const string Edit = "Editar";
         public const string Details = "Detalles";

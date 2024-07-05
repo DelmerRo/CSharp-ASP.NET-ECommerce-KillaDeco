@@ -1,13 +1,18 @@
-﻿
-
+﻿@model IEnumerable<WebKillaDeco.Models.Question>
+@using WebKillaDeco.Helpers
+@{
+    ViewData["Title"] = "Index";
+    
+}
+<div class="d-flex justify-content-center mt-3">
+<h1>@Alias.QuestionsAndAnswers</h1>
+</div>
 <div id="questionList">
-    @if (Model.Questions.Any())
+    @if (Model.Any())
     {
-        foreach (var question in Model.Questions)
+        foreach (var question in Model)
         {
-            <div class="question-item">
-               
-            </div>
+            @Html.Partial("_QuestionPartial", question);
             <hr />
         }
     }
@@ -17,15 +22,4 @@
     }
 </div>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        @for (var i = 1; i <= Math.Ceiling((double)Model.TotalQuestions / Model.PageSize); i++)
-        {
-            <li class="page-item @(i == Model.PageNumber ? "active" : "")">
-                <a class="page-link" href="@Url.Action("Index", new { productId = Model.ProductId, pageNumber = i })">@i</a>
-            </li>
-        }
-        }
-    </ul>
-</nav>
 

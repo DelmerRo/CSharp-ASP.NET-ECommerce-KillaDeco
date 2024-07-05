@@ -25,9 +25,12 @@ namespace WebKillaDeco.Controllers
         }
 
         // GET: Questions
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var killaDbContext = _context.Questions.Include(q => q.Client).Include(q => q.Product);
+            var killaDbContext = _context.Questions
+                .Include(q => q.Client)
+                .Include(q => q.Product)
+                .Where(q => q.ProductId == id);
             return View(await killaDbContext.ToListAsync());
         }
 
@@ -40,8 +43,8 @@ namespace WebKillaDeco.Controllers
             }
 
             var question = await _context.Questions
-                .Include(q => q.Client)
                 .Include(q => q.Product)
+                 .Include(q => q.Client)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (question == null)
             {
