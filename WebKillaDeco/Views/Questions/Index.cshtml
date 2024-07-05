@@ -1,0 +1,31 @@
+﻿
+
+<div id="questionList">
+    @if (Model.Questions.Any())
+    {
+        foreach (var question in Model.Questions)
+        {
+            <div class="question-item">
+               
+            </div>
+            <hr />
+        }
+    }
+    else
+    {
+        <p>Aún no existen preguntas</p>
+    }
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @for (var i = 1; i <= Math.Ceiling((double)Model.TotalQuestions / Model.PageSize); i++)
+        {
+            <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { productId = Model.ProductId, pageNumber = i })">@i</a>
+            </li>
+        }
+        }
+    </ul>
+</nav>
+

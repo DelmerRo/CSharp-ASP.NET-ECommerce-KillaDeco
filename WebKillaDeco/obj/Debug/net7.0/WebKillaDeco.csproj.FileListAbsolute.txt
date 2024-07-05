@@ -287,6 +287,15 @@ C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-Kil
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.pdb
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.genruntimeconfig.cache
 C:\Users\Jindrg\Desktop\Proyectos Propios\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\ref\WebKillaDeco.dll
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.csproj.AssemblyReference.cache
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.GeneratedMSBuildEditorConfig.editorconfig
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.AssemblyInfoInputs.cache
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.AssemblyInfo.cs
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.csproj.CoreCompileInputs.cache
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.MvcApplicationPartsAssemblyInfo.cache
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.RazorAssemblyInfo.cache
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.RazorAssemblyInfo.cs
+C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.sourcelink.json
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\appsettings.Development.json
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\appsettings.json
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\WebKillaDeco.staticwebassets.runtime.json
@@ -551,15 +560,6 @@ C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\ru
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.csproj.AssemblyReference.cache
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.GeneratedMSBuildEditorConfig.editorconfig
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.AssemblyInfoInputs.cache
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.AssemblyInfo.cs
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.csproj.CoreCompileInputs.cache
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.MvcApplicationPartsAssemblyInfo.cache
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.RazorAssemblyInfo.cache
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.RazorAssemblyInfo.cs
-C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\WebKillaDeco.sourcelink.json
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\staticwebassets.build.json
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\staticwebassets.development.json
 C:\KillaHome\CSharp-ASP.NET-ECommerce-KillaDeco\WebKillaDeco\obj\Debug\net7.0\staticwebassets\msbuild.WebKillaDeco.Microsoft.AspNetCore.StaticWebAssets.props

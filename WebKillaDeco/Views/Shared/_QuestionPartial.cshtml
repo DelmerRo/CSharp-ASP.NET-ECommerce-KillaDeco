@@ -1,0 +1,28 @@
+﻿<!-- _QuestionPartial.cshtml -->
+@model WebKillaDeco.Models.Question
+
+<div class="question-item p-3 bg-light rounded mb-3">
+    <div class="review-header d-flex align-items-center justify-content-between border-bottom pb-2 mb-2">
+        <div class="date text-muted">
+            <p class="mb-0"><i class="fa fa-calendar"></i> @Model.PublicationDate.ToShortDateString()</p>
+        </div>
+    </div>
+    <div class="review-body">
+        <div class="comment-user-info">
+            <div class="comment mb-2">
+                <p class="mb-1"><i class="fa fa-question-circle"></i> @Model.Description</p>
+                @if (Model.Answer != null)
+                {
+                    <p class="ml-4 mb-0"><i class="fa fa-reply"></i> @Model.Answer.description</p>
+                }
+                else
+                {
+                    <p class="ml-4 mb-0"><i class="fa fa-reply"></i> No hay respuesta aún.</p>
+                }
+            </div>
+            <div class="user-info text-right text-muted mt-2">
+                <small><i class="fa fa-user"></i> @(Model.Client != null ? Model.Client.Name : "Cliente desconocido")</small>
+            </div>
+        </div>
+    </div>
+</div>
