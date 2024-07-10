@@ -31,7 +31,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 5,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 5m
                 },
                 new Product
                 {
@@ -53,7 +53,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 25m
                 },
 
                 // Manteleria
@@ -77,7 +77,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 7,
                     Color = "Blanco",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 10m
                 },
                 new Product
                 {
@@ -99,7 +99,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 140,
                     Color = "Gris",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 50m
                 },
 
                 // Utensilios
@@ -123,7 +123,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Rojo",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -145,7 +145,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 7,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 0m
                 },
 
                 // Porta Condimentos
@@ -169,7 +169,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 5,
                     Color = "Negro",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -191,7 +191,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 400,
                     Color = "Marrón",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
                 // Frascos
@@ -215,7 +215,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Transparente",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -237,7 +237,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Transparente",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 10m
                 },
 
                                 // Latas
@@ -261,7 +261,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Verde",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -283,7 +283,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 75,
                     Color = "Marrón",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 0.0m
                 },
 
                 // Ollas & Sartenes
@@ -307,7 +307,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 50,
                     Color = "Negro",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 20m
                 },
                 new Product
                 {
@@ -329,7 +329,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 170,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 35m
                 },
 
                 // Recipiente para horno
@@ -353,7 +353,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Transparente",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -375,7 +375,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 7,
                     Color = "Rojo",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
                 // Organizador de Cocina
@@ -399,7 +399,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Blanco",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -421,7 +421,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 170,
                     Color = "Gris",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
                 // Accesorios de Cocina
@@ -445,7 +445,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 5m
                 },
                 new Product
                 {
@@ -467,7 +467,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 22,
                     Color = "Azul",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
                 // Tablas para picar
@@ -491,7 +491,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Marrón",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -513,7 +513,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Blanco",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.05m
+                    Discount = 15m
                 },
 
                 // Utensilios
@@ -537,7 +537,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Negro",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 10m
                 },
                 new Product
                 {
@@ -559,7 +559,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Marrón",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 20m
                 },
 
                 // Cuchillos
@@ -583,7 +583,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 10,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 70m
                 },
                 new Product
                 {
@@ -605,7 +605,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 15,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
 
@@ -630,7 +630,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 7,
                     Color = "Negro",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -652,7 +652,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 10,
                     Color = "Negro",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
                 // Accesorios de vino & bar
@@ -676,7 +676,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 20,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -698,7 +698,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 20,
                     Color = "Plata",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
                 // Manta & almohadones
@@ -722,7 +722,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Gris",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -744,7 +744,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 80,
                     Color = "Blanco",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 30m
                 },
 
                 // Portavelas & Floreros
@@ -768,7 +768,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 70,
                     Color = "Transparente",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 10m
                 },
                 new Product
                 {
@@ -790,7 +790,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 80,
                     Color = "Blanco",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 30m
                 },
 
                 // Accesorio Deco
@@ -814,7 +814,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 80,
                     Color = "Doradado",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -836,7 +836,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 80,
                     Color = "Negro",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
                 // Lamparas
@@ -860,7 +860,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 80,
                     Color = "Blanco",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -882,7 +882,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 10,
                     Color = "Negro",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
 
                 // Plantas
@@ -906,7 +906,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 10,
                     Color = "Verde",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 25m
                 },
                 new Product
                 {
@@ -928,7 +928,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 10,
                     Color = "Verde",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 20m
                 },
 
                 // Cremas & Jabones
@@ -974,7 +974,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 5,
                     Color = "Beige",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 10m
                 },
 
                 // Fragancias
@@ -998,7 +998,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 5,
                     Color = "Transparente",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 35m
                 },
                 new Product
                 {
@@ -1020,7 +1020,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 5,
                     Color = "Transparente",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 25m
                 },
 
                 // Difusores
@@ -1044,7 +1044,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 5,
                     Color = "Blanco",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                 },
                 new Product
                 {
@@ -1066,7 +1066,7 @@ namespace WebKillaDeco.DataInMemory
                     Depth = 5,
                     Color = "Negro",
                     PublicationDate = DateTime.Now,
-                    Discount = 0.1m
+                    Discount = 0m
                      }
             };
 

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Helpers;
 using WebKillaDeco.Models;
@@ -209,6 +210,14 @@ namespace WebKillaDeco.Controllers
             {
                 return NotFound();
             }
+
+            // Ejemplo de formateo en el controlador
+            decimal originalPrice = product.CurrentPrice;
+            decimal discountAmount = originalPrice * product.Discount/100;
+            decimal discountedPrice = originalPrice - discountAmount;
+
+            ViewBag.FormattedOriginalPrice = string.Format(CultureInfo.CurrentCulture, "{0:C}", originalPrice);
+            ViewBag.FormattedDiscountedPrice = string.Format(CultureInfo.CurrentCulture, "{0:C}", discountedPrice);
 
             return View(product);
         }

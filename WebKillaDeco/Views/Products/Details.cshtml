@@ -91,17 +91,15 @@
                     <div class="product-meta-data">
                         <div class="line"></div>
 
-                        @if (Model.Discount != 0 && Model.Discount < Model.CurrentPrice)
+                        @if (Model.Discount != 0 @* && Model.Discount < Model.CurrentPrice *@)
                         {
-                            decimal discountPercent = Model.Discount * 100;
-                            decimal price = Model.CurrentPrice;
-                            decimal discountedPrice = price - (price * discountPercent / 100);
+
                             <p class="product-price">
-                                <del class="original-price">$@price.ToString("0.##")</del>
+                                <del class="original-price">@ViewBag.FormattedOriginalPrice</del>
                                 <span style="color: #9ACD32; font-size: smaller;">
-                                    @discountPercent.ToString("0")% OFF<br />
+                                    @Model.Discount.ToString("0")% OFF<br />
                                 </span>
-                                <span class="discount-info">$@discountedPrice.ToString("0.##")</span>
+                                <span class="discount-info">@ViewBag.FormattedDiscountedPrice</span>
                             </p>
 
                         }
