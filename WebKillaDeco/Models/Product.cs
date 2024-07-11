@@ -109,7 +109,7 @@ namespace WebKillaDeco.Models
         //[Required(ErrorMessage = ErrorMsgs.Required)]
         [Range(Restrictions.MinProductDiscount, Restrictions.MaxProductDiscount, ErrorMessage = ErrorMsgs.RangeMinMax)]
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
-        public decimal Discount { get; set; }
+        public decimal Discount { get; set; } = 0m;
 
         [Display(Name = Alias.SubCategoryName)]
         public SubCategory? SubCategories { get; set; }

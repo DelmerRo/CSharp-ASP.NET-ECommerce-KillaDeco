@@ -91,17 +91,15 @@
                     <div class="product-meta-data">
                         <div class="line"></div>
 
-                        @if (Model.Discount != 0 && Model.Discount < Model.CurrentPrice)
+                        @if (Model.Discount != 0 @* && Model.Discount < Model.CurrentPrice *@)
                         {
-                            decimal discountPercent = Model.Discount * 100;
-                            decimal price = Model.CurrentPrice;
-                            decimal discountedPrice = price - (price * discountPercent / 100);
+
                             <p class="product-price">
-                                <del class="original-price">$@price.ToString("0.##")</del>
+                                <del class="original-price">@ViewBag.FormattedOriginalPrice</del>
                                 <span style="color: #9ACD32; font-size: smaller;">
-                                    @discountPercent.ToString("0")% OFF<br />
+                                    @Model.Discount.ToString("0")% OFF<br />
                                 </span>
-                                <span class="discount-info">$@discountedPrice.ToString("0.##")</span>
+                                <span class="discount-info">@ViewBag.FormattedDiscountedPrice</span>
                             </p>
 
                         }
@@ -229,13 +227,28 @@
 <hr />
 
 <!-- Preguntas y Respuestas -->
- @if (User.IsInRole("Client"))
-    {
+ 
 <div class="reviews-container mt-5">
     <h3>Preguntas y Respuestas</h3>
+    @if (User.IsInRole("Client"))
+    {
+        <h4>Agregar una nueva pregunta</h4>
 
+        <form id="questionForm" asp-controller="Questions" asp-action="Create" method="post">
+            <input type="hidden" name="ProductId" value="@Model.ProductId" />
+            <div class="form-group">
+                <label for="description">Pregunta</label>
+                <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    }
+    else
+    {
+        <p>No se le permiten generar preguntas por el Rol asignado</p>
+    }
     <!-- Listado de Preguntas -->
-    <div id="questionList">
+    <div class="mt-3" id="questionList">
         @if (Model.Questions.Any())
         {
             // Ordenar las preguntas por fecha de publicación descendente y tomar las primeras 10
@@ -252,22 +265,12 @@
             <p>Aún no existen preguntas</p>
         }
     </div>
+    @if(Model.Questions.Count > 5){
     <div class="d-flex justify-content-center mt-3">
         <a class="text-warning font-weight-bold" asp-controller="Questions" asp-action="Index" asp-route-id="@Model.ProductId">Ver todas las preguntas</a>
     </div>
-
-    <h4>Agregar una nueva pregunta</h4>
-   
-        <form id="questionForm" asp-controller="Questions" asp-action="Create" method="post">
-            <input type="hidden" name="ProductId" value="@Model.ProductId" />
-            <div class="form-group">
-                <label for="description">Pregunta</label>
-                <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+    }
 </div>
- }
 
 @section Scripts {
     <script>
