@@ -10,11 +10,11 @@
             </div>
             <div class="product-description card-body">
                 <div class="product-meta-data">
-                    <div class="line"></div>
-                    <p class="product-price">USD @product.CurrentPrice</p>
-                    <a href="@Url.Action("Details", "Products", new { id = product.ProductId })">
+                    @*  <p class="product-price">USD @product.CurrentPrice</p> *@
+                    <a asp-controller="Products" asp-action="Details" asp-route-id="@product.ProductId">
                         <h6>@product.Name</h6>
-                    </a>
+                    </a> 
+                    @Html.Partial("_ProductPricePartial", product)
                 </div>
                 <div class="ratings-cart text-right">
                   @Html.Partial("_Rating", product)

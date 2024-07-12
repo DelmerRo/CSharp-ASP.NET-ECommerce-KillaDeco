@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\shared\\_productpricepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\shared\\_productpricepartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\areas\\identity\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\areas\\identity\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\answers\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -13,6 +37,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\answers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\answers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\shared\\_layoutemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\shared\\_layoutemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\answers\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -33,14 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\views\\questions\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|solutionrelative:webkilladeco\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3ECEF78E-C963-4F49-AB4E-87B06CAC7E14}|WebKillaDeco\\WebKillaDeco.csproj|c:\\killahome\\csharp-asp.net-ecommerce-killadeco\\webkilladeco\\views\\products\\review.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -66,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,7 +94,98 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_ProductPricePartial.cshtml",
+              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_ProductPricePartial.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Shared\\_ProductPricePartial.cshtml",
+              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_ProductPricePartial.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Views\\Shared\\_ProductPricePartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-11T19:50:40.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Models\\Product.cs",
+              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Models\\Product.cs",
+              "RelativeToolTip": "WebKillaDeco\\Models\\Product.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAHMAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T19:41:28.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Products\\Index.cshtml",
+              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Views\\Products\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-11T19:26:19.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Products\\Details.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Products\\Details.cshtml",
+              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Products\\Details.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Views\\Products\\Details.cshtml",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAiwF0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-11T18:55:47.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "WebKillaDeco\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAYwNIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T18:44:25.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Areas\\Identity\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Areas\\Identity\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Areas\\Identity\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebKillaDeco\\Areas\\Identity\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T17:26:09.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_LayoutEmployee.cshtml",
+              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_LayoutEmployee.cshtml",
+              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Shared\\_LayoutEmployee.cshtml",
+              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_LayoutEmployee.cshtml",
+              "RelativeToolTip": "WebKillaDeco\\Views\\Shared\\_LayoutEmployee.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAUAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-11T15:10:42.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Answers\\Index.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Answers\\Index.cshtml",
@@ -87,20 +198,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Answers\\Details.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Answers\\Details.cshtml",
               "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Answers\\Details.cshtml",
               "RelativeToolTip": "WebKillaDeco\\Views\\Answers\\Details.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAA5AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-10T14:42:41.255Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Answers\\Delete.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Answers\\Delete.cshtml",
@@ -108,12 +219,11 @@
               "RelativeToolTip": "WebKillaDeco\\Views\\Answers\\Delete.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAnwCMAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-10T14:42:04.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T14:42:04.283Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Answers\\Create.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Answers\\Create.cshtml",
@@ -121,12 +231,11 @@
               "RelativeToolTip": "WebKillaDeco\\Views\\Answers\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-10T14:40:18.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T14:40:18.345Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "AnswersController.cs",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\AnswersController.cs",
               "RelativeDocumentMoniker": "WebKillaDeco\\Controllers\\AnswersController.cs",
@@ -134,12 +243,11 @@
               "RelativeToolTip": "WebKillaDeco\\Controllers\\AnswersController.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T14:39:48.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T14:39:48.74Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "_QuestionPartial.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_QuestionPartial.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Shared\\_QuestionPartial.cshtml",
@@ -147,12 +255,11 @@
               "RelativeToolTip": "WebKillaDeco\\Views\\Shared\\_QuestionPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-10T13:35:58.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T13:35:58.854Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "QuestionsController.cs",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\QuestionsController.cs",
               "RelativeDocumentMoniker": "WebKillaDeco\\Controllers\\QuestionsController.cs",
@@ -160,12 +267,11 @@
               "RelativeToolTip": "WebKillaDeco\\Controllers\\QuestionsController.cs",
               "ViewState": "AQIAACQAAAAAAAAAAAAAAEwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T13:21:54.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T13:21:54.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Questions\\Index.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Questions\\Index.cshtml",
@@ -173,12 +279,11 @@
               "RelativeToolTip": "WebKillaDeco\\Views\\Questions\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-10T13:25:57.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T13:25:57.695Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Questions\\Details.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Questions\\Details.cshtml",
@@ -186,12 +291,11 @@
               "RelativeToolTip": "WebKillaDeco\\Views\\Questions\\Details.cshtml",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-10T13:25:54.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T13:25:54.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "_ReviewContent.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Shared\\_ReviewContent.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Shared\\_ReviewContent.cshtml",
@@ -199,12 +303,11 @@
               "RelativeToolTip": "WebKillaDeco\\Views\\Shared\\_ReviewContent.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-10T13:24:21.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T13:24:21.82Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "Review.cshtml",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Products\\Review.cshtml",
               "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Products\\Review.cshtml",
@@ -212,52 +315,19 @@
               "RelativeToolTip": "WebKillaDeco\\Views\\Products\\Review.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-10T13:23:04.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T13:23:04.719Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "WebKillaDeco\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "WebKillaDeco\\Controllers\\ProductsController.cs",
-              "ViewState": "AQIAAO4AAAAAAAAAAAAAANcAAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T15:29:42.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Startup.cs",
               "RelativeDocumentMoniker": "WebKillaDeco\\Startup.cs",
               "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Startup.cs",
               "RelativeToolTip": "WebKillaDeco\\Startup.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAGsAAAAdAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAqwCYAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T15:21:11.889Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Products\\Details.cshtml",
-              "RelativeDocumentMoniker": "WebKillaDeco\\Views\\Products\\Details.cshtml",
-              "ToolTip": "C:\\KillaHome\\CSharp-ASP.NET-ECommerce-KillaDeco\\WebKillaDeco\\Views\\Products\\Details.cshtml",
-              "RelativeToolTip": "WebKillaDeco\\Views\\Products\\Details.cshtml",
-              "ViewState": "AQIAANgAAAAAAAAAAAAQwPgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-09T15:17:28.752Z",
               "EditorCaption": ""
             }
           ]

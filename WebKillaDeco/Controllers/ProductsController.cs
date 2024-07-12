@@ -25,39 +25,28 @@ namespace WebKillaDeco.Controllers
             _imageService = imageService;
         }
 
-        public async Task<IActionResult> Review(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Products
-                .Include(p => p.Qualifications)  // Incluye las calificaciones del producto
-                    .ThenInclude(q => q.Client)  // Subincluye el cliente asociado a cada calificación
-                .FirstOrDefaultAsync(p => p.ProductId == id);
-
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return PartialView("Review", product);
-        }
-
-
-
-
         [Authorize]
-        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = PageSize)
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = PageSize, bool showDiscounts= false)
         {
-            var productActiveDescending = await _context.Products
-                                                        .Include(p => p.SubCategories)
-                                                        .Include(P => P.Qualifications)
-                                                        .Where(p => p.Active)
-                                                        .OrderByDescending(d => d.PublicationDate)
-                                                        .ToListAsync();
-
+            var productActiveDescending = new List<Product>();
+            if (showDiscounts)
+            {
+                 productActiveDescending = await _context.Products
+                                                            .Include(p => p.SubCategories)
+                                                            .Include(P => P.Qualifications)
+                                                            .Where(p => p.Active && p.Discount > 0)
+                                                            .OrderByDescending(d => d.Discount)
+                                                            .ToListAsync();
+            }
+            else
+            {
+                 productActiveDescending = await _context.Products
+                                                            .Include(p => p.SubCategories)
+                                                            .Include(P => P.Qualifications)
+                                                            .Where(p => p.Active)
+                                                            .OrderByDescending(d => d.PublicationDate)
+                                                            .ToListAsync();
+            }
             var brandsWithMaxDiscount = productActiveDescending
                 .GroupBy(p => p.Brand)
                 .Select(group => new
@@ -87,6 +76,39 @@ namespace WebKillaDeco.Controllers
 
             return View(viewModel);
         }
+
+        public async Task<IActionResult> Discounts()
+        {
+            var listDiscount = await _context.Products
+                                             .Include(c => c.SubCategories)
+                                             .Include(P => P.Qualifications)
+                                             .Where(p => p.Active)
+                                             .OrderByDescending(d => d.PublicationDate)
+                                             .ToListAsync();
+            return View(listDiscount);
+        }
+
+        public async Task<IActionResult> Review(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products
+                .Include(p => p.Qualifications)  // Incluye las calificaciones del producto
+                    .ThenInclude(q => q.Client)  // Subincluye el cliente asociado a cada calificación
+                .FirstOrDefaultAsync(p => p.ProductId == id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return PartialView("Review", product);
+        }
+
+
 
         public ActionResult GetProductsByFilters(int? subcategoryId, List<string> brands, string color, decimal? minPrice, decimal? maxPrice, string sortOrder, int pageNumber = 1, int pageSize = PageSize, string searchString = "")
         {
@@ -165,30 +187,6 @@ namespace WebKillaDeco.Controllers
         }
 
 
-        // Acción para obtener productos por subcategoría mediante AJAX
-        //[HttpGet]
-        //public IActionResult GetProductsBySubcategory(int subcategoryId)
-        //{
-        //    var products = _context.Products
-        //                           .Include(p => p.SubCategories)
-        //                           .Where(p => p.SubCategoryId == subcategoryId)
-        //                           .ToList();
-
-        //    return PartialView("_ProductListPartial", products);
-        //}
-
-        //// Acción para obtener productos por marca mediante AJAX
-        //[HttpGet]
-        //public IActionResult GetProductsByBrand(List<string> brands)
-        //{
-        //    var products = _context.Products
-        //                           .Include(p => p.SubCategories)
-        //                           .Where(p => brands.Contains(p.Brand))
-        //                           .ToList();
-
-        //    return PartialView("_ProductListPartial", products);
-        //}
-
         [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
@@ -212,12 +210,12 @@ namespace WebKillaDeco.Controllers
             }
 
             // Ejemplo de formateo en el controlador
-            decimal originalPrice = product.CurrentPrice;
-            decimal discountAmount = originalPrice * product.Discount/100;
-            decimal discountedPrice = originalPrice - discountAmount;
+            //decimal originalPrice = product.CurrentPrice;
+            //decimal discountAmount = originalPrice * product.Discount / 100;
+            //decimal discountedPrice = originalPrice - discountAmount;
 
-            ViewBag.FormattedOriginalPrice = string.Format(CultureInfo.CurrentCulture, "{0:C}", originalPrice);
-            ViewBag.FormattedDiscountedPrice = string.Format(CultureInfo.CurrentCulture, "{0:C}", discountedPrice);
+            //ViewBag.FormattedOriginalPrice = string.Format(CultureInfo.CurrentCulture, "{0:C}", originalPrice);
+            //ViewBag.FormattedDiscountedPrice = string.Format(CultureInfo.CurrentCulture, "{0:C}", discountedPrice);
 
             return View(product);
         }

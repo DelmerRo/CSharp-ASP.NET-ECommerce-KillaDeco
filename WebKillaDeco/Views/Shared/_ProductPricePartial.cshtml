@@ -1,0 +1,20 @@
+﻿@using System.Globalization
+@model WebKillaDeco.Models.Product
+@{
+    var originalPrice = string.Format(CultureInfo.CurrentCulture, "{0:C}", Model.CurrentPrice);
+    var discountedPrice = string.Format(CultureInfo.CurrentCulture, "{0:C}", Model.DiscountedPrice);
+}
+@if (Model.Discount != 0)
+{
+    <p class="product-price">
+        <del class="original-price">@originalPrice</del>
+        <span style="color: #9ACD32; font-size: smaller;">
+            @Model.Discount.ToString("0")% OFF<br />
+        </span>
+        <span class="discount-info">@discountedPrice</span>
+    </p>
+}
+else
+{
+    <p class="product-price">@originalPrice</p>
+}

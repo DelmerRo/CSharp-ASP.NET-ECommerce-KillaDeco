@@ -90,24 +90,7 @@
                     <!-- Product Meta Data -->
                     <div class="product-meta-data">
                         <div class="line"></div>
-
-                        @if (Model.Discount != 0 @* && Model.Discount < Model.CurrentPrice *@)
-                        {
-
-                            <p class="product-price">
-                                <del class="original-price">@ViewBag.FormattedOriginalPrice</del>
-                                <span style="color: #9ACD32; font-size: smaller;">
-                                    @Model.Discount.ToString("0")% OFF<br />
-                                </span>
-                                <span class="discount-info">@ViewBag.FormattedDiscountedPrice</span>
-                            </p>
-
-                        }
-                        else
-                        {
-                            <p class="product-price">$@Model.CurrentPrice.ToString("0.##")</p>
-                        }
-
+                        @Html.Partial("_ProductPricePartial", Model)
                         <h5>@Model.Name</h5>
 
                         <!-- Ratings & Review -->
