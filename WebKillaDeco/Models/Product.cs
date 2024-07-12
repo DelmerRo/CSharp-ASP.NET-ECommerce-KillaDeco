@@ -110,6 +110,10 @@ namespace WebKillaDeco.Models
         [Range(Restrictions.MinProductDiscount, Restrictions.MaxProductDiscount, ErrorMessage = ErrorMsgs.RangeMinMax)]
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Discount { get; set; } = 0m;
+        
+        public decimal DiscountAmount  => CurrentPrice * Discount / 100;
+
+        public decimal DiscountedPrice => CurrentPrice - DiscountAmount;
 
         [Display(Name = Alias.SubCategoryName)]
         public SubCategory? SubCategories { get; set; }

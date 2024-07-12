@@ -71,7 +71,8 @@
 
         public const string CouponId = "ID del Cupón";
         public const string Code = "Código";
-        public const string Discount = "Descuento";
+        public const string NewThisWeek = "Nuevos Ingresos";
+
         public const string ExpirationDate = "Fecha de Expiración";
         public const string Used = "Usado";
 
@@ -150,7 +151,9 @@
         public const string CategoryImagePath = "category-image";
         public const string ProductImagePath = "product-image";
         public const string UserImagePath = "user-image";
-
+        public const string Logout = "Cerrar Sesión";
+        public const string Login = "Iniciar Sesión";
+        public const string Discount = "Descuentos";
 
         //Question
         public const string QuestionsAndAnswers = "Preguntas y Respuestas";
@@ -166,6 +169,7 @@
         public const string ViewSubCategories = "Ver SubCategorías";
         public const string Save = "Guardar";
         public const string ApplyFilter = "Aplicar Filtro";
+      
     }
 
 }
