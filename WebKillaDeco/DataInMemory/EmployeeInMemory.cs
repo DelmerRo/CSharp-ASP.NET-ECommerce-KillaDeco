@@ -19,6 +19,7 @@ namespace WebKillaDeco.Models
                     Email = "employee1@killa.com.ar",
                     Occupation = "Manager",
                     Salary = 50000,
+                    PhotoUrl ="/images/faces-clipart/pic-2.png",
                     DateAdded = DateTime.Now
                 },
                 new Employee
@@ -43,6 +44,7 @@ namespace WebKillaDeco.Models
                     Email = "employee3@killa.com.ar",
                     Occupation = "Designer",
                     Salary = 55000,
+                    PhotoUrl ="/images/faces-clipart/pic-3.png",
                     DateAdded = DateTime.Now
                 }
             };

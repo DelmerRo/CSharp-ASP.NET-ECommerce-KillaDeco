@@ -14,6 +14,7 @@
         public const string LastName = "Apellido";
         public const string Name = "Nombre";
         public const string Password = "Contraseña";
+        public const string Photo = "Foto de Perfil";
 
         public const string Titulo = "Título";
         public const string Description = "Descripción";

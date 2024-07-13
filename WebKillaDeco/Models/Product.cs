@@ -111,8 +111,10 @@ namespace WebKillaDeco.Models
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Discount { get; set; } = 0m;
         
+        [NotMapped]
         public decimal DiscountAmount  => CurrentPrice * Discount / 100;
-
+        
+        [NotMapped]
         public decimal DiscountedPrice => CurrentPrice - DiscountAmount;
 
         [Display(Name = Alias.SubCategoryName)]
