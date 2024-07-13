@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using NuGet.Packaging.Signing;
 using WebKillaDeco.Areas.Identity.Data;
 using WebKillaDeco.Areas.Identity.ViewModels;
+using WebKillaDeco.Helpers;
 using WebKillaDeco.Models;
 
 namespace WebKillaDeco.Areas.Identity.Controllers
@@ -50,13 +52,13 @@ namespace WebKillaDeco.Areas.Identity.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> Login(Login logInViewModel)
+        public async Task<IActionResult> Login(Login logInViewModel)
         {
             string returnUrl = TempData["returnUrl"]?.ToString() ?? string.Empty;
 
             if (ModelState.IsValid)
             {
-                var user = _context.Admins.FirstOrDefault(u => u.Email == logInViewModel.Email);
+                var user = await _userManager.FindByEmailAsync(logInViewModel.Email);
                 if (user == null)
                 {
                     ModelState.AddModelError(string.Empty, "Inicio de sesión inválido");
@@ -66,12 +68,7 @@ namespace WebKillaDeco.Areas.Identity.Controllers
                     var resultadoSignIn = await _signInManager.PasswordSignInAsync(user, logInViewModel.Password, logInViewModel.Remember, false);
                     if (resultadoSignIn.Succeeded)
                     {
-                        if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
-                        {
-                            return Redirect(returnUrl);
-                        }
-
-                        return Redirect("/");
+                        return await RedirectByRole(user, returnUrl);
                     }
                     else
                     {
@@ -82,6 +79,30 @@ namespace WebKillaDeco.Areas.Identity.Controllers
             return View(logInViewModel);
         }
 
+        private async Task<IActionResult> RedirectByRole(User user, string returnUrl)
+        {
+            if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            if (roles.Contains(Config.RolClient))
+            {
+                return RedirectToAction("Index", "Home", new { area = "" });
+            }
+            else if (roles.Contains(Config.RolEmployee))
+            {
+                return RedirectToAction("Index", "Home", new { area = "Identity" });
+            }
+            else if (roles.Contains(Config.RolAdmin))
+            {
+                return RedirectToAction("Index", "Home", new { area = "Identity" });
+            }
+
+            return Redirect("/");
+        }
 
 
         public IActionResult ResetPassword()
