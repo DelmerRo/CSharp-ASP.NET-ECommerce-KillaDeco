@@ -1,16 +1,31 @@
 ﻿@using Microsoft.EntityFrameworkCore
 @inject WebKillaDeco.Areas.Identity.Data.KillaDbContext killaDbContext
-@inject SignInManager<User> singInManager
+@inject SignInManager<User> signInManager
+@inject UserManager<User> userManager
+
 @{
     var categories = await killaDbContext.Categories.Include(c => c.SubCategories).ToListAsync();
-    var isAuthenticated = singInManager.IsSignedIn(User);
-    var userName = @User.Identity?.Name;
+    var isAuthenticated = signInManager.IsSignedIn(User);
+    var userName = User.Identity?.Name;
+    var profileImageUrl = "";
 
-    if (userName != null && userName.Contains('@'))
+    if (isAuthenticated)
     {
-        userName = userName.Substring(0, userName.IndexOf('@'));
+        var user = await userManager.GetUserAsync(User);
+        userName = userName?.Contains('@') ?? false ? userName.Substring(0, userName.IndexOf('@')) : userName;
+
+        if (user != null)
+        {
+            // Verifica si el usuario es del tipo Employee
+            if (user is Employee employee)
+            {
+                profileImageUrl = employee.PhotoUrl;
+            }
+            // Aquí puedes añadir más lógica para otros tipos de usuarios si es necesario
+        }
     }
 }
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -48,7 +63,12 @@
                     <li class="nav-item nav-profile">
                         <a href="#" class="nav-link">
                             <div class="nav-profile-image">
-                                <img src="~/images/faces/face1.jpg" alt="perfil" />
+                                @if (isAuthenticated)
+                                {
+                                    <div class="ml-auto">
+                                        <img src="@profileImageUrl" alt="Perfil" class="rounded-circle" width="30" height="30">
+                                    </div>
+                                }
                                 <span class="login-status online"></span>
                                 <!--cambiar a offline o busy según sea necesario-->
                             </div>

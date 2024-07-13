@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using WebKillaDeco.Helpers;
 
 namespace WebKillaDeco.Models
@@ -15,6 +16,11 @@ namespace WebKillaDeco.Models
         [Range(Restrictions.MinEmployeeSalary, Restrictions.MaxEmployeeSalary, ErrorMessage = ErrorMsgs.RangeMinMax)]
         public decimal Salary { get; set; }
 
+        [NotMapped]
+        public IFormFile? PhotoUrlFile { get; set; }
+
+        [Display(Name = Alias.Photo)]
+        public string? PhotoUrl { get; set; } = "/images/faces-clipart/pic-1.png";
 
         public List<Answer>? Answers { get; set; }
     }

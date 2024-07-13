@@ -56,7 +56,7 @@ namespace WebKillaDeco.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Occupation,Salary,Dni,Cuil,Name,LastName,Phone,BirthDate,DateAdded,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Employee employee)
+        public async Task<IActionResult> Create([Bind("PhotoUrl,Occupation,Salary,Dni,Cuil,Name,LastName,Phone,BirthDate,DateAdded,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace WebKillaDeco.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Occupation,Salary,Dni,Cuil,Name,LastName,Phone,BirthDate,DateAdded,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("PhotoUrl,Occupation,Salary,Dni,Cuil,Name,LastName,Phone,BirthDate,DateAdded,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Employee employee)
         {
             if (id != employee.Id)
             {
