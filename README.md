@@ -24,7 +24,7 @@ Realizar los ajustes requeridos del lado de los permisos.
 Todo lo referido a la presentación de la aplicaión (cuestiones visuales).
 
 ## Diagrama de Clases ##
-
+![Diagrama de Clases](https://raw.githubusercontent.com/DelmerRo/CSharp-ASP.NET-ECommerce-KillaDeco/main/Diagrama%20de%20Clases.jpg)
 
 ## Entidades 📄
 - Address
