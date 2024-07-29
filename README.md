@@ -1,4 +1,4 @@
-# Carrito de compras 📖
+# Ecommerce - KillaDeco 📖
 
 ## Objetivos 📋
 Desarrollar un sistema que permita la administración y visualización general de un Ecommerce, diferenciando las funciones según el rol del usuario. Utilizar preferentemente Visual Studio 2022 y crear una aplicación empleando las versiones más recientes de ASP.NET Core MVC. El desarrollo se realizará en C# y se enfocará en la implementación de un carrito de compras para el Ecommerce
@@ -22,6 +22,8 @@ El sólo podrá tomar acción en el sistema, en base al rol que tiene.
 Realizar todos los ajustes necesarios en los modelos y/o funcionalidades.
 Realizar los ajustes requeridos del lado de los permisos.
 Todo lo referido a la presentación de la aplicaión (cuestiones visuales).
+
+## Diagrama de Clases ##
 
 
 ## Entidades 📄
